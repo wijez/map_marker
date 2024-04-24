@@ -363,31 +363,31 @@ window.onload = function () {
        // ctx.fillStyle = 'white';
        // ctx.fill();
         if (distance <= marker.radius) {
-          infoCard.innerHTML = `
-          <li class="card_item"> 
-          <div class="card">
-            <div class="card_image">
-              <img src="${marker.img}" alt="info image ${marker.title}" />
-              <span class="card_price"><a href="${marker.href}" alt="gg map link">
-              <img style="width:30px;height:30px;" src="https://cdn-icons-png.flaticon.com/128/151/151773.png" alt="location ${marker.title}" />
-              </a></span>
-            </div>
-            <div class="card_content">
-              <h2 class="card_title">${marker.title}</h2>
-              <div class="card_text">
-                <p>marker.description
-                </p>
-                <hr />
-                <p>${marker.description}
-                </p>
-                <hr />
-              </div>
-            </div>
-          </div>
-          </li>
+          // infoCard.innerHTML = `
+          // <li class="card_item"> 
+          // <div class="card">
+          //   <div class="card_image">
+          //     <img src="${marker.img}" alt="info image ${marker.title}" />
+          //     <span class="card_price"><a href="${marker.href}" alt="gg map link">
+          //     <img style="width:30px;height:30px;" src="https://cdn-icons-png.flaticon.com/128/151/151773.png" alt="location ${marker.title}" />
+          //     </a></span>
+          //   </div>
+          //   <div class="card_content">
+          //     <h2 class="card_title">${marker.title}</h2>
+          //     <div class="card_text">
+          //       <p>marker.description
+          //       </p>
+          //       <hr />
+          //       <p>${marker.description}
+          //       </p>
+          //       <hr />
+          //     </div>
+          //   </div>
+          // </div>
+          // </li>
           
-          `
-        //  infoCard.innerHTML = '<div width="60"; height = "90";><strong>' + marker.title + '</strong><br><hr><p style="text-align: justify;">' + marker.description + '</p><br><img src="' + marker.img + '"></div>';
+          // `
+          infoCard.innerHTML = '<div width="60"; height = "90";><strong>' + marker.title + '</strong><br><hr><p style="text-align: justify;">' + marker.description + '</p><br><img src="' + marker.img + '"></div>';
           infoCard.style.left = (event.pageX - 40) + 'px';
           infoCard.style.top = (event.pageY + 20) + 'px';
           infoCard.style.display = 'block';
