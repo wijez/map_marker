@@ -1,35 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
-  <title>Marker on Image</title>
-</head>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<body>
-  <div id="canvas-container">
-    <!-- Định nghĩa canvas và ảnh -->
-    <canvas id="myCanvas" width="500" height="600" style="border: 1px solid #000; position: absolute;"></canvas>
-    <img id="map" src="./img/namyenmap.jpg" height="1200" style="display:none;">
-    <div id="info-card" style="position: absolute; display: none; background-color: #fff; padding: 10px;"></div>
-  </div>
+    <style>
+      body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .maker{
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background-color: red;
+        border-radius: 50px;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+      }
+      .container{
+        position: relative;
+      }
+    </style>
+    <script src="test.js" defer></script>
+    <title>Marker on Image</title>
+  </head>
 
+  <body>
+    <div id="container">
+      <!-- Định nghĩa canvas và ảnh -->
+      <!-- <div
+        style="background-color: red;z-index: 1; border-radius: 50px; width: 20px; height: 20px; position: absolute; top: 343px; left: 549px;">
+      </div> -->
 
+      <img id="map" src="./img/namyenmap.jpg">
 
-  
-  <script src="script.js"></script>
-  <script src="markerData.js"></script>
+    </div>
 
-  <!-- <div id="marker1" class="marker"> </div>
-  <div id="marker2" class="marker"> </div> -->
-  
-  <div style="width: 300px; height: 500px; ">
-  <div id="info-box" class="hidden">
-    <p id="info-text"></p>
-  </div>
-
-</body>
+  </body>
 
 </html>
