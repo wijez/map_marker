@@ -15,7 +15,7 @@ var cardLocation = document.getElementById('.card_location')
 function getWindowWidth() {
   return document.documentElement.clientWidth;
 }
-function getWindowHeight(){
+function getWindowHeight() {
   return document.documentElement.clientHeight;
 }
 
@@ -26,7 +26,7 @@ window.onload = function () {
   // Lấy chiều rộng của trình duyệt
   var browserWidth = getWindowWidth();
   var browserHeight = getWindowHeight()
- 
+
   canvas.width = browserWidth;
   //canvas.width = image.width
   canvas.height = image.height
@@ -34,13 +34,15 @@ window.onload = function () {
 
   var widthW = (canvas.width - image.width) / 2
   var heightW = (canvas.height - image.height) / 2
+  console.log('wid', widthW)
+  console.log('hei', heightW)
 
   // data
 
   const markerData = {
     marker1: {
       x: 636,
-      y: 569 ,
+      y: 569,
       map: `<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30661.008822904496!2d108.01087353605213!3d16.136631307566265!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31418bd3ca7c84c1%3A0xb304c8f2904e86f5!2zTMOgbmcgTcOq!5e0!3m2!1svi!2s!4v1713952355600!5m2!1svi!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`,
       img: 'https://i.pinimg.com/236x/17/b4/5b/17b45b56495623fb249e060bffe43bcd.jpg',
       radius: 10,
@@ -107,7 +109,7 @@ window.onload = function () {
       radius: 10,
       hrefMapinGoogle: '',
       title: 'Khu cắm trại Hòa Bắc',
-      description:`
+      description: `
       Khu cắm trại Hòa Bắc là một bờ đất trống nhô ra từ bãi bồi của sông Cu đê. Đi vào con <br> 
       đường đối diện với Trạm y tế Hòa Bắc tầm 200m, du khách sẽ thấy bảng chỉ dẫn rẽ trái <br>
       đến nơi này. Khu cắm trại Hòa Bắc có khung cảnh thiên nhiên hùng vĩ, thảm cỏ xanh mát,<br>
@@ -139,7 +141,7 @@ window.onload = function () {
       triển nông nghiệp.
 
      `
-      
+
     },
     marker6: {
       x: 629,
@@ -260,7 +262,7 @@ window.onload = function () {
       hrefMapinGoogle: '',
       radius: 10,
       title: 'Cu Đê House'
-      
+
     },
     marker12: {
       x: 508,
@@ -297,7 +299,7 @@ window.onload = function () {
         9 gian cúng tế. Đây là nơi thờ cúng những người vô danh, không nơi nương tựa. Tại đây<br> 
         du khách có thể tham dự lễ hội cúng bái được tổ chức vào ngày 25 tháng chạp hằng năm.
         `
-      
+
     },
     marker14: {
       x: 435,
@@ -343,20 +345,20 @@ window.onload = function () {
 
   ctx.drawImage(image, widthW, heightW);
 
-  
+
   function convertCoordinatesToPercent(markerData, canvas) {
     for (const key in markerData) {
-        if (markerData.hasOwnProperty(key)) {
-            const marker = markerData[key];
-            marker.x = (marker.x / canvas.width) * 100;
-            marker.y = (marker.y / canvas.height) * 100;
-        }
+      if (markerData.hasOwnProperty(key)) {
+        const marker = markerData[key];
+        marker.x = (marker.x / canvas.width) * 100;
+        marker.y = (marker.y / canvas.height) * 100;
+      }
     }
-}
+  }
 
 
-// Gọi hàm để chuyển đổi tọa độ của tất cả các điểm đánh dấu sang %
-convertCoordinatesToPercent(markerData, canvas);
+  // Gọi hàm để chuyển đổi tọa độ của tất cả các điểm đánh dấu sang %
+  convertCoordinatesToPercent(markerData, canvas);
 
 
 
@@ -364,32 +366,30 @@ convertCoordinatesToPercent(markerData, canvas);
     var rect = canvas.getBoundingClientRect();
     var x = event.clientX - rect.left;
     var y = event.clientY - rect.top;
-         
+
     // Kiểm tra xem chuột có nằm trong bán kính của marker không
     for (const markerKey in markerData) {
       if (markerData.hasOwnProperty(markerKey)) {
         const marker = markerData[markerKey];
-       var  distance = Math.sqrt((x - ((marker.x / 100) * canvas.width)) ** 2 + (y - ((marker.y / 100) * canvas.height)) ** 2);
+        var distance = Math.sqrt((x - ((marker.x / 100) * canvas.width) + (Math.abs(124 - widthW)/2)) ** 2 + (y - ((marker.y / 100) * canvas.height)+(Math.abs(0 - heightW)/2)) ** 2);
 
-      console.log("distances", distance)
-       ctx.beginPath();
-       ctx.arc(marker.x * canvas.width / 100,marker.y * canvas.height / 100, marker.radius, 0, 2 * Math.PI);
-       console.log("x", (marker.x  / 100) * window.innerWidth)
-       console.log("y", (marker.y / 100) * window.innerHeight )
-      // img.src = marker.icon
+        console.log("distances", distance)
+        ctx.beginPath();
+        ctx.arc(marker.x * canvas.width / 100, marker.y * canvas.height / 100, marker.radius, 0, 2 * Math.PI);
+        // img.src = marker.icon
 
-      // var pattern = ctx.createPattern(img, 'repeat');
-      // var imageWidth = 2 * marker.radius;
-      // var imageHeight = 2 * marker.radius;
+        // var pattern = ctx.createPattern(img, 'repeat');
+        // var imageWidth = 2 * marker.radius;
+        // var imageHeight = 2 * marker.radius;
 
 
-      // ctx.fillStyle = pattern;
-       // ctx.fillStyle = 'white';
-       // ctx.fill();
-        if (distance <= marker.radius) {       
-         // infoCard.innerHTML = '<div width="60"; height = "90";><strong>' + marker.title + '</strong><br><hr><p style="text-align: justify;">' + marker.description + '</p><br><img style="width:40px; height:40px;" src="' + marker.img + '"></div>';
-          infoCard.innerHTML = 
-          `
+        // ctx.fillStyle = pattern;
+        // ctx.fillStyle = 'white';
+        // ctx.fill();
+        if (distance <= marker.radius) {
+          // infoCard.innerHTML = '<div width="60"; height = "90";><strong>' + marker.title + '</strong><br><hr><p style="text-align: justify;">' + marker.description + '</p><br><img style="width:40px; height:40px;" src="' + marker.img + '"></div>';
+          infoCard.innerHTML =
+            `
 
             <div width="60"; height = "90";>
               <div style="display: flex; align-items: center; margin-top: 20px;">
@@ -411,37 +411,37 @@ convertCoordinatesToPercent(markerData, canvas);
             </div>
 
             `
-        if(marker.x <= browserWidth - 300 && marker.y <= canvas.height - 200){
-          infoCard.style.left = (event.pageX - 40) + 'px';
-          infoCard.style.top = (event.pageY + 20) + 'px';
-          infoCard.style.display = 'block';
-          return;
-        }
-        else{
-          infoCard.style.left = (event.pageX - 300) + 'px';
-          infoCard.style.top = (event.pageY + 20) + 'px';
-          infoCard.style.display = 'block';
-          return;
-        }       
+          if (marker.x <= browserWidth - 300 && marker.y <= canvas.height - 200) {
+            infoCard.style.left = (event.pageX - 40) + 'px';
+            infoCard.style.top = (event.pageY + 20) + 'px';
+            infoCard.style.display = 'block';
+            return;
+          }
+          else {
+            infoCard.style.left = (event.pageX - 300) + 'px';
+            infoCard.style.top = (event.pageY + 20) + 'px';
+            infoCard.style.display = 'block';
+            return;
+          }
         }
       }
     }
   });
 
 
-//   window.addEventListener('DOMContentLoaded', function() {
-//     const mapContainer = document.getElementById('mapInGoogle');
-//     const mapLink = document.getElementById('mapInGoogle');
+  //   window.addEventListener('DOMContentLoaded', function() {
+  //     const mapContainer = document.getElementById('mapInGoogle');
+  //     const mapLink = document.getElementById('mapInGoogle');
 
-//     mapLink.addEventListener('mouseenter', function() {
-//         mapContainer.style.display = 'block'; 
-//         mapContainer.innerHTML = `${markers.map}`
-//     });
+  //     mapLink.addEventListener('mouseenter', function() {
+  //         mapContainer.style.display = 'block'; 
+  //         mapContainer.innerHTML = `${markers.map}`
+  //     });
 
-//     mapLink.addEventListener('mouseleave', function() {
-//         mapContainer.style.display = 'none'; // Ẩn bản đồ khi di chuột rời khỏi
-//     });
-// });
+  //     mapLink.addEventListener('mouseleave', function() {
+  //         mapContainer.style.display = 'none'; // Ẩn bản đồ khi di chuột rời khỏi
+  //     });
+  // });
 
   window.addEventListener('click', function (event) {
     // Kiểm tra xem click có xảy ra bên ngoài các điểm đánh dấu không
@@ -452,7 +452,7 @@ convertCoordinatesToPercent(markerData, canvas);
         var rect = canvas.getBoundingClientRect();
         var x = event.clientX - rect.left;
         var y = event.clientY - rect.top;
-        var distance = Math.sqrt((x - marker.x) ** 2 + (y - marker.y) ** 2);
+        var distance = Math.sqrt((x - ((marker.x / 100) * canvas.width + (Math.abs(124 - widthW)/2))) ** 2 + (y - ((marker.y / 100) * canvas.height + (Math.abs(0 - heightW)/2))) ** 2);
         if (distance <= marker.radius) {
           isOutsideMarkers = false;
           break;
