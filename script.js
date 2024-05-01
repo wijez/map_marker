@@ -15,6 +15,9 @@ var cardLocation = document.getElementById('.card_location')
 function getWindowWidth() {
   return document.documentElement.clientWidth;
 }
+function getWindowHeight(){
+  return document.documentElement.clientHeight;
+}
 
 
 
@@ -22,18 +25,22 @@ function getWindowWidth() {
 window.onload = function () {
   // Lấy chiều rộng của trình duyệt
   var browserWidth = getWindowWidth();
+  var browserHeight = getWindowHeight()
+ 
   canvas.width = browserWidth;
   //canvas.width = image.width
   canvas.height = image.height
+
 
   var widthW = (canvas.width - image.width) / 2
   var heightW = (canvas.height - image.height) / 2
 
   // data
+
   const markerData = {
     marker1: {
-      x: 635,
-      y: 573,
+      x: 636,
+      y: 569 ,
       map: `<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30661.008822904496!2d108.01087353605213!3d16.136631307566265!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31418bd3ca7c84c1%3A0xb304c8f2904e86f5!2zTMOgbmcgTcOq!5e0!3m2!1svi!2s!4v1713952355600!5m2!1svi!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`,
       img: 'https://i.pinimg.com/236x/17/b4/5b/17b45b56495623fb249e060bffe43bcd.jpg',
       radius: 10,
@@ -336,6 +343,23 @@ window.onload = function () {
 
   ctx.drawImage(image, widthW, heightW);
 
+  
+  function convertCoordinatesToPercent(markerData, canvas) {
+    for (const key in markerData) {
+        if (markerData.hasOwnProperty(key)) {
+            const marker = markerData[key];
+            marker.x = (marker.x / canvas.width) * 100;
+            marker.y = (marker.y / canvas.height) * 100;
+        }
+    }
+}
+
+
+// Gọi hàm để chuyển đổi tọa độ của tất cả các điểm đánh dấu sang %
+convertCoordinatesToPercent(markerData, canvas);
+
+
+
   window.addEventListener('mousemove', function (event) {
     var rect = canvas.getBoundingClientRect();
     var x = event.clientX - rect.left;
@@ -345,10 +369,13 @@ window.onload = function () {
     for (const markerKey in markerData) {
       if (markerData.hasOwnProperty(markerKey)) {
         const marker = markerData[markerKey];
-        var distance = Math.sqrt((x - marker.x) ** 2 + (y - marker.y) ** 2);
-        ctx.beginPath();
-        ctx.arc(marker.x, marker.y, marker.radius, 0, 2 * Math.PI);
-      // var img = new Image()
+       var  distance = Math.sqrt((x - ((marker.x / 100) * canvas.width)) ** 2 + (y - ((marker.y / 100) * canvas.height)) ** 2);
+
+      console.log("distances", distance)
+       ctx.beginPath();
+       ctx.arc(marker.x * canvas.width / 100,marker.y * canvas.height / 100, marker.radius, 0, 2 * Math.PI);
+       console.log("x", (marker.x  / 100) * window.innerWidth)
+       console.log("y", (marker.y / 100) * window.innerHeight )
       // img.src = marker.icon
 
       // var pattern = ctx.createPattern(img, 'repeat');
@@ -400,6 +427,8 @@ window.onload = function () {
       }
     }
   });
+
+
 //   window.addEventListener('DOMContentLoaded', function() {
 //     const mapContainer = document.getElementById('mapInGoogle');
 //     const mapLink = document.getElementById('mapInGoogle');
