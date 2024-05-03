@@ -466,6 +466,7 @@ window.onload = function () {
   });
 
 
+ 
   // canvas.addEventListener('mousemove', function (event) {
   //   var rect = canvas.getBoundingClientRect();
   //   var x = event.clientX - rect.left;
