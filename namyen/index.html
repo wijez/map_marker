@@ -8,6 +8,8 @@
   <title>Marker on Image</title>
   <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
   <script src="action.js"></script>
+  
+
 </head>
 
 <body>
@@ -29,9 +31,8 @@
             <box-icon type='solid' name='chevron-up' id="len" onclick="anSub()"></box-icon>
           </a>
           <ul id="goi-y-nam-yen">
-            <li>
-              <a href="#">
-                <img src="./img/namyen/cautreohoabac.jpg" width="30px" height="30px">
+            <li class="menu-item" onclick="displayInfoCard(marker1)">     
+                <img  src="./img/namyen/cautreohoabac.jpg" width="30px" height="30px">
                 Cầu treo hòa bắc
               </a>
             </li>
@@ -153,10 +154,54 @@
   </div>
   <div id="canvas-container">
     <!-- Định nghĩa canvas và ảnh -->
-    <canvas id="myCanvas" width="500" height="600" style="border: 1px solid #000; position: absolute;"></canvas>
+    <canvas id="myCanvas"  height="600" style="border: 1px solid #000; position: absolute;"></canvas>
     <img id="map" src="./img/1.png" style="display:none;">
     <div id="info-card" style="position: absolute; display: none; background-color: #fff; padding: 10px;"></div>
   </div>
+
+  <script>
+    // Lắng nghe sự kiện click trên các mục menu
+document.querySelectorAll('.menu-item').forEach(function(menuItem, index) {
+  menuItem.addEventListener('click', function() {
+      // Lấy thông tin marker từ markerData dựa trên index của menuItem
+      var marker = markerData['marker' + (index + 1)];
+      displayInfoCard(marker);
+  });
+});
+
+// Hàm để hiển thị infoCard với thông tin của marker được chọn
+function displayInfoCard(marker) {
+  var infoCardContainer = document.getElementById('info-card-container');
+  infoCardContainer.innerHTML = createInfoCardHTML(marker);
+}
+
+// Hàm để tạo HTML cho infoCard từ marker
+function createInfoCardHTML(marker) {
+  return `
+      <div style="width:300px; height: 100px">
+        <div style="display: flex; align-items: center; margin-top: 20px; ">
+        <strong>${marker.title}</strong>
+        <a id="mapInGoogle" target="_blank" style="width:40px; height:40px; margin-left:auto; " href="${marker.hrefMapinGoogle}" alt="${marker.title}"><img src="https://img.icons8.com/?size=48&id=kDqO6kPb3xLj&format=gif" alt="Google Maps ${marker.title}"></a> 
+        </div>
+
+        <br><hr>
+        <div style="text-align: justify; max-height:200px; overflow-y:auto; background-color: white;">
+        <p>${marker.description}</p>
+        </div>
+        <br>
+        <div>
+        <img style="width:40px; height:40px;" src="${marker.img}">
+        <br><hr>
+        </div>
+        <div id="map-container" class="hidden" style=" justify-content: center; width:20px; height: 20px;">
+        ${marker.map}
+        </div>
+       
+      </div>
+  `;
+}
+
+  </script>
   <script src="./script.js"></script>
 
 </body>

@@ -1,4 +1,4 @@
-#map {
+#map-container {
   position: relative;
   display: none;
     justify-content: center;
@@ -35,7 +35,7 @@
   }
 
   #info-card {
-    
+    display: block;
     position: absolute;
     background-color: white;
     border: 1px solid #ccc;

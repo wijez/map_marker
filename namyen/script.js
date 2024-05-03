@@ -1,14 +1,8 @@
 
 var image = document.getElementById('map');
-
 var canvas = document.getElementById('myCanvas');
-var markers = document.getElementById('.marker')
-const infoBox = document.getElementById('info-box');
 var infoCard = document.getElementById('info-card');
-const infoText = document.getElementById('info-text');
-var cardText = document.getElementById('card_text')
-var cardTitle = document.getElementById('.card-title')
-var cardLocation = document.getElementById('.card_location')
+
 
 
 // Định nghĩa hàm để lấy chiều rộng của trình duyệt
@@ -41,8 +35,9 @@ window.onload = function () {
     marker1: {
       x: 724,
       y: 396,
+      radius: 10,
       map: `<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30661.008822904496!2d108.01087353605213!3d16.136631307566265!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31418bd3ca7c84c1%3A0xb304c8f2904e86f5!2zTMOgbmcgTcOq!5e0!3m2!1svi!2s!4v1713952355600!5m2!1svi!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`,
-      img: '',
+      img: 'https://i.pinimg.com/236x/85/98/92/8598922e3dca893731dd2e0f62191e12.jpg',
       hrefMapinGoogle: 'https://maps.app.goo.gl/xpQDgNvh7PEeZxEt9',
       title: 'Cầu treo Hòa Bắc',
       description: `Cầu treo Hòa Bắc còn có tên gọi khác là Cầu dây văng Hòa Bắc, nối hai bờ của con sông <br> 
@@ -65,6 +60,7 @@ window.onload = function () {
     marker2: {
       x: 697,
       y: 334,
+      radius: 10,
       icon: '',
       img: '',
       hrefMapinGoogle: 'https://maps.app.goo.gl/fywJTYLMysoKAiLDA',
@@ -81,6 +77,7 @@ window.onload = function () {
     marker3: {
       x: 707,
       y: 322,
+      radius: 10,
       icon: '',
       img: '',
       hrefMapinGoogle: '',
@@ -99,6 +96,7 @@ window.onload = function () {
     marker4: {
       x: 761,
       y: 357,
+      radius: 10,
       icon: '',
       img: '',
       hrefMapinGoogle: '',
@@ -118,6 +116,7 @@ window.onload = function () {
     marker5: {
       x: 886,
       y: 633,
+      radius: 10,
       icon: '',
       img: '',
       hrefMapinGoogle: '',
@@ -139,6 +138,7 @@ window.onload = function () {
     marker6: {
       x: 721,
       y: 331,
+      radius: 10,
       icon: '',
       img: '',
       hrefMapinGoogle: '',
@@ -157,6 +157,7 @@ window.onload = function () {
     marker7: {
       x: 729,
       y: 316,
+      radius: 10,
       icon: '',
       img: '',
       hrefMapinGoogle: '',
@@ -180,6 +181,7 @@ window.onload = function () {
     marker8: {
       x: 746,
       y: 321,
+      radius: 10,
       icon: '',
       img: '',
       hrefMapinGoogle: '',
@@ -202,6 +204,7 @@ window.onload = function () {
     marker9: {
       x: 805,
       y: 213,
+      radius: 10,
       icon: '',
       img: '',
       hrefMapinGoogle: '',
@@ -230,6 +233,7 @@ window.onload = function () {
     marker10: {
       x: 1054,
       y: 377,
+      radius: 10,
       icon: '',
       img: '',
       hrefMapinGoogle: '',
@@ -245,6 +249,7 @@ window.onload = function () {
     marker11: {
       x: 632,
       y: 312,
+      radius: 10,
       icon: '',
       img: '',
       hrefMapinGoogle: '',
@@ -255,6 +260,7 @@ window.onload = function () {
     marker12: {
       x: 638,
       y: 285,
+      radius: 10,
       icon: '',
       img: '',
       hrefMapinGoogle: '',
@@ -274,6 +280,7 @@ window.onload = function () {
     marker13: {
       x: 644,
       y: 240,
+      radius: 10,
       icon: '',
       img: '',
       hrefMapinGoogle: '',
@@ -290,6 +297,7 @@ window.onload = function () {
     marker14: {
       x: 585,
       y: 314,
+      radius: 10,
       icon: '',
       img: '',
       hrefMapinGoogle: '',
@@ -305,6 +313,7 @@ window.onload = function () {
     marker15: {
       x: 537,
       y: 264,
+      radius: 10,
       map: `<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30661.008822904496!2d108.01087353605213!3d16.136631307566265!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31418bd3ca7c84c1%3A0xb304c8f2904e86f5!2zTMOgbmcgTcOq!5e0!3m2!1svi!2s!4v1713952355600!5m2!1svi!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`,
       img: '',
       hrefMapinGoogle: 'https://maps.app.goo.gl/Dyf9KTgaPTim6zH47',
@@ -366,27 +375,30 @@ window.onload = function () {
 
         console.log("distances", distance)
         ctx.beginPath();
-        ctx.arc(marker.x * canvas.width / 100, marker.y * canvas.height / 100, 10, 0, 2 * Math.PI);
-        ctx.fillStyle = 'red';
-        ctx.fill();
+        ctx.arc(marker.x * canvas.width / 100, marker.y * canvas.height / 100, marker.radius, 0, 2 * Math.PI);
+        // ctx.fillStyle = 'red';
+        // ctx.fill();
         if (distance <= marker.radius) {
           // infoCard.innerHTML = '<div width="60"; height = "90";><strong>' + marker.title + '</strong><br><hr><p style="text-align: justify;">' + marker.description + '</p><br><img style="width:40px; height:40px;" src="' + marker.img + '"></div>';
           infoCard.innerHTML =
             `
-            <div width="60"; height = "90";>
-              <div style="display: flex; align-items: center; margin-top: 20px;">
+            
+            <div style="width:300px; height: 100px">
+              <div style="display: flex; align-items: center; margin-top: 20px; ">
               <strong>${marker.title}</strong>
-              <a id="mapInGoogle" target="_blank" style="width:40px; height:40px;margin-left: auto;" href="${marker.hrefMapinGoogle}" alt="${marker.title}"><img src="https://img.icons8.com/?size=48&id=kDqO6kPb3xLj&format=gif" alt="Google Maps ${marker.title}"></a> 
+              <a id="mapInGoogle" target="_blank" style="width:40px; height:40px; margin-left:auto; " href="${marker.hrefMapinGoogle}" alt="${marker.title}"><img src="https://img.icons8.com/?size=48&id=kDqO6kPb3xLj&format=gif" alt="Google Maps ${marker.title}"></a> 
               </div>
 
               <br><hr>
-              <div style="text-align: justify; max-height:200px; overflow-y:auto">
+              <div style="text-align: justify; max-height:200px; overflow-y:auto; background-color: white;">
               <p>${marker.description}</p>
+              </div>
               <br>
               <div>
               <img style="width:40px; height:40px;" src="${marker.img}">
               <br><hr>
-              <div id="map-container" class="hidden">
+              </div>
+              <div id="map-container" class="hidden" style=" justify-content: center; width:20px; height: 20px;">
               ${marker.map}
               </div>
              
@@ -394,7 +406,7 @@ window.onload = function () {
 
             `
           if (marker.x <= browserWidth - 300 && marker.y <= canvas.height - 200) {
-            infoCard.style.left = (event.pageX - 0) + 'px';
+            infoCard.style.left = (event.pageX - 30) + 'px';
             infoCard.style.top = (event.pageY + 20) + 'px';
             infoCard.style.display = 'block';
             return;
@@ -454,3 +466,5 @@ window.onload = function () {
     }
   });
 }
+
+
