@@ -31,11 +31,14 @@ window.onload = function () {
   //canvas.width = image.width
   canvas.height = image.height
 
-
   var widthW = (canvas.width - image.width) / 2
   var heightW = (canvas.height - image.height) / 2
+  var widthWClient = ((canvas.width - image.width) / 2 / canvas.width) * 100;
+  var heightWClient = ((canvas.height - image.height) / 2 / canvas.height) * 100;
   console.log('wid', widthW)
   console.log('hei', heightW)
+  console.log('widc', widthWClient)
+  console.log('heic', heightWClient)
 
   // data
 
@@ -371,7 +374,14 @@ window.onload = function () {
     for (const markerKey in markerData) {
       if (markerData.hasOwnProperty(markerKey)) {
         const marker = markerData[markerKey];
-        var distance = Math.sqrt((x - ((marker.x / 100) * canvas.width) + (Math.abs(124 - widthW)/2)) ** 2 + (y - ((marker.y / 100) * canvas.height)+(Math.abs(0 - heightW)/2)) ** 2);
+        var distance = Math.sqrt(
+          (x -
+            ((marker.x / 100) * canvas.width)) **
+          2 +
+          (y -
+            ((marker.y / 100) * canvas.height)) **
+            2
+          );
 
         console.log("distances", distance)
         ctx.beginPath();
@@ -412,7 +422,7 @@ window.onload = function () {
 
             `
           if (marker.x <= browserWidth - 300 && marker.y <= canvas.height - 200) {
-            infoCard.style.left = (event.pageX - 40) + 'px';
+            infoCard.style.left = (event.pageX - 0) + 'px';
             infoCard.style.top = (event.pageY + 20) + 'px';
             infoCard.style.display = 'block';
             return;
@@ -452,7 +462,14 @@ window.onload = function () {
         var rect = canvas.getBoundingClientRect();
         var x = event.clientX - rect.left;
         var y = event.clientY - rect.top;
-        var distance = Math.sqrt((x - ((marker.x / 100) * canvas.width + (Math.abs(124 - widthW)/2))) ** 2 + (y - ((marker.y / 100) * canvas.height + (Math.abs(0 - heightW)/2))) ** 2);
+        var distance = Math.sqrt(
+          (x -
+            (marker.x / 100) * canvas.width) **
+          2 +
+          (y -
+            (marker.y / 100) * canvas.height) **
+          2
+        );
         if (distance <= marker.radius) {
           isOutsideMarkers = false;
           break;
@@ -466,7 +483,7 @@ window.onload = function () {
   });
 
 
- 
+
   // canvas.addEventListener('mousemove', function (event) {
   //   var rect = canvas.getBoundingClientRect();
   //   var x = event.clientX - rect.left;

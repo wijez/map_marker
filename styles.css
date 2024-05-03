@@ -1,9 +1,7 @@
-#map-container {
+#map {
   position: relative;
   display: none;
-  img {
     justify-content: center;
-  }
   }
 
  
@@ -55,6 +53,11 @@
     height: auto;
     margin-top: 10px;
   }
+
+
+
+
+
   
   .menu{
     background-color:#E4FBF3;
@@ -91,11 +94,7 @@ display: none;
 z-index: 1;
 }
 
-body {
-  width: 100%;
-  height: 100vh;
-  box-sizing: border-box;
-}
+
 .menu {
   position: fixed;
   top: 10px;
@@ -135,18 +134,7 @@ body {
   position: relative;
 }
 
-.marker {
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  background-color: red;
-  border-radius: 50%;
-}
 
-#marker {
-  left: calc(50% - 10px); /* Đặt marker ở giữa theo chiều ngang */
-  top: calc(50% - 10px); /* Đặt marker ở giữa theo chiều dọc */
-}
 @media only screen and (max-width: 768px) {
   .container {
     max-width: 100%; /* Đảm bảo rằng hình ảnh map không vượt quá kích thước màn hình */
