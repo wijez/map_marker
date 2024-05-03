@@ -60,11 +60,12 @@
     background-color:#E4FBF3;
 }
 .title{
-    background-color: rgb(240, 80, 80);
+    background-color: rgb(140, 166, 251);
     color: white;
     font-size: 25px;
     padding: 5px 5px;
     font:bold;
+    border-radius: 10px;
 }
 .link-map p:hover{
     background-color: #00B46F;
