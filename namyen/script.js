@@ -33,22 +33,16 @@ window.onload = function () {
 
   var widthW = (canvas.width - image.width) / 2
   var heightW = (canvas.height - image.height) / 2
-  var widthWClient = ((canvas.width - image.width) / 2 / canvas.width) * 100;
-  var heightWClient = ((canvas.height - image.height) / 2 / canvas.height) * 100;
-  console.log('wid', widthW)
-  console.log('hei', heightW)
-  console.log('widc', widthWClient)
-  console.log('heic', heightWClient)
+
 
   // data
 
   const markerData = {
     marker1: {
-      x: 636,
-      y: 569,
+      x: 724,
+      y: 396,
       map: `<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30661.008822904496!2d108.01087353605213!3d16.136631307566265!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31418bd3ca7c84c1%3A0xb304c8f2904e86f5!2zTMOgbmcgTcOq!5e0!3m2!1svi!2s!4v1713952355600!5m2!1svi!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`,
-      img: 'https://i.pinimg.com/236x/17/b4/5b/17b45b56495623fb249e060bffe43bcd.jpg',
-      radius: 10,
+      img: '',
       hrefMapinGoogle: 'https://maps.app.goo.gl/xpQDgNvh7PEeZxEt9',
       title: 'Cầu treo Hòa Bắc',
       description: `Cầu treo Hòa Bắc còn có tên gọi khác là Cầu dây văng Hòa Bắc, nối hai bờ của con sông <br> 
@@ -69,11 +63,10 @@ window.onload = function () {
       `
     },
     marker2: {
-      x: 598,
-      y: 484,
-      icon: 'https://cdn-icons-png.flaticon.com/128/559/559907.png',
-      img: 'https://cdn-icons-png.flaticon.com/128/559/559907.png',
-      radius: 10,
+      x: 697,
+      y: 334,
+      icon: '',
+      img: '',
       hrefMapinGoogle: 'https://maps.app.goo.gl/fywJTYLMysoKAiLDA',
       title: 'Làng Nguồn',
       description: `
@@ -86,11 +79,10 @@ window.onload = function () {
       `
     },
     marker3: {
-      x: 610,
-      y: 462,
-      icon: 'https://cdn-icons-png.flaticon.com/128/559/559907.png',
-      img: 'https://cdn-icons-png.flaticon.com/128/559/559907.png',
-      radius: 10,
+      x: 707,
+      y: 322,
+      icon: '',
+      img: '',
       hrefMapinGoogle: '',
       title: 'Homestay Sang',
       description: `
@@ -105,11 +97,10 @@ window.onload = function () {
       `
     },
     marker4: {
-      x: 685,
-      y: 521,
-      icon: 'https://cdn-icons-png.flaticon.com/128/559/559907.png',
-      img: 'https://cdn-icons-png.flaticon.com/128/559/559907.png',
-      radius: 10,
+      x: 761,
+      y: 357,
+      icon: '',
+      img: '',
       hrefMapinGoogle: '',
       title: 'Khu cắm trại Hòa Bắc',
       description: `
@@ -125,11 +116,10 @@ window.onload = function () {
       `,
     },
     marker5: {
-      x: 865,
-      y: 917,
-      icon: 'https://cdn-icons-png.flaticon.com/128/559/559907.png',
-      img: 'https://cdn-icons-png.flaticon.com/128/559/559907.png',
-      radius: 10,
+      x: 886,
+      y: 633,
+      icon: '',
+      img: '',
       hrefMapinGoogle: '',
       title: 'Mô hình vườn - ao - chuồng - nhà bác Hồng',
       description: `
@@ -147,11 +137,10 @@ window.onload = function () {
 
     },
     marker6: {
-      x: 629,
-      y: 473,
-      icon: 'https://cdn-icons-png.flaticon.com/128/559/559907.png',
-      img: 'https://cdn-icons-png.flaticon.com/128/559/559907.png',
-      radius: 10,
+      x: 721,
+      y: 331,
+      icon: '',
+      img: '',
       hrefMapinGoogle: '',
       title: 'Nam Yên Camping',
       description: `
@@ -166,11 +155,10 @@ window.onload = function () {
       `
     },
     marker7: {
-      x: 639,
-      y: 459,
-      icon: 'https://cdn-icons-png.flaticon.com/128/559/559907.png',
-      img: 'https://cdn-icons-png.flaticon.com/128/559/559907.png',
-      radius: 10,
+      x: 729,
+      y: 316,
+      icon: '',
+      img: '',
       hrefMapinGoogle: '',
       title: 'Homestay Hoa Chín',
       description: `
@@ -190,11 +178,10 @@ window.onload = function () {
     `
     },
     marker8: {
-      x: 665,
-      y: 464,
-      icon: 'https://cdn-icons-png.flaticon.com/128/559/559907.png',
-      img: 'https://cdn-icons-png.flaticon.com/128/559/559907.png',
-      radius: 10,
+      x: 746,
+      y: 321,
+      icon: '',
+      img: '',
       hrefMapinGoogle: '',
       title: `Trung tâm Du lịch học tập cộng đồng Hợp tác xã (HTX) <br>
                Nông nghiệp sinh thái & Du lịch cộng đồng Hòa Bắc`,
@@ -213,11 +200,10 @@ window.onload = function () {
       `
     },
     marker9: {
-      x: 752,
-      y: 309,
-      icon: 'https://cdn-icons-png.flaticon.com/128/559/559907.png',
-      img: 'https://cdn-icons-png.flaticon.com/128/559/559907.png',
-      radius: 10,
+      x: 805,
+      y: 213,
+      icon: '',
+      img: '',
       hrefMapinGoogle: '',
       title: 'Nhà thờ Giáo xứ Hội Yên',
       description: `
@@ -242,11 +228,10 @@ window.onload = function () {
       `,
     },
     marker10: {
-      x: 1111,
-      y: 543,
-      icon: 'https://cdn-icons-png.flaticon.com/128/559/559907.png',
-      img: 'https://cdn-icons-png.flaticon.com/128/559/559907.png',
-      radius: 10,
+      x: 1054,
+      y: 377,
+      icon: '',
+      img: '',
       hrefMapinGoogle: '',
       title: 'Vườn rừng bác Du',
       description: `
@@ -258,21 +243,20 @@ window.onload = function () {
       <strong>Không cung cấp dịch vụ lưu trú.</strong> `
     },
     marker11: {
-      x: 501,
-      y: 452,
-      icon: 'https://cdn-icons-png.flaticon.com/128/559/559907.png',
-      img: 'https://cdn-icons-png.flaticon.com/128/559/559907.png',
+      x: 632,
+      y: 312,
+      icon: '',
+      img: '',
       hrefMapinGoogle: '',
-      radius: 10,
-      title: 'Cu Đê House'
+      title: 'Cu Đê House',
+      description: ''
 
     },
     marker12: {
-      x: 508,
-      y: 410,
-      icon: 'https://cdn-icons-png.flaticon.com/128/559/559907.png',
-      img: 'https://cdn-icons-png.flaticon.com/128/559/559907.png',
-      radius: 10,
+      x: 638,
+      y: 285,
+      icon: '',
+      img: '',
       hrefMapinGoogle: '',
       title: 'Hòa Bắc Ecolodge - Camping Space Art',
       description: `<strong>Hòa Bắc Ecolodge - Camping Space Art:</strong> được xem là địa điểm nghỉ dưỡng sinh thái hấp <br>
@@ -288,11 +272,10 @@ window.onload = function () {
       `
     },
     marker13: {
-      x: 517,
-      y: 343,
-      icon: 'https://cdn-icons-png.flaticon.com/128/559/559907.png',
-      img: 'https://cdn-icons-png.flaticon.com/128/559/559907.png',
-      radius: 10,
+      x: 644,
+      y: 240,
+      icon: '',
+      img: '',
       hrefMapinGoogle: '',
       title: 'Đền Âm Linh',
       description: `
@@ -305,11 +288,10 @@ window.onload = function () {
 
     },
     marker14: {
-      x: 435,
-      y: 454,
-      icon: 'https://cdn-icons-png.flaticon.com/128/559/559907.png',
-      img: 'https://cdn-icons-png.flaticon.com/128/559/559907.png',
-      radius: 10,
+      x: 585,
+      y: 314,
+      icon: '',
+      img: '',
       hrefMapinGoogle: '',
       title: 'Cu Đê Camping',
       description: `
@@ -321,11 +303,10 @@ window.onload = function () {
       `
     },
     marker15: {
-      x: 365,
-      y: 380,
+      x: 537,
+      y: 264,
       map: `<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30661.008822904496!2d108.01087353605213!3d16.136631307566265!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31418bd3ca7c84c1%3A0xb304c8f2904e86f5!2zTMOgbmcgTcOq!5e0!3m2!1svi!2s!4v1713952355600!5m2!1svi!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`,
-      img: 'https://cdn-icons-png.flaticon.com/128/559/559907.png',
-      radius: 10,
+      img: '',
       hrefMapinGoogle: 'https://maps.app.goo.gl/Dyf9KTgaPTim6zH47',
       title: 'Làng Mê',
       description: `
@@ -380,27 +361,18 @@ window.onload = function () {
           2 +
           (y -
             ((marker.y / 100) * canvas.height)) **
-            2
-          );
+          2
+        );
 
         console.log("distances", distance)
         ctx.beginPath();
-        ctx.arc(marker.x * canvas.width / 100, marker.y * canvas.height / 100, marker.radius, 0, 2 * Math.PI);
-        // img.src = marker.icon
-
-        // var pattern = ctx.createPattern(img, 'repeat');
-        // var imageWidth = 2 * marker.radius;
-        // var imageHeight = 2 * marker.radius;
-
-
-        // ctx.fillStyle = pattern;
-        // ctx.fillStyle = 'white';
-        // ctx.fill();
+        ctx.arc(marker.x * canvas.width / 100, marker.y * canvas.height / 100, 10, 0, 2 * Math.PI);
+        ctx.fillStyle = 'red';
+        ctx.fill();
         if (distance <= marker.radius) {
           // infoCard.innerHTML = '<div width="60"; height = "90";><strong>' + marker.title + '</strong><br><hr><p style="text-align: justify;">' + marker.description + '</p><br><img style="width:40px; height:40px;" src="' + marker.img + '"></div>';
           infoCard.innerHTML =
             `
-
             <div width="60"; height = "90";>
               <div style="display: flex; align-items: center; margin-top: 20px;">
               <strong>${marker.title}</strong>
@@ -481,70 +453,4 @@ window.onload = function () {
       infoCard.style.display = 'none';
     }
   });
-
-
-
-  // canvas.addEventListener('mousemove', function (event) {
-  //   var rect = canvas.getBoundingClientRect();
-  //   var x = event.clientX - rect.left;
-  //   var y = event.clientY - rect.top;
-  // });
-
-
-
-  // for (const markerKey in markerData) {
-  //   if (markerData.hasOwnProperty(markerKey)) {
-  //     const marker = markerData[markerKey];
-  //     ctx.beginPath();
-  //     ctx.arc(marker.x, marker.y, marker.radius, 0, 2 * Math.PI);
-  //     // var img = new Image()
-  //     // img.src = marker.icon
-
-  //     // var pattern = ctx.createPattern(img, 'repeat');
-  //     // var imageWidth = 2 * marker.radius;
-  //     // var imageHeight = 2 * marker.radius;
-
-
-  //     // ctx.fillStyle = pattern;
-  //     ctx.fillStyle = 'white';
-  //      ctx.fill();
-
-
-  //       var distance = Math.sqrt((x - marker.x) ** 2 + (y - marker.y) ** 2);
-  //       if (distance <= marker.radius) {
-
-  //         //ctx.textAlign = "center";
-  //         //ctx.fillText(marker.title + marker.description, 1118, 82)
-
-  //         infoCard.innerHTML = '<strong>' + marker.title + '</strong><br>' + marker.description + '<br><img src="' + marker.img + '">';
-  //         infoCard.style.left = (event.pageX + 10) + 'px';
-  //         infoCard.style.top = (event.pageY + 10) + 'px';
-  //         infoCard.style.display = 'block';
-
-  //         return
-  //       }     
-  //   }
-
-  //   }  
 }
-
-
-
-
-
-// markers.forEach(marker => {
-//   marker.addEventListener('click', () => {
-//     const id = marker.id;
-//     const data = markerData[id];
-
-//     if (data) {
-//       infoText.innerHTML = `<h3>${data.title}</h3><p>${data.description}</p>`;
-//       infoBox.classList.remove('hidden');
-//     }
-//   });
-// });
-
-
-// infoBox.addEventListener('click', () => {
-//   infoBox.classList.add('hidden');
-// });
