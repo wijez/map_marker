@@ -21,22 +21,13 @@ function getWindowHeight() {
 
 
 
-// Khi trang đã được tải hoàn toàn
 window.onload = function () {
-  // Lấy chiều rộng của trình duyệt
-  var browserWidth = getWindowWidth();
-  var browserHeight = getWindowHeight()
-
-  canvas.width = browserWidth;
-  //canvas.width = image.width
-  canvas.height = image.height
-
 
   var widthW = (canvas.width - image.width) / 2
   var heightW = (canvas.height - image.height) / 2
-  console.log('wid', widthW)
-  console.log('hei', heightW)
 
+
+  // data
   // data
 // Tạo một đối tượng chứa thông tin cho từng điểm đánh dấu
 const markerData = {
@@ -199,132 +190,137 @@ marker111: {
   
 
 
-  // xử lý vẽ điểm
-  var ctx = canvas.getContext('2d');
+ // xử lý vẽ điểm
+ var ctx = canvas.getContext('2d');
 
-  ctx.drawImage(image, widthW, heightW);
-
-// tăng khoảng cách location
-  // for (const key in markerData) {
-  //   const maker = markerData[key];
-  //   maker.x += 35
-  // }
-  function convertCoordinatesToPercent(markerData, canvas) {
-    for (const key in markerData) {
-      if (markerData.hasOwnProperty(key)) {
-        const marker = markerData[key];
-        marker.x = (marker.x / canvas.width) * 100;
-        marker.y = (marker.y / canvas.height) * 100;
-      }
-    }
-  }
-
-
-  // Gọi hàm để chuyển đổi tọa độ của tất cả các điểm đánh dấu sang %
-  convertCoordinatesToPercent(markerData, canvas);
-
-
-
-  window.addEventListener('mousemove', function (event) {
-    var rect = canvas.getBoundingClientRect();
-    var x = event.clientX - rect.left;
-    var y = event.clientY - rect.top;
-
-    // Kiểm tra xem chuột có nằm trong bán kính của marker không
-    for (const markerKey in markerData) {
-      if (markerData.hasOwnProperty(markerKey)) {
-        const marker = markerData[markerKey];
-        var distance = Math.sqrt((x - ((marker.x / 100) * canvas.width)) ** 2 + (y - ((marker.y / 100) * canvas.height)) ** 2);
-
-        console.log("distances", distance)
-        ctx.beginPath();
-        ctx.arc(marker.x * canvas.width / 100, marker.y * canvas.height / 100, marker.radius, 0, 2 * Math.PI);
-        // img.src = marker.icon
-
-        // var pattern = ctx.createPattern(img, 'repeat');
-        // var imageWidth = 2 * marker.radius;
-        // var imageHeight = 2 * marker.radius;
-
-
-        // ctx.fillStyle = pattern;
-// ctx.fillStyle = 'red';
-// ctx.fill();
-        if (distance <= marker.radius) {
-          
-          // infoCard.innerHTML = '<div width="60"; height = "90";><strong>' + marker.title + '</strong><br><hr><p style="text-align: justify;">' + marker.description + '</p><br><img style="width:40px; height:40px;" src="' + marker.img + '"></div>';
-          infoCard.innerHTML =
-            `
-
-            <div style= "width : 350px ; height: 300px" >
-              <div style="display: flex; align-items: center; margin-top: 10px; height : 10px">
-              <h2><strong>${marker.title}</strong></h2>
-              <a id="mapInGoogle" target="_blank" style="width:30px; height:30px;margin-left: auto;" href="${marker.hrefMapinGoogle}" alt="${marker.title}"><img src="https://img.icons8.com/?size=48&id=kDqO6kPb3xLj&format=gif" alt="Google Maps ${marker.title}"></a> 
-              </div>
-
-              <br><hr>
-              <div style="text-align: justify; max-height:250px; overflow-y:auto">
-              <p>${marker.description}</p>
-              <br>
-              <div>
-              <img style="width:200px; height:150px;" src="${marker.img}">
-                   
-              <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ảnh Minh Họa 
-              <div id="map-container" class="hidden">
-              
-              </div>
-             
-            </div>
-
-            `
-          if (marker.x <= browserWidth - 300 && marker.y <= canvas.height - 200) {
-            infoCard.style.left = (event.pageX - 0) + 'px';
-            infoCard.style.top = (event.pageY + 10) + 'px';
-            infoCard.style.display = 'block';
-            return;
-          }
-          else {
-            infoCard.style.left = (event.pageX - 300) + 'px';
-            infoCard.style.top = (event.pageY + 20) + 'px';
-            infoCard.style.display = 'block';
-            return;
-          }
-        }
-      }
-    }
-  });
-
-
-
-  window.addEventListener('click', function (event) {
-    // Kiểm tra xem click có xảy ra bên ngoài các điểm đánh dấu không
-    var isOutsideMarkers = true;
-    for (const markerKey in markerData) {
-      if (markerData.hasOwnProperty(markerKey)) {
-        const marker = markerData[markerKey];
-        var rect = canvas.getBoundingClientRect();
-        var x = event.clientX - rect.left;
-        var y = event.clientY - rect.top;
-        var distance = Math.sqrt(
-          (x -
-            (marker.x / 100) * canvas.width) **
-          2 +
-          (y -
-            (marker.y / 100) * canvas.height) **
-          2
-        );
-        if (distance <= marker.radius) {
-          isOutsideMarkers = false;
-          break;
-        }
-      }
-    }
-    // Nếu click xảy ra bên ngoài các điểm đánh dấu, ẩn thông tin
-    if (isOutsideMarkers) {
-      infoCard.style.display = 'none';
-    }
-  });
+ ctx.drawImage(image, widthW, heightW);
+ for (const key in markerData) {
+  const maker = markerData[key];
+  maker.x -= 75
 }
 
+
+
+ window.addEventListener('mousemove', function (event) {
+   var rect = canvas.getBoundingClientRect();
+   var x = event.clientX - rect.left;
+   var y = event.clientY - rect.top;
+
+   // Kiểm tra xem chuột có nằm trong bán kính của marker không
+   for (const markerKey in markerData) {
+     if (markerData.hasOwnProperty(markerKey)) {
+       const marker = markerData[markerKey];
+       var distance = Math.sqrt(
+         (x - marker.x) ** 2 + (y - marker.y) ** 2);
+       ctx.beginPath();
+
+       ctx.arc(marker.x, marker.y, marker.radius, 0, 2 * Math.PI);
+       ctx.fillStyle = 'red';
+       ctx.fill();
+       if (distance <= marker.radius) {
+         
+          infoCard.innerHTML =
+          `
+
+          <div style= "width : 350px ; height: 300px" >
+            <div style="display: flex; align-items: center; margin-top: 10px; height : 10px">
+            <h2><strong>${marker.title}</strong></h2>
+            <a id="mapInGoogle" target="_blank" style="width:30px; height:30px;margin-left: auto;" href="${marker.hrefMapinGoogle}" alt="${marker.title}"><img src="https://img.icons8.com/?size=48&id=kDqO6kPb3xLj&format=gif" alt="Google Maps ${marker.title}"></a> 
+            </div>
+
+            <br><hr>
+            <div style="text-align: justify; max-height:250px; overflow-y:auto">
+            <p>${marker.description}</p>
+            <br>
+            <div>
+            <img style="width:200px; height:150px;" src="${marker.img}">
+                
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ảnh Minh Họa 
+            <div id="map-container" class="hidden">
+            
+            </div>
+          
+          </div>
+
+          `
+
+
+         if (marker.x <= canvas.width - 300 && marker.y <= canvas.height - 200) {
+           infoCard.style.left = (event.pageX - 30) + 'px';
+           infoCard.style.top = (event.pageY + 20) + 'px';
+           infoCard.style.display = 'block';
+           return;
+         }
+         else {
+           infoCard.style.left = (event.pageX - 300) + 'px';
+           infoCard.style.top = (event.pageY + 20) + 'px';
+           infoCard.style.display = 'block';
+           return;
+         }
+       }
+     }
+   }
+ });
+
+
+ // function getMousePos(canvas, event) {
+ //   const rect = canvas.getBoundingClientRect(); // Lấy kích thước và vị trí tuyệt đối của canvas trong cửa sổ trình duyệt
+ //   const x = event.clientX - rect.left; // Tính toán tọa độ x của chuột
+ //   const y = event.clientY - rect.top; // Tính toán tọa độ y của chuột
+ //   return { x, y };
+ // }
+
+ // // Sự kiện di chuột trên canvas
+ // canvas.addEventListener('mousemove', function (event) {
+ //   const mousePos = getMousePos(canvas, event); // Lấy tọa độ của chuột trong canvas
+ //   ctx.clearRect(500, 190, 200, 100); // Xóa vùng hiển thị tọa độ trước đó
+ //   ctx.fillStyle = 'black'; // Thiết lập màu vẽ
+ //   ctx.fillText(`X: ${mousePos.x}, Y: ${mousePos.y}`, 500, 200); // Hiển thị tọa độ
+
+ // });
+
+
+ //   window.addEventListener('DOMContentLoaded', function() {
+ //     const mapContainer = document.getElementById('mapInGoogle');
+ //     const mapLink = document.getElementById('mapInGoogle');
+
+ //     mapLink.addEventListener('mouseenter', function() {
+ //         mapContainer.style.display = 'block'; 
+ //         mapContainer.innerHTML = `${markers.map}`
+ //     });
+
+ //     mapLink.addEventListener('mouseleave', function() {
+ //         mapContainer.style.display = 'none'; // Ẩn bản đồ khi di chuột rời khỏi
+ //     });
+ // });
+
+ window.addEventListener('click', function (event) {
+   // Kiểm tra xem click có xảy ra bên ngoài các điểm đánh dấu không
+   var isOutsideMarkers = true;
+   for (const markerKey in markerData) {
+     if (markerData.hasOwnProperty(markerKey)) {
+       const marker = markerData[markerKey];
+       var rect = canvas.getBoundingClientRect();
+       var x = event.clientX - rect.left;
+       var y = event.clientY - rect.top;
+       var distance = Math.sqrt(
+         (x - marker.x) **
+         2 +
+         (y - marker.y) **
+         2
+       );
+       if (distance <= marker.radius) {
+         isOutsideMarkers = false;
+         break;
+       }
+     }
+   }
+   // Nếu click xảy ra bên ngoài các điểm đánh dấu, ẩn thông tin
+   if (isOutsideMarkers) {
+     infoCard.style.display = 'none';
+   }
+ });
+}
 
 
 
