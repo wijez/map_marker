@@ -35,9 +35,9 @@ const markerData = {
       x: 1206,
       y: 292,
       map: `<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30661.008822904496!2d108.01087353605213!3d16.136631307566265!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31418bd3ca7c84c1%3A0xb304c8f2904e86f5!2zTMOgbmcgTcOq!5e0!3m2!1svi!2s!4v1713952355600!5m2!1svi!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`,
-      img: '',
+      img: './img/talanggianbi/cautreo.png',
       radius: 10,
-      hrefMapinGoogle: 'https://maps.app.goo.gl/xpQDgNvh7PEeZxEt9',
+      hrefMapinGoogle: 'https://www.google.com/maps/place/C%E1%BA%A7u+S%E1%BA%ADp,+th%C3%B4n+T%C3%A0+Lang,+%C4%90T601,+Ho%C3%A0+B%E1%BA%AFc,+H%C3%B2a+Vang,+%C4%90%C3%A0+N%E1%BA%B5ng,+Vi%E1%BB%87t+Nam/@16.1195584,107.9791313,837m/data=!3m2!1e3!4b1!4m6!3m5!1s0x3141f4cf43976ef3:0x23b8fcca6c927a63!8m2!3d16.1195585!4d107.9840022!16s%2Fg%2F11g6bk0tq0?entry=ttu',
       title: 'Cầu Sắt Cổ',
       description: '',
   }
@@ -67,7 +67,7 @@ const markerData = {
       y: 282,
       img: './img/talanggianbi/conauche.jpg',
       radius: 10,
-      hrefMapinGoogle: '',
+      hrefMapinGoogle: "https://www.google.com/maps/place/16%C2%B007'13.5%22N+107%C2%B059'21.2%22E/@16.120413,107.9881233,418m/data=!3m2!1e3!4b1!4m4!3m3!8m2!3d16.120413!4d107.989227?entry=ttu",
       title: 'Cô Chọn nấu Chè dây',
       description: 'Cô Chọn làm nghề chế biến chè dây được 8 năm. Cô cho biết chè dây có nhiều công dụng như chữa bệnh dạ dày, viêm gan B, tiểu đường… Chè dây là đặc sản của xã Hòa Bắc. Cách chế biến chè dây khá đơn giản, qua 03 công đoạn chính là: (1) băm thân chè, (2) phơi khô chè và (3) rang chè. Nếu như khi pha trà chúng ta thường dùng nước sôi tráng sơ qua, còn với chè dây thì không vì khi tráng sẽ làm mất lớp men vị thuốc của chè. Cứ vào mùa, cô Chọn cùng với bà con sẽ lên rừng hái chè, sau đó chế biến ngay để chè giữ được hương vị thơm ngon nhất. Cứ 10kg chè tươi, sau khi rang xong ra được 2kg chè thành phẩm với mức giá khoảng  200.000 đồng/kg.'
       
@@ -78,7 +78,7 @@ const markerData = {
       y: 342,
       img: './img/talanggianbi/nhaguoitalang.jpg',
       radius: 10,
-      hrefMapinGoogle: '',
+      hrefMapinGoogle: "https://www.google.com/maps/place/16%C2%B007'11.5%22N+107%C2%B059'14.5%22E/@16.119848,107.98655,418m/data=!3m2!1e3!4b1!4m4!3m3!8m2!3d16.119848!4d107.987361?entry=ttu",
       title: 'Nhà Gươl thôn Tà Lang',
       description: 'Nhà Gươl thôn Tà Lang, xã Hòa Bắc, huyện Hoà Vang, TP. Đà Nẵng là địa điểm phục vụ du khách tham quan các loại hình văn hóa truyền thống, trưng bày các sản phẩm làng nghề và là nơi tổ chức các lễ hội của đồng bào dân tộc Cơ Tu... Đối với đồng bào Cơ Tu, nhà Gươl chính là ngôi nhà chung của bản làng và còn được xem là linh hồn của làng. Đây là nơi thờ các vị thần linh như thần rừng, thần đất, ông bà tổ tiên, với mong muốn cầu mong mưa thuận gió hòa, dân làng gặp nhiều may mắn Trong văn hóa của đồng bào Cơ Tu, phụ nữ không được bước lên nhà Gươl, vai trò của phụ nữ và đàn ông rất khác nhau, phụ nữ là người nấu đồ cúng và đàn ông sẽ dâng đồ cúng lên nhà Gươl. Mâm lễ cúng gồm heo, gà, cá sông, bánh sừng trâu, bánh lam. Lễ hội quan trọng của người Cơ Tu gồm có “Lễ hội mừng lúa mới” và “Đâm trâu”. Đây là lễ hội lớn nhất của đồng bào Cơ Tu.  Người Cơ Tu của cả 3 làng sẽ dựng cây nêu, tập trung tại nhà Gươl và cùng múa vũ điệu “tung tung za zá”, sau đó sẽ “Đâm trâu”. Cũng giống người Kinh, người Cơ Tu cũng có lễ  “Tất niên” vào mỗi dịp cuối năm âm lịch. Đồng bào Cơ Tu tại khu vực Tà Lang - Giàn Bí sẽ tập trung tại nhà Gươl để dự lễ cúng. Người Cơ Tu thờ ảnh của Bác Hồ. Bàn thờ của Già làng sẽ có một chén gạo và cau trầu xung quanh. Vào tháng 4 hàng năm, chén gạo sẽ được thay bởi lúa mới gặt về.'
   }
@@ -129,7 +129,7 @@ const markerData = {
       y: 368,
       img: '',
       radius: 10,
-      hrefMapinGoogle: '',
+      hrefMapinGoogle: "https://www.google.com/maps/place/C%E1%BA%A7u+S%E1%BA%ADp,+th%C3%B4n+T%C3%A0+Lang,+%C4%90T601,+Ho%C3%A0+B%E1%BA%AFc,+H%C3%B2a+Vang,+%C4%90%C3%A0+N%E1%BA%B5ng,+Vi%E1%BB%87t+Nam/@16.1195585,107.9814273,837m/data=!3m2!1e3!4b1!4m6!3m5!1s0x3141f4cf43976ef3:0x23b8fcca6c927a63!8m2!3d16.1195585!4d107.9840022!16s%2Fg%2F11g6bk0tq0?entry=ttu",
       title: 'Cầu Sập',
       description: ''
   }
@@ -139,7 +139,7 @@ marker111: {
   y: 519,
   img: './img/talanggianbi/conglangtalang.png',
   radius: 10,
-  hrefMapinGoogle: '',
+  hrefMapinGoogle: 'https://www.google.com/maps/place/Th%C3%B4n+gi%C3%A0n+b%C3%AD+ho%C3%A0+B%E1%BA%AFc+huy%E1%BB%87n+ho%C3%A0+vang/@16.1179841,107.9765605,1673m/data=!3m1!1e3!4m6!3m5!1s0x3141f58e1887a83b:0xcda33510bd9f645c!8m2!3d16.1179841!4d107.9827977!16s%2Fg%2F11swpdhykn?entry=ttu',
   title: 'Cổng làng tà lang',
   description: ''
 }
@@ -149,7 +149,7 @@ marker111: {
       y: 532,
       img: './img/talanggianbi/truongtieuhoc.png',
       radius: 10,
-      hrefMapinGoogle: '',
+      hrefMapinGoogle: 'https://www.google.com/maps/place/Tr%C6%B0%E1%BB%9Dng+ti%E1%BB%83u+h%E1%BB%8Dc+ho%C3%A0+b%E1%BA%AFc/@16.1176021,107.9827119,296m/data=!3m1!1e3!4m6!3m5!1s0x3141f56571df0a69:0x71380bd5d9d74b07!8m2!3d16.1176426!4d107.9833632!16s%2Fg%2F11kqn39k4n?entry=ttu',
       title: 'Trường tiểu Học',
       description: 'Trường Tiểu học Hòa Bắc được xây dựng từ năm 2004, với cơ sở gồm 10 phòng làm việc, 8 phòng học, 1 bếp ăn bán trú, phòng ăn, ngủ cho học sinh và phòng máy vi tính, trên diện tích 3.214m2, đảm bảo cho hơn 300 em học sinh học tập.  '
   }
@@ -169,7 +169,7 @@ marker111: {
       y: 555,
       img: './img/talanggianbi/nhaguoi.jpg',
       radius: 10,
-      hrefMapinGoogle: '',
+      hrefMapinGoogle: "https://www.google.com/maps/place/16%C2%B007'01.4%22N+107%C2%B058'47.2%22E/@16.1170506,107.9798579,166m/data=!3m1!1e3!4m4!3m3!8m2!3d16.117057!4d107.979779?entry=ttu",
       title: 'Nhà Gươl thôn Giàn Bí',
       description: "Nhà Gươl thôn Giàn Bí là nơi lưu giữ văn hóa truyền thống, trưng bày các sản phẩm của người địa phương. “Gươl” trong tiếng Cơ Tu có nghĩa là cộng đồng, nhà Gươl được xem như trái tim của Làng. Vậy nên các làng của người Cơ Tu đều phải có nhà Gươl. Nhà Gươl được thiết kế theo kiểu nhà sàn, trụ bởi một cây cột cái ở giữa và tám cây cột con ở xung quanh. Mái nhà được lợp bằng lá tự nhiên, sàn nhà lát bằng tre cật chẻ mỏng, giữa các thanh tre có một độ hở nhất định để tạo nên sự thông thoáng. Mái nhà thường thường được trang trí bằng những hình tượng đơn giản như gà trống hay tổ hợp gắn kết nhiều tượng với nhau như tượng người, tượng đầu trâu. Dưới mái nhà Gươl, những hình ảnh chạm khắc tỉ mỉ như những tác phẩm nghệ thuật sinh động, mỗi tác phẩm tái hiện đời sống lao động, văn hóa của một dân tộc giàu bản sắc giữa núi rừng. Cây nêu (x'nur) của người Cơ Tu cũng là một sản phẩm mỹ thuật thể hiện tài nghệ trang trí, điêu khắc của nghệ nhân. Cây được đặt tại sân nhà Gươl, nơi hành lễ."
   }
@@ -178,7 +178,7 @@ marker111: {
       map: `<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30661.008822904496!2d108.01087353605213!3d16.136631307566265!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31418bd3ca7c84c1%3A0xb304c8f2904e86f5!2zTMOgbmcgTcOq!5e0!3m2!1svi!2s!4v1713952355600!5m2!1svi!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`,
       img: './img/talanggianbi/dantalu.jpg',
       radius: 10,
-      hrefMapinGoogle: '',
+      hrefMapinGoogle: "https://www.google.com/maps/place/16%C2%B007'00.5%22N+107%C2%B058'44.1%22E/@16.1169204,107.9789529,209m/data=!3m1!1e3!4m4!3m3!8m2!3d16.116807!4d107.978915?entry=ttu",
       x: 395,
       y: 570,
       title: 'Nghệ nhân đàn Ta Lư',
@@ -194,7 +194,7 @@ marker111: {
  var ctx = canvas.getContext('2d');
 
  ctx.drawImage(image, widthW, heightW);
- for (const key in markerData) {
+for (const key in markerData) {
   const maker = markerData[key];
   maker.x -= 75
 }
@@ -215,8 +215,10 @@ marker111: {
        ctx.beginPath();
 
        ctx.arc(marker.x, marker.y, marker.radius, 0, 2 * Math.PI);
-       ctx.fillStyle = 'red';
-       ctx.fill();
+
+      //  ctx.fillStyle = 'red';
+      //  ctx.fill();
+      
        if (distance <= marker.radius) {
          
           infoCard.innerHTML =
@@ -245,17 +247,29 @@ marker111: {
           `
 
 
-         if (marker.x <= canvas.width - 300 && marker.y <= canvas.height - 200) {
-           infoCard.style.left = (event.pageX - 30) + 'px';
-           infoCard.style.top = (event.pageY + 20) + 'px';
+         if (marker.x <= canvas.width - 376 && marker.y <= canvas.height - 300) {
+            infoCard.style.left = (event.pageX - 0) + 'px';
+            infoCard.style.top = (event.pageY - 0) + 'px';
+            infoCard.style.display = 'block';
+            return;
+         }
+         else if(marker.x > canvas.width - 376 && marker.y < canvas.height - 300){
+           infoCard.style.left = (event.pageX - 370) + 'px';
+           infoCard.style.top = (event.pageY - 2) + 'px';
            infoCard.style.display = 'block';
            return;
          }
-         else {
-           infoCard.style.left = (event.pageX - 20) + 'px';
-           infoCard.style.top = (event.pageY + 20) + 'px';
+         else if(marker.x < canvas.width - 376 && marker.y > canvas.height - 300){
+          infoCard.style.left = (event.pageX - 0) + 'px';
+           infoCard.style.top = (event.pageY - 330) + 'px';
            infoCard.style.display = 'block';
            return;
+         }
+        else if(marker.x > canvas.width - 376 && marker.y > canvas.height - 300){
+         infoCard.style.left = (event.pageX - 300) + 'px';
+          infoCard.style.top = (event.pageY + 200) + 'px';
+          infoCard.style.display = 'block';
+          return;
          }
        }
      }
