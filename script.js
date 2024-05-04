@@ -31,316 +31,172 @@ window.onload = function () {
   //canvas.width = image.width
   canvas.height = image.height
 
+
   var widthW = (canvas.width - image.width) / 2
   var heightW = (canvas.height - image.height) / 2
-  var widthWClient = ((canvas.width - image.width) / 2 / canvas.width) * 100;
-  var heightWClient = ((canvas.height - image.height) / 2 / canvas.height) * 100;
   console.log('wid', widthW)
   console.log('hei', heightW)
-  console.log('widc', widthWClient)
-  console.log('heic', heightWClient)
 
   // data
-
-  const markerData = {
-    marker1: {
-      x: 636,
-      y: 569,
+// Tạo một đối tượng chứa thông tin cho từng điểm đánh dấu
+const markerData = {
+  marker1: {
+      x: 1206,
+      y: 292,
       map: `<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30661.008822904496!2d108.01087353605213!3d16.136631307566265!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31418bd3ca7c84c1%3A0xb304c8f2904e86f5!2zTMOgbmcgTcOq!5e0!3m2!1svi!2s!4v1713952355600!5m2!1svi!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`,
-      img: 'https://i.pinimg.com/236x/17/b4/5b/17b45b56495623fb249e060bffe43bcd.jpg',
+      img: '',
       radius: 10,
       hrefMapinGoogle: 'https://maps.app.goo.gl/xpQDgNvh7PEeZxEt9',
-      title: 'Cầu treo Hòa Bắc',
-      description: `Cầu treo Hòa Bắc còn có tên gọi khác là Cầu dây văng Hòa Bắc, nối hai bờ của con sông <br> 
-       Cu Đê. Trước khi cây cầu được xây dựng, người dân di chuyển qua lại hai bên bờ bằng ghe <br>
-      và xuồng. Tuy nhiên, điều này tiềm ẩn rủi ro khi có thời tiết xấu, đặc biệt vào mùa mưa lũ.<br> 
-       Với mục đích đảm bảo an toàn việc đi lại, sinh hoạt, học tập của người dân, Cố Bí thư  <br>
-        <a href="https://vi.wikipedia.org/wiki/Nguy%E1%BB%85n_B%C3%A1_Thanh"> Nguyễn Bá Thanh <a> 
-        đã lên kế hoạch xây dựng cầu treo Hòa Bắc. Cây cầu được khởi công  <br>
-        xây dựng vào ngày 15/01/2001 và hoàn thành vào ngày 02/9/2002. Cầu có chiều dài<br> 
-          151,4m, rộng 7,5m, tải trọng 8 tấn. <br>
-
-      Nếu muốn đến check-in công trình này, du khách nên đến trong khoảng tháng 5 đến tháng 8,<br> 
-      đây là khoảng thời gian có thời tiết thuận lợi. Du khách có thể ngắm hoàng hôn rực rỡ <br>
-       khi mặt trời xuống núi buổi chiều tà.<br>
-      Có nhiều homestay, khu cắm trại xung quanh cây cầu, <br>
-      an ninh đảm bảo. Vì vậy, khách du lịch hoàn toàn có thể yên tâm để trải nghiệm và khám<br>
-       phá địa điểm tuyệt vời này.
-      `
-    },
-    marker2: {
-      x: 598,
-      y: 484,
-      icon: 'https://cdn-icons-png.flaticon.com/128/559/559907.png',
-      img: 'https://cdn-icons-png.flaticon.com/128/559/559907.png',
+      title: 'Cầu Sắt Cổ',
+      description: '',
+  }
+,
+  marker2: {
+      x: 1152,
+      y: 295,
+      img: '/img/talanggianbi/cotindetthocam.jpg',
       radius: 10,
       hrefMapinGoogle: 'https://maps.app.goo.gl/fywJTYLMysoKAiLDA',
-      title: 'Làng Nguồn',
-      description: `
-      Nằm ngay tại trung tâm thôn Nam Yên, xã Hoà Bắc, huyện Hoà Vang, TP. Đà Nẵng.<br>
-      Làng Nguồn là điểm đến tuyệt vời dành cho gia đình, bạn bè mỗi dịp cuối tuần hay<br> 
-      những kỳ nghỉ lễ.<br>
-      Làng Nguồn có 13 phòng hiện đại, sức chứa 4 - 5 người/phòng với đầy đủ tiện nghi<br> 
-      bao gồm phòng bếp và phòng ăn. Tại đây còn cung cấp dịch vụ cắm trại và tổ chức<br>
-      sự kiện cũng như nhiều không gian đẹp để du khách check-in.
-      `
-    },
-    marker3: {
-      x: 610,
-      y: 462,
-      icon: 'https://cdn-icons-png.flaticon.com/128/559/559907.png',
-      img: 'https://cdn-icons-png.flaticon.com/128/559/559907.png',
+      title: 'Nhà cô Tin - Dệt thổ cẩm',
+      description: 'Dệt thổ cẩm là bản sắc văn hóa độc đáo của đồng bào Cơ Tu. Lúc bấy giờ, trong làng có khoảng hơn 40 người làm nghề dệt thổ cẩm và cô Tin - nghệ nhân dệt thổ cẩm là một trong số đó. Khi đến đây, chúng ta sẽ được hướng dẫn cách dệt vải thổ cẩm, nhận dạng áo thổ cẩm cho nam bằng những hình sọc dọc, áo nữ là hình sọc ngang. Cô Tin sẽ mất khoảng một tháng để làm ra một bộ quần áo truyền thống bằng thổ cẩm, Vào lễ cưới hỏi, nhà trai sẽ mang theo sính lễ như vòng cổ đồng, cườm hạt, vài lít rượu, cau trầu, heo và gà đến nhà gái. Nhà gái sẽ đáp lại sính lễ như gà, xôi, cau trầu và 1 lít rượu. Khách mừng đám cưới không mừng phong bì mà mừng hiện vật như gà, rượu và 10 lon gạo. Người Cơ Tu thời xưa có phong tục nhuộm răng đen để giúp răng chắc khỏe và là nét đẹp văn hóa truyền thống.'
+  }
+,
+  marker3: {
+      x: 1118,
+      y: 300,
+      img: '',
+      radius: 10,
+      hrefMapinGoogle: 'https://www.google.com/maps/place/Th%C3%B4n+gi%C3%A0n+b%C3%AD+ho%C3%A0+B%E1%BA%AFc+huy%E1%BB%87n+ho%C3%A0+vang/@16.1179841,107.9809055,17z/data=!3m1!4b1!4m6!3m5!1s0x3141f58e1887a83b:0xcda33510bd9f645c!8m2!3d16.1179841!4d107.9827977!16s%2Fg%2F11swpdhykn?hl=vi-VN&entry=ttu',
+      title: 'Cổng Thôn Giàn bí',
+      description: ''
+  }
+,
+  marker4: {
+      x: 1022,
+      y: 282,
+      img: '/img/talanggianbi/conauche.jpg',
       radius: 10,
       hrefMapinGoogle: '',
-      title: 'Homestay Sang',
-      description: `
-      Homestay Sang sở hữu cảnh quan thiên nhiên tuyệt đẹp với núi rừng và những thửa ruộng <br>
-      bậc thang. Du khách sẽ được tận hưởng bầu không khí trong lành, yên bình và hòa mình <br>
-      vào thiên nhiên, mang đến cho du khách trải nghiệm đời sống bình dị và văn hóa độc đáo<br>
-      của người dân bản địa.
-      <br><br>
-      Homestay cung cấp nhiều hoạt động vui chơi giải trí như tour tham quan bản làng bằng xe<br>
-      đạp, đốt lửa trại, ...Đặc biệt, du khách còn được thưởng thức những món ăn đặc sản của <br>
-      người dân địa phương như gà nướng, cơm lam, rau rừng…
-      `
-    },
-    marker4: {
-      x: 685,
-      y: 521,
-      icon: 'https://cdn-icons-png.flaticon.com/128/559/559907.png',
-      img: 'https://cdn-icons-png.flaticon.com/128/559/559907.png',
-      radius: 10,
-      hrefMapinGoogle: '',
-      title: 'Khu cắm trại Hòa Bắc',
-      description: `
-      Khu cắm trại Hòa Bắc là một bờ đất trống nhô ra từ bãi bồi của sông Cu đê. Đi vào con <br> 
-      đường đối diện với Trạm y tế Hòa Bắc tầm 200m, du khách sẽ thấy bảng chỉ dẫn rẽ trái <br>
-      đến nơi này. Khu cắm trại Hòa Bắc có khung cảnh thiên nhiên hùng vĩ, thảm cỏ xanh mát,<br>
-      bên cạnh là dòng sông xanh êm đềm. Nơi đây trở thành một địa điểm dã ngoại lý tưởng <br>
-      cho ai thích khám phá và trải nghiệm. Khi đến đây, du khách nên chuẩn bị đầy đủ các dụng cụ <br>
-      để cắm trại như: lều, nước uống, thức ăn. Chi phí thuê đèn chiếu sáng 10.000/đêm. Du <br>
-      khách có thể ca hát, nấu ăn, đốt lửa trại và tổ chức các hoạt động giải trí ở nơi này mà <br>
-      không cần phải lo lắng về vấn đề an ninh. Tuy nhiên, du khách nên lưu ý việc giữ gìn vệ sinh
-      chung cho môi trường luôn xanh sạch đẹp. 
-      `,
-    },
-    marker5: {
-      x: 865,
-      y: 917,
-      icon: 'https://cdn-icons-png.flaticon.com/128/559/559907.png',
-      img: 'https://cdn-icons-png.flaticon.com/128/559/559907.png',
-      radius: 10,
-      hrefMapinGoogle: '',
-      title: 'Mô hình vườn - ao - chuồng - nhà bác Hồng',
-      description: `
- 
-      Vườn - ao - chuồng nhà bác Hồng là nơi cung cấp nguồn lương thực, thực phẩm chủ yếu <br>
-      trong khu vực. Địa thế nằm gần sông Cu Đê, nước tự nhiên từ đầu nguồn chảy xuống, bao <br>
-      phủ bởi núi rừng, đất thịt màu mỡ rất thích hợp để trồng nhiều loại rau củ như: bí đỏ, cà <br>
-      tím, rau muống, rau lang, mướp đắng,… Bác Hồng còn nuôi thêm gia súc, gia cầm và nuôi <br>
-      cá. Đến thăm Vườn Bác Hồng, du khách có thể mua được nông sản tươi, ngon và sạch <br>
-      nhất. Bên cạnh đó, du khách có thể chọn mô hình vườn - ao - chuồng nhà bác Hồng cho <br>
-      những hoạt động tham quan, học tập, tìm hiểu các phương pháp canh tác cây trồng và phát <br>
-      triển nông nghiệp.
-
-     `
-
-    },
-    marker6: {
-      x: 629,
-      y: 473,
-      icon: 'https://cdn-icons-png.flaticon.com/128/559/559907.png',
-      img: 'https://cdn-icons-png.flaticon.com/128/559/559907.png',
-      radius: 10,
-      hrefMapinGoogle: '',
-      title: 'Nam Yên Camping',
-      description: `
-     
-      Khu vực cắm trại tại <strong>Nam Yên Camping</strong> được trang bị cơ sở hạ tầng hiện đại, ẩm thực<br> 
-      phong phú đa dạng, khu vệ sinh tiện nghi đảm bảo cho du khách có một chuyến cắm trại<br>
-      tuyệt vời. Du khách có thể mang theo thức ăn để chuẩn bị cho tiệc BBQ ngoài trời.<br> 
-      Vào buổi tối, <strong>Nam Yên Camping</strong> còn cung cấp dịch vụ đốt lửa 
-      trại, đêm nhạc hát cho nhau nghe<br>
-      theo yêu cầu của du khách.
-     
-      `
-    },
-    marker7: {
-      x: 639,
-      y: 459,
-      icon: 'https://cdn-icons-png.flaticon.com/128/559/559907.png',
-      img: 'https://cdn-icons-png.flaticon.com/128/559/559907.png',
-      radius: 10,
-      hrefMapinGoogle: '',
-      title: 'Homestay Hoa Chín',
-      description: `
-     
-      Homestay Hoa Chín tọa lạc tại thôn Nam Yên, xã Hòa Bắc, huyện Hòa Vang, TP. Đà Nẵng<br>
-       - địa điểm để du khách trải nghiệm thiên nhiên thơ mộng.<br><br>
-      Vào những dịp lễ, tết, Homestay Hoa Chín là địa điểm được nhiều du khách lựa chọn là <br>
-      điểm đến nghỉ dưỡng lý tưởng. Không gian sống tiện nghi, nhân viên thân thiện cùng với <br>
-      nhiều loại thực phẩm phong phú, đa dạng. Homestay có 04 phòng và hơn 10 lều ngoài trời,<br>
-      tích hợp đầy đủ tiện nghi về điện nước, wifi và dịch vụ ăn uống. Homestay cung cấp đầy <br>
-      đủ các dịch vụ, bao gồm cả bãi đỗ xe. Chi phí sẽ giao động từ 100.000 - 200.000 đồng/ <br>
-      người/đêm.
-      <br><strong>Lưu ý:</strong><br>
-      ●	Homestay dừng hoạt động từ tháng 9 đến tháng 12 do ảnh hưởng của mưa lũ <br>
-      ●	Sinh viên sẽ được giảm giá thuê phòng khi mang theo thẻ sinh viên.
-     
-    `
-    },
-    marker8: {
-      x: 665,
-      y: 464,
-      icon: 'https://cdn-icons-png.flaticon.com/128/559/559907.png',
-      img: 'https://cdn-icons-png.flaticon.com/128/559/559907.png',
-      radius: 10,
-      hrefMapinGoogle: '',
-      title: `Trung tâm Du lịch học tập cộng đồng Hợp tác xã (HTX) <br>
-               Nông nghiệp sinh thái & Du lịch cộng đồng Hòa Bắc`,
-      description: `
+      title: 'Cô Chọn nấu Chè dây',
+      description: 'Cô Chọn làm nghề chế biến chè dây được 8 năm. Cô cho biết chè dây có nhiều công dụng như chữa bệnh dạ dày, viêm gan B, tiểu đường… Chè dây là đặc sản của xã Hòa Bắc. Cách chế biến chè dây khá đơn giản, qua 03 công đoạn chính là: (1) băm thân chè, (2) phơi khô chè và (3) rang chè. Nếu như khi pha trà chúng ta thường dùng nước sôi tráng sơ qua, còn với chè dây thì không vì khi tráng sẽ làm mất lớp men vị thuốc của chè. Cứ vào mùa, cô Chọn cùng với bà con sẽ lên rừng hái chè, sau đó chế biến ngay để chè giữ được hương vị thơm ngon nhất. Cứ 10kg chè tươi, sau khi rang xong ra được 2kg chè thành phẩm với mức giá khoảng  200.000 đồng/kg.'
       
-      Trung tâm Du lịch học tập cộng đồng Hợp tác xã (HTX) Nông nghiệp sinh thái & Du lịch <br>
-      cộng đồng Hòa Bắc đặt trụ sở tại Homestay Nam Yên. Homestay được xây dựng từ năm <br> 
-      2019, là nơi tiếp đón du khách đến với Hòa Bắc để tham quan và tham gia các chương trình <br>
-      trao đổi học tập và nghiên cứu.
-      <br>
-      <br>
-      Homestay Nam Yên cung cấp dịch vụ lưu trú với 04 phòng, dịch vụ ăn uống, dịch vụ thuê <br>
-      xe đạp và xe điện du lịch. Quanh khu vực homestay có các quầy tạp hóa, quán cafe gần kề <br>
-      nên rất thuận lợi cho du khách. An ninh tại khu vực này rất tốt.
+    }
+,
+  marker5: {
+      x: 1005 ,
+      y: 342,
+      img: '/img/talanggianbi/nhaguoitalang.jpg',
+      radius: 10,
+      hrefMapinGoogle: '',
+      title: 'Nhà Gươl thôn Tà Lang',
+      description: 'Nhà Gươl thôn Tà Lang, xã Hòa Bắc, huyện Hoà Vang, TP. Đà Nẵng là địa điểm phục vụ du khách tham quan các loại hình văn hóa truyền thống, trưng bày các sản phẩm làng nghề và là nơi tổ chức các lễ hội của đồng bào dân tộc Cơ Tu... Đối với đồng bào Cơ Tu, nhà Gươl chính là ngôi nhà chung của bản làng và còn được xem là linh hồn của làng. Đây là nơi thờ các vị thần linh như thần rừng, thần đất, ông bà tổ tiên, với mong muốn cầu mong mưa thuận gió hòa, dân làng gặp nhiều may mắn Trong văn hóa của đồng bào Cơ Tu, phụ nữ không được bước lên nhà Gươl, vai trò của phụ nữ và đàn ông rất khác nhau, phụ nữ là người nấu đồ cúng và đàn ông sẽ dâng đồ cúng lên nhà Gươl. Mâm lễ cúng gồm heo, gà, cá sông, bánh sừng trâu, bánh lam. Lễ hội quan trọng của người Cơ Tu gồm có “Lễ hội mừng lúa mới” và “Đâm trâu”. Đây là lễ hội lớn nhất của đồng bào Cơ Tu.  Người Cơ Tu của cả 3 làng sẽ dựng cây nêu, tập trung tại nhà Gươl và cùng múa vũ điệu “tung tung za zá”, sau đó sẽ “Đâm trâu”. Cũng giống người Kinh, người Cơ Tu cũng có lễ  “Tất niên” vào mỗi dịp cuối năm âm lịch. Đồng bào Cơ Tu tại khu vực Tà Lang - Giàn Bí sẽ tập trung tại nhà Gươl để dự lễ cúng. Người Cơ Tu thờ ảnh của Bác Hồ. Bàn thờ của Già làng sẽ có một chén gạo và cau trầu xung quanh. Vào tháng 4 hàng năm, chén gạo sẽ được thay bởi lúa mới gặt về.'
+  }
+,
+  marker6: {
+      x: 969,
+      y: 285,
+      img: '/img/talanggianbi/homestayalang.jpg',
+      radius: 10,
+      hrefMapinGoogle: 'https://www.google.com/maps/place/Homestay+Alang+Nhu/@16.1206275,107.9844736,17z/data=!3m1!4b1!4m6!3m5!1s0x3141f55004fcaaed:0x8b491ec7267c1971!8m2!3d16.1206275!4d107.9870485!16s%2Fg%2F11h7pzl39q?hl=vi-VN&entry=ttu',
+      title: 'Homestay ALăng Như',
+      description: 'Homestay ALăng Như nằm tại thôn Giàn Bí, xã Hòa Bắc, huyện Hòa Vang do anh Đinh Văn Như làm chủ. Homestay được thiết kế theo kiểu nhà sàn, sử dụng các vật liệu tự nhiên như tre, gỗ, đá. Homestay có hai tầng: tầng 1 được sử dụng cho ăn uống và sinh hoạt chung; tầng 2 là khu vực phòng ngủ hướng ra phía sông Cu Đê. Homestay có khoảng sân rộng rãi thuận tiện cho việc cắm trại cũng như tổ chức các trò chơi, đốt lửa trại. Ngoài ra, du khách có thể thưởng thức những món ăn đặc trưng của người đồng bào Cơ Tu như bánh sừng trâu, cá suối, gà nướng…'
+  } 
+,
+  marker7: {
+      x: 929,
+      y: 293,
+      img: '',
+      radius: 10,
+      hrefMapinGoogle: 'https://www.google.com/maps/place/Tr%C6%B0%E1%BB%9Dng+MN+Ho%C3%A0+B%E1%BA%AFc,+%C4%91i%E1%BB%83m+tr%C6%B0%E1%BB%9Dng+Gi%C3%A0n+B%C3%AD/@16.1205504,107.9103448,13z/data=!4m7!3m6!1s0x3141f5006a3a51e3:0x6a3fa835de9d456!8m2!3d16.1205504!4d107.9865625!15sChNUcsaw4budbmcgTeG6p20gTm9ukgEJcHJlc2Nob29s4AEA!16s%2Fg%2F11vjw_s9zt?hl=vi-VN&entry=ttu',
+      title: 'Trường Mầm Non',
+      description: ''
+  }
+,
+  marker8: {
+      x: 844,
+      y: 313,
+      img: '/img/talanggianbi/homestaythihong.jpg',
+      radius: 10,
+      hrefMapinGoogle: 'https://www.google.com/maps/place/Homestay+Z%C6%A1+R%C3%A2m+Th%E1%BB%8B+H%E1%BB%93ng/@16.1202308,107.9828444,17z/data=!3m1!4b1!4m6!3m5!1s0x3141f5defd4b6507:0xea46ef685b24aa5e!8m2!3d16.1202308!4d107.9854193!16s%2Fg%2F11ssy8y8gg?hl=vi-VN&entry=ttu',
+      title: 'Homestay Thị Hồng',
+      description: 'Homestay Thị Hồng (Zơ Răm Thị Hồng) có diện tích khoảng 100m2, thuộc thôn Tà Lang, xã Hòa Bắc. Homestay được xây dựng theo mô hình nhà sàn của người đồng bào Cơ Tu gồm hai tầng: tầng 1 để tiếp khách, ăn uống và sinh hoạt cộng đồng; tầng 2 có 4 phòng ngủ, mỗi phòng sẽ có 2 giường, khu vực nhà vệ sinh riêng. Không gian homestay khá yên tĩnh, hòa mình giữa núi rừng, không khí mát mẻ quanh năm. Khi đến đây du khách sẽ được thưởng thức những đặc sản núi rừng như: cá liên, ốc đá, lá sắn xào sả ớt, bánh sừng trâu, cơm lam, ếch rừng…'
+  }
+,
+  marker9: {
+      x: 669,
+      y: 198,
       
-      `
-    },
-    marker9: {
-      x: 752,
-      y: 309,
-      icon: 'https://cdn-icons-png.flaticon.com/128/559/559907.png',
-      img: 'https://cdn-icons-png.flaticon.com/128/559/559907.png',
+      img: '/img/talanggianbi/vungbot.jpg',
+      radius: 10,
+      hrefMapinGoogle: 'https://www.google.com/maps/place/V%C5%A9ng+B%E1%BB%8Dt,+H%C3%B2a+B%E1%BA%AFc,+%C4%90%C3%A0+N%E1%BA%B5ng/@16.1214688,107.9806948,17z/data=!3m1!4b1!4m6!3m5!1s0x3141f57e2165fe37:0x2c535e03e2aa65fb!8m2!3d16.1214688!4d107.9832697!16s%2Fg%2F11s3wgf_gd?entry=ttu',
+      title: 'Vũng Bọt',
+      description: 'Vũng Bọt nằm ở hạ lưu sông Nam, sông Bắc thuộc địa bàn Thôn Tà Lang - Giàn Bí, xã Hòa Bắc, huyện Hòa Vang, TP. Đà Nẵng. Vũng Bọt là một kiệt tác của thiên nhiên được bao quanh bởi những ngọn núi đá tạo thành hình ảnh hòn non bộ tự nhiên. Nơi đây có khí hậu quanh năm mát mẻ, là điểm đến trải nghiệm lý tưởng.'
+  }
+,
+  marker10: {
+      x: 697,
+      y: 368,
+      img: '',
       radius: 10,
       hrefMapinGoogle: '',
-      title: 'Nhà thờ Giáo xứ Hội Yên',
-      description: `
-      
-      Nhà thờ Giáo xứ Hội Yên nằm ở vị trí đắc địa, là nơi “Tựa Sơn hướng Thủy”, tựa lưng vào <br>
-      đồi cây Bàng Da và mặt hướng ra phía Nam, hướng sông Cu Đê. Bởi vị trí địa lý nằm trên <br>
-      vùng đất cao, được xây dựng kiên cố cho nên hằng năm vào các mùa mưa lũ (từ tháng 9 <br>
-      đến tháng 12), nhà thờ không bị ngập úng và là nơi trú ngụ của Giáo dân mùa mưa bão.<br>
-       <br>
-       <br>
-      Năm 2008, Giáo họ Hội Yên chính thức trở thành Giáo xứ. Linh mục đầu tiên của Giáo xứ <br>
-      là Cha Phêrô Trần Công Thạch. Năm 2015, Nhà thờ Giáo xứ Hội Yên chính thức khởi<br>
-      công xây dựng nhà thờ mới và khánh thành vào năm 2018.
-       <br>
-       <br>
-      Nhà thờ có lối kiến trúc bắt mắt, với thiết kế vòm cửa cao, tông màu chủ đạo là màu xám<br>
-      kết hợp với màu trắng tạo cảm giác rộng rãi cho ngôi thánh đường. Chi tiết ảnh Chúa, thánh<br>
-      giá, vườn địa đàng làm cho khu thánh đường vừa hài hòa vừa trang nghiêm. Nhà thờ thường<br>
-      tổ chức các cuộc thi về giáo lý, nhiều hoạt động vui chơi, giải trí như múa, hát, đốt lửa trại,<br>
-      sinh hoạt thiếu nhi… vào các ngày lễ lớn như Lễ Phục sinh, Lễ Giáng sinh…
-
-      `,
-    },
-    marker10: {
-      x: 1111,
-      y: 543,
-      icon: 'https://cdn-icons-png.flaticon.com/128/559/559907.png',
-      img: 'https://cdn-icons-png.flaticon.com/128/559/559907.png',
+      title: 'Cầu Sập',
+      description: ''
+  }
+,
+marker111: {
+  x: 609,
+  y: 519,
+  img: '/img/talanggianbi/conglangtalang.png',
+  radius: 10,
+  hrefMapinGoogle: '',
+  title: 'Cổng làng tà lang',
+  description: ''
+}
+,
+  marker12: {
+      x: 658,
+      y: 532,
+      img: '/img/talanggianbi/truongtieuhoc.png',
       radius: 10,
       hrefMapinGoogle: '',
-      title: 'Vườn rừng bác Du',
-      description: `
-      Vườn rừng bác Du nằm trong con hẻm nhỏ, trong vườn có hồ cá cùng với mạch nước ngầm<br>
-      từ sông Cu Đê nên hồ không bao giờ bị khô cạn. Trong vườn có rất nhiều loại cây như tre,<br>
-      chuối, bắp, khế, mía, cây bạc hà và có các loài chim, khỉ đến đây sinh sống. Đặc biệt, chủ<br>
-      vườn có trồng cây sao đen quý. Du khách từ các cơ sở lưu trú lân cận chủ yếu đến vườn để<br>
-      tham quan mô hình vườn rừng. <br>
-      <strong>Không cung cấp dịch vụ lưu trú.</strong> `
-    },
-    marker11: {
-      x: 501,
-      y: 452,
-      icon: 'https://cdn-icons-png.flaticon.com/128/559/559907.png',
-      img: 'https://cdn-icons-png.flaticon.com/128/559/559907.png',
-      hrefMapinGoogle: '',
+      title: 'Trường tiểu Học',
+      description: 'Trường Tiểu học Hòa Bắc được xây dựng từ năm 2004, với cơ sở gồm 10 phòng làm việc, 8 phòng học, 1 bếp ăn bán trú, phòng ăn, ngủ cho học sinh và phòng máy vi tính, trên diện tích 3.214m2, đảm bảo cho hơn 300 em học sinh học tập.  '
+  }
+,
+  marker13: {
+      x: 544,
+      y: 516,
+      img: '/img/talanggianbi/cefehaiyen.png',
       radius: 10,
-      title: 'Cu Đê House'
-
-    },
-    marker12: {
-      x: 508,
-      y: 410,
-      icon: 'https://cdn-icons-png.flaticon.com/128/559/559907.png',
-      img: 'https://cdn-icons-png.flaticon.com/128/559/559907.png',
+      hrefMapinGoogle: 'https://www.google.com/maps/place/C%C3%A0+Ph%C3%AA+H%E1%BA%A3i+Y%E1%BA%BFn/@16.1177284,107.980527,17z/data=!4m14!1m7!3m6!1s0x3141f5fd71fec6a7:0xf85b1ce5ca3aa161!2sTaBi+Retreat!8m2!3d16.1162486!4d107.9783162!16s%2Fg%2F11k51h8v3d!3m5!1s0x3141f57e381bc873:0x12c159fdbf8a4e02!8m2!3d16.1175917!4d107.9810465!16s%2Fg%2F11ppdxlbcl?hl=vi-VN&entry=ttu',
+      title: 'Tạp Hóa Hải Yến',
+      description: ''
+  }
+,
+  marker14: {
+      x: 460,
+      y: 555,
+      img: '/img/talanggianbi/nhaguoi.jpg',
       radius: 10,
       hrefMapinGoogle: '',
-      title: 'Hòa Bắc Ecolodge - Camping Space Art',
-      description: `<strong>Hòa Bắc Ecolodge - Camping Space Art:</strong> được xem là địa điểm nghỉ dưỡng sinh thái hấp <br>
-      dẫn trong khu vực. Nằm nép mình giữa vùng núi Hòa Bắc với không gian xanh mát, cánh <br>
-      rừng thông hòa cùng tiếng chim líu lo, khu vực đồng bằng bằng phẳng. Đây là nơi lý tưởng <br>
-      để du khách tìm sự bình yên, thoải mái, gần gũi thiên nhiên sau những ngày làm việc mệt mỏi.
-      <br><br>
-      <strong>Hòa Bắc Ecolodge - Camping Space Art:</strong> có những chiếc lều trắng
-       thơ mộng, khu vực lửa <br>
-      trại với không gian thoáng đãng. Chi phí thuê lều cho khách lẻ và khách theo đoàn dao <br>
-      động từ 200.000 - 6000.000 đồng/người/ngày.
-
-      `
-    },
-    marker13: {
-      x: 517,
-      y: 343,
-      icon: 'https://cdn-icons-png.flaticon.com/128/559/559907.png',
-      img: 'https://cdn-icons-png.flaticon.com/128/559/559907.png',
-      radius: 10,
-      hrefMapinGoogle: '',
-      title: 'Đền Âm Linh',
-      description: `
-        Khu vực thờ cúng linh thiêng trong thôn đã có từ khoảng thế kỉ 19. Công trình đã bị tàn phá<br>
-        sau chiến tranh chống thực dân Pháp và được xây dựng lại từ năm 1992. Đền Âm Linh <br>
-        nằm trên vùng đất bằng phẳng, xung quanh được bao quanh bởi đồi núi. Bên trong đền có <br>
-        9 gian cúng tế. Đây là nơi thờ cúng những người vô danh, không nơi nương tựa. Tại đây<br> 
-        du khách có thể tham dự lễ hội cúng bái được tổ chức vào ngày 25 tháng chạp hằng năm.
-        `
-
-    },
-    marker14: {
-      x: 435,
-      y: 454,
-      icon: 'https://cdn-icons-png.flaticon.com/128/559/559907.png',
-      img: 'https://cdn-icons-png.flaticon.com/128/559/559907.png',
-      radius: 10,
-      hrefMapinGoogle: '',
-      title: 'Cu Đê Camping',
-      description: `
-      Nằm ngay cạnh bờ sông Cu Đê, khu cắm trại có vẻ đẹp thiên nhiên hoang sơ, không gian <br> 
-      trong lành của cây cỏ. Đến Cu Đê Camping, du khách có thể chiêm ngưỡng một màu xanh <br> 
-      bạt ngàn của đồng cỏ, núi rừng, dòng sông và bầu trời.
-      <br><br>
-      Cu Đê Camping cung cấp dịch vụ cafe, ăn uống và lưu trú với khu vực lều trại riêng biệt. 
-      `
-    },
-    marker15: {
-      x: 365,
-      y: 380,
+      title: 'Nhà Gươl thôn Giàn Bí',
+      description: "Nhà Gươl thôn Giàn Bí là nơi lưu giữ văn hóa truyền thống, trưng bày các sản phẩm của người địa phương. “Gươl” trong tiếng Cơ Tu có nghĩa là cộng đồng, nhà Gươl được xem như trái tim của Làng. Vậy nên các làng của người Cơ Tu đều phải có nhà Gươl. Nhà Gươl được thiết kế theo kiểu nhà sàn, trụ bởi một cây cột cái ở giữa và tám cây cột con ở xung quanh. Mái nhà được lợp bằng lá tự nhiên, sàn nhà lát bằng tre cật chẻ mỏng, giữa các thanh tre có một độ hở nhất định để tạo nên sự thông thoáng. Mái nhà thường thường được trang trí bằng những hình tượng đơn giản như gà trống hay tổ hợp gắn kết nhiều tượng với nhau như tượng người, tượng đầu trâu. Dưới mái nhà Gươl, những hình ảnh chạm khắc tỉ mỉ như những tác phẩm nghệ thuật sinh động, mỗi tác phẩm tái hiện đời sống lao động, văn hóa của một dân tộc giàu bản sắc giữa núi rừng. Cây nêu (x'nur) của người Cơ Tu cũng là một sản phẩm mỹ thuật thể hiện tài nghệ trang trí, điêu khắc của nghệ nhân. Cây được đặt tại sân nhà Gươl, nơi hành lễ."
+  }
+,
+  marker15: {
       map: `<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30661.008822904496!2d108.01087353605213!3d16.136631307566265!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31418bd3ca7c84c1%3A0xb304c8f2904e86f5!2zTMOgbmcgTcOq!5e0!3m2!1svi!2s!4v1713952355600!5m2!1svi!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`,
-      img: 'https://cdn-icons-png.flaticon.com/128/559/559907.png',
+      img: '/img/talanggianbi/dantalu.jpg',
       radius: 10,
-      hrefMapinGoogle: 'https://maps.app.goo.gl/Dyf9KTgaPTim6zH47',
-      title: 'Làng Mê',
-      description: `
-      Làng Mê nằm ở thôn Nam Yên, xã Hòa Bắc, huyện Hòa Vang, TP. Đà Nẵng, với lợi thế<br>
-      không gian rộng rãi, thoáng mát. Nơi đây là địa điểm du lịch lý tưởng, thích hợp với nghỉ<br>
-      dưỡng và dã ngoại cuối tuần. 
-       <br><br>
-      Làng Mê có những chiếc lều trắng chắc chắn, có không gian đốt lửa trại, ghế ngồi được<br>
-      làm bằng chất liệu tre gần gũi. Nhà hàng, quán cà phê và khu cắm trại kết hợp với nhau<br>
-      nên ở đây cung cấp nhiều trải nghiệm dịch vụ hấp dẫn trong quá trình du khách lưu trú Giá<br>
-      dịch vụ sẽ từ 500.000 đồng/người/ngày. 
-
-      `
-    },
-  };
+      hrefMapinGoogle: '',
+      x: 395,
+      y: 570,
+      title: 'Nghệ nhân đàn Ta Lư',
+      description: 
+      'Khi đặt chân đến nhà ông A Lăng Mỹ - nghệ nhân đàn Ta Lư, chúng ta sẽ được lắng nghe những chia sẻ về sự tích cây đàn Ta Lư huyền thoại của đồng bào Cơ Tu. Cây đàn Ta Lư được làm từ gỗ mít, khá nhẹ. Để làm được đàn, cây gỗ mít phải được trồng hơn 10 năm và có đường kính trên 20cm. Cây đàn được làm thủ công và không quét sơn. Dây đàn có thể là dây cước và dây tơ. Nghệ nhân A Lăng Mỹ đã mất hơn 1 tuần để làm ra nó. Nghệ nhân A Lăng Mỹ nâng niu cây đàn Ta Lư, ông luôn muốn gửi gắm những lời hát của người Cơ Tu đến với khách du lịch, như cách mà ông muốn âm nhạc và đàn Ta Lư mãi mãi trường tồn cùng núi rừng, làng bản, không bao giờ mai một trong văn hóa của đồng bào Cơ Tu .'
+      
+  }
+};
+  
 
 
   // xử lý vẽ điểm
@@ -348,7 +204,11 @@ window.onload = function () {
 
   ctx.drawImage(image, widthW, heightW);
 
-
+// tăng khoảng cách location
+  // for (const key in markerData) {
+  //   const maker = markerData[key];
+  //   maker.x += 35
+  // }
   function convertCoordinatesToPercent(markerData, canvas) {
     for (const key in markerData) {
       if (markerData.hasOwnProperty(key)) {
@@ -374,14 +234,7 @@ window.onload = function () {
     for (const markerKey in markerData) {
       if (markerData.hasOwnProperty(markerKey)) {
         const marker = markerData[markerKey];
-        var distance = Math.sqrt(
-          (x -
-            ((marker.x / 100) * canvas.width)) **
-          2 +
-          (y -
-            ((marker.y / 100) * canvas.height)) **
-            2
-          );
+        var distance = Math.sqrt((x - ((marker.x / 100) * canvas.width)) ** 2 + (y - ((marker.y / 100) * canvas.height)) ** 2);
 
         console.log("distances", distance)
         ctx.beginPath();
@@ -394,28 +247,30 @@ window.onload = function () {
 
 
         // ctx.fillStyle = pattern;
-        // ctx.fillStyle = 'white';
-        // ctx.fill();
+// ctx.fillStyle = 'red';
+// ctx.fill();
         if (distance <= marker.radius) {
+          
           // infoCard.innerHTML = '<div width="60"; height = "90";><strong>' + marker.title + '</strong><br><hr><p style="text-align: justify;">' + marker.description + '</p><br><img style="width:40px; height:40px;" src="' + marker.img + '"></div>';
           infoCard.innerHTML =
             `
 
-            <div width="60"; height = "90";>
-              <div style="display: flex; align-items: center; margin-top: 20px;">
-              <strong>${marker.title}</strong>
-              <a id="mapInGoogle" target="_blank" style="width:40px; height:40px;margin-left: auto;" href="${marker.hrefMapinGoogle}" alt="${marker.title}"><img src="https://img.icons8.com/?size=48&id=kDqO6kPb3xLj&format=gif" alt="Google Maps ${marker.title}"></a> 
+            <div style= "width : 350px ; height: 300px" >
+              <div style="display: flex; align-items: center; margin-top: 10px; height : 10px">
+              <h2><strong>${marker.title}</strong></h2>
+              <a id="mapInGoogle" target="_blank" style="width:30px; height:30px;margin-left: auto;" href="${marker.hrefMapinGoogle}" alt="${marker.title}"><img src="https://img.icons8.com/?size=48&id=kDqO6kPb3xLj&format=gif" alt="Google Maps ${marker.title}"></a> 
               </div>
 
               <br><hr>
-              <div style="text-align: justify; max-height:200px; overflow-y:auto">
+              <div style="text-align: justify; max-height:250px; overflow-y:auto">
               <p>${marker.description}</p>
               <br>
               <div>
-              <img style="width:40px; height:40px;" src="${marker.img}">
-              <br><hr>
+              <img style="width:200px; height:150px;" src="${marker.img}">
+                   
+              <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ảnh Minh Họa 
               <div id="map-container" class="hidden">
-              ${marker.map}
+              
               </div>
              
             </div>
@@ -423,7 +278,7 @@ window.onload = function () {
             `
           if (marker.x <= browserWidth - 300 && marker.y <= canvas.height - 200) {
             infoCard.style.left = (event.pageX - 0) + 'px';
-            infoCard.style.top = (event.pageY + 20) + 'px';
+            infoCard.style.top = (event.pageY + 10) + 'px';
             infoCard.style.display = 'block';
             return;
           }
@@ -439,19 +294,6 @@ window.onload = function () {
   });
 
 
-  //   window.addEventListener('DOMContentLoaded', function() {
-  //     const mapContainer = document.getElementById('mapInGoogle');
-  //     const mapLink = document.getElementById('mapInGoogle');
-
-  //     mapLink.addEventListener('mouseenter', function() {
-  //         mapContainer.style.display = 'block'; 
-  //         mapContainer.innerHTML = `${markers.map}`
-  //     });
-
-  //     mapLink.addEventListener('mouseleave', function() {
-  //         mapContainer.style.display = 'none'; // Ẩn bản đồ khi di chuột rời khỏi
-  //     });
-  // });
 
   window.addEventListener('click', function (event) {
     // Kiểm tra xem click có xảy ra bên ngoài các điểm đánh dấu không
@@ -481,70 +323,9 @@ window.onload = function () {
       infoCard.style.display = 'none';
     }
   });
-
-
-
-  // canvas.addEventListener('mousemove', function (event) {
-  //   var rect = canvas.getBoundingClientRect();
-  //   var x = event.clientX - rect.left;
-  //   var y = event.clientY - rect.top;
-  // });
-
-
-
-  // for (const markerKey in markerData) {
-  //   if (markerData.hasOwnProperty(markerKey)) {
-  //     const marker = markerData[markerKey];
-  //     ctx.beginPath();
-  //     ctx.arc(marker.x, marker.y, marker.radius, 0, 2 * Math.PI);
-  //     // var img = new Image()
-  //     // img.src = marker.icon
-
-  //     // var pattern = ctx.createPattern(img, 'repeat');
-  //     // var imageWidth = 2 * marker.radius;
-  //     // var imageHeight = 2 * marker.radius;
-
-
-  //     // ctx.fillStyle = pattern;
-  //     ctx.fillStyle = 'white';
-  //      ctx.fill();
-
-
-  //       var distance = Math.sqrt((x - marker.x) ** 2 + (y - marker.y) ** 2);
-  //       if (distance <= marker.radius) {
-
-  //         //ctx.textAlign = "center";
-  //         //ctx.fillText(marker.title + marker.description, 1118, 82)
-
-  //         infoCard.innerHTML = '<strong>' + marker.title + '</strong><br>' + marker.description + '<br><img src="' + marker.img + '">';
-  //         infoCard.style.left = (event.pageX + 10) + 'px';
-  //         infoCard.style.top = (event.pageY + 10) + 'px';
-  //         infoCard.style.display = 'block';
-
-  //         return
-  //       }     
-  //   }
-
-  //   }  
 }
 
 
 
 
 
-// markers.forEach(marker => {
-//   marker.addEventListener('click', () => {
-//     const id = marker.id;
-//     const data = markerData[id];
-
-//     if (data) {
-//       infoText.innerHTML = `<h3>${data.title}</h3><p>${data.description}</p>`;
-//       infoBox.classList.remove('hidden');
-//     }
-//   });
-// });
-
-
-// infoBox.addEventListener('click', () => {
-//   infoBox.classList.add('hidden');
-// });

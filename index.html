@@ -11,7 +11,15 @@
 </head>
 
 <body>
+  <div id="canvas-container">
+    <!-- Định nghĩa canvasvà ảnh -->
+    <button id="closeButton">Close</button>
 
+    <canvas id="myCanvas" width="800" height="1200" style="border: 1px solid #000; position: absolute;"></canvas>
+    <img id="map" src="./img/talanggianbi/map4.png"  style="display:none;">
+    <div id="info-card" style="position: absolute; display: none; background-color: #fff; padding: 10px;"></div>
+  </div>
+  
   <div class="menu-container">
     <box-icon name='list-ul' id="menu-hien" onclick="hien()"></box-icon>
     <div class="menu" id="menu">
@@ -151,12 +159,7 @@
       </div>
     </div>
   </div>
-  <div id="canvas-container">
-    <!-- Định nghĩa canvas và ảnh -->
-    <canvas id="myCanvas" width="500" height="600" style="border: 1px solid #000; position: absolute;"></canvas>
-    <img id="map" src="./img/namyen/namyenmap.jpg" height="1200" style="display:none;">
-    <div id="info-card" style="position: absolute; display: none; background-color: #fff; padding: 10px;"></div>
-  </div>
+
 
 
 
@@ -166,6 +169,11 @@
 
   <!-- <div id="marker1" class="marker"> </div>
   <div id="marker2" class="marker"> </div> -->
+
+  <!-- <div style="width: 300px; height: 500px; ">
+    <div id="info-box" class="hidden">
+      <p id="info-text"></p>
+    </div> -->
 
 </body>
 
