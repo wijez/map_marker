@@ -4,8 +4,12 @@
     justify-content: center;
   }
 
- 
+#myCanvas {
+  right: 0;
+}
+
 #cavas-container {
+  right: 0;
   position: absolute;
   top: 50%;
   height: 50%;
@@ -168,3 +172,44 @@ ul li a {
   left: 0;
   z-index: 1;
 }
+
+.image-container {
+  position: relative;
+  display: inline-block;
+  border-radius: 10px ;
+}
+
+.image-container:hover {
+  transform: translateY(-300px)
+}
+
+.hover-image {
+  width: 60px;
+  height: 60px;
+  transition: transform 0.3s ease;
+}
+
+.hover-image:hover {
+  transform: scale(5); 
+}
+
+.image-info {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  visibility: hidden;
+  opacity: 0; 
+  transition: visibility 0 opacity 0.3s ease;
+}
+
+.image-container:hover .image-info {
+  opacity: 1;
+  visibility: visible;
+}
+

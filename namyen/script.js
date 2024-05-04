@@ -4,26 +4,8 @@ var canvas = document.getElementById('myCanvas');
 var infoCard = document.getElementById('info-card');
 
 
-
-// Định nghĩa hàm để lấy chiều rộng của trình duyệt
-function getWindowWidth() {
-  return document.documentElement.clientWidth;
-}
-function getWindowHeight() {
-  return document.documentElement.clientHeight;
-}
-
-
-
 // Khi trang đã được tải hoàn toàn
 window.onload = function () {
-  // Lấy chiều rộng của trình duyệt
-  var browserWidth = getWindowWidth();
-  var browserHeight = getWindowHeight()
-
-  canvas.width = browserWidth;
-  //canvas.width = image.width
-  canvas.height = image.height
 
   var widthW = (canvas.width - image.width) / 2
   var heightW = (canvas.height - image.height) / 2
@@ -33,11 +15,11 @@ window.onload = function () {
 
   const markerData = {
     marker1: {
-      x: 724,
-      y: 396,
+      x: 773,
+      y: 394,
       radius: 10,
       map: `<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30661.008822904496!2d108.01087353605213!3d16.136631307566265!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31418bd3ca7c84c1%3A0xb304c8f2904e86f5!2zTMOgbmcgTcOq!5e0!3m2!1svi!2s!4v1713952355600!5m2!1svi!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`,
-      img: 'https://i.pinimg.com/236x/85/98/92/8598922e3dca893731dd2e0f62191e12.jpg',
+      img: './img/namyen/cautreohoabac.jpg',
       hrefMapinGoogle: 'https://maps.app.goo.gl/xpQDgNvh7PEeZxEt9',
       title: 'Cầu treo Hòa Bắc',
       description: `Cầu treo Hòa Bắc còn có tên gọi khác là Cầu dây văng Hòa Bắc, nối hai bờ của con sông <br> 
@@ -62,7 +44,7 @@ window.onload = function () {
       y: 334,
       radius: 10,
       icon: '',
-      img: '',
+      img: './img/namyen/cautreohoabac.jpg',
       hrefMapinGoogle: 'https://maps.app.goo.gl/fywJTYLMysoKAiLDA',
       title: 'Làng Nguồn',
       description: `
@@ -339,19 +321,19 @@ window.onload = function () {
   ctx.drawImage(image, widthW, heightW);
 
 
-  function convertCoordinatesToPercent(markerData, canvas) {
-    for (const key in markerData) {
-      if (markerData.hasOwnProperty(key)) {
-        const marker = markerData[key];
-        marker.x = (marker.x / canvas.width) * 100;
-        marker.y = (marker.y / canvas.height) * 100;
-      }
-    }
-  }
+  // function convertCoordinatesToPercent(markerData, canvas) {
+  //   for (const key in markerData) {
+  //     if (markerData.hasOwnProperty(key)) {
+  //       const marker = markerData[key];
+  //       marker.x = (marker.x / canvas.width) * 100;
+  //       marker.y = (marker.y / canvas.height) * 100;
+  //     }
+  //   }
+  // }
 
 
   // Gọi hàm để chuyển đổi tọa độ của tất cả các điểm đánh dấu sang %
-  convertCoordinatesToPercent(markerData, canvas);
+  // convertCoordinatesToPercent(markerData, canvas);
 
 
 
@@ -365,25 +347,17 @@ window.onload = function () {
       if (markerData.hasOwnProperty(markerKey)) {
         const marker = markerData[markerKey];
         var distance = Math.sqrt(
-          (x -
-            ((marker.x / 100) * canvas.width)) **
-          2 +
-          (y -
-            ((marker.y / 100) * canvas.height)) **
-          2
-        );
-
-        console.log("distances", distance)
+          (x - marker.x) ** 2 + (y - marker.y) ** 2);
         ctx.beginPath();
-        ctx.arc(marker.x * canvas.width / 100, marker.y * canvas.height / 100, marker.radius, 0, 2 * Math.PI);
-        // ctx.fillStyle = 'red';
-        // ctx.fill();
+
+        ctx.arc(marker.x, marker.y, marker.radius, 0, 2 * Math.PI);
+        ctx.fillStyle = 'red';
+        ctx.fill();
         if (distance <= marker.radius) {
-          // infoCard.innerHTML = '<div width="60"; height = "90";><strong>' + marker.title + '</strong><br><hr><p style="text-align: justify;">' + marker.description + '</p><br><img style="width:40px; height:40px;" src="' + marker.img + '"></div>';
           infoCard.innerHTML =
             `
             
-            <div style="width:300px; height: 100px">
+            <div style="width:300px; height: 300px">
               <div style="display: flex; align-items: center; margin-top: 20px; ">
               <strong>${marker.title}</strong>
               <a id="mapInGoogle" target="_blank" style="width:40px; height:40px; margin-left:auto; " href="${marker.hrefMapinGoogle}" alt="${marker.title}"><img src="https://img.icons8.com/?size=48&id=kDqO6kPb3xLj&format=gif" alt="Google Maps ${marker.title}"></a> 
@@ -394,8 +368,9 @@ window.onload = function () {
               <p>${marker.description}</p>
               </div>
               <br>
-              <div>
-              <img style="width:40px; height:40px;" src="${marker.img}">
+              <div class="image-container">
+              <img class="hover-image" src="${marker.img}" alt="Marker Image">
+              <div class="image-info">${marker.title}</div>
               <br><hr>
               </div>
               <div id="map-container" class="hidden" style=" justify-content: center; width:20px; height: 20px;">
@@ -405,7 +380,7 @@ window.onload = function () {
             </div>
 
             `
-          if (marker.x <= browserWidth - 300 && marker.y <= canvas.height - 200) {
+          if (marker.x <= canvas.width - 300 && marker.y <= canvas.height - 200) {
             infoCard.style.left = (event.pageX - 30) + 'px';
             infoCard.style.top = (event.pageY + 20) + 'px';
             infoCard.style.display = 'block';
@@ -421,6 +396,23 @@ window.onload = function () {
       }
     }
   });
+
+
+  // function getMousePos(canvas, event) {
+  //   const rect = canvas.getBoundingClientRect(); // Lấy kích thước và vị trí tuyệt đối của canvas trong cửa sổ trình duyệt
+  //   const x = event.clientX - rect.left; // Tính toán tọa độ x của chuột
+  //   const y = event.clientY - rect.top; // Tính toán tọa độ y của chuột
+  //   return { x, y };
+  // }
+
+  // // Sự kiện di chuột trên canvas
+  // canvas.addEventListener('mousemove', function (event) {
+  //   const mousePos = getMousePos(canvas, event); // Lấy tọa độ của chuột trong canvas
+  //   ctx.clearRect(500, 190, 200, 100); // Xóa vùng hiển thị tọa độ trước đó
+  //   ctx.fillStyle = 'black'; // Thiết lập màu vẽ
+  //   ctx.fillText(`X: ${mousePos.x}, Y: ${mousePos.y}`, 500, 200); // Hiển thị tọa độ
+
+  // });
 
 
   //   window.addEventListener('DOMContentLoaded', function() {
@@ -447,11 +439,9 @@ window.onload = function () {
         var x = event.clientX - rect.left;
         var y = event.clientY - rect.top;
         var distance = Math.sqrt(
-          (x -
-            (marker.x / 100) * canvas.width) **
+          (x - marker.x) **
           2 +
-          (y -
-            (marker.y / 100) * canvas.height) **
+          (y - marker.y) **
           2
         );
         if (distance <= marker.radius) {
