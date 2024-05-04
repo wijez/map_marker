@@ -24,6 +24,15 @@
 </head>
 
 <body>
+  <div id="canvas-container">
+    <!-- Định nghĩa canvas và ảnh -->
+    <canvas id="myCanvas" width="1366" height="768" style="border: 1px solid #000; position: absolute;"></canvas>
+    <img id="map" src="./img/1.png" style="display:none;">
+    <div id="info-card" style="position: absolute; display: none; background-color: #fff; padding: 10px;"></div>
+  </div>
+  <script src="./script.js"></script>
+
+
 
   <div class="menu-container">
     <box-icon name='list-ul' id="menu-hien" onclick="hien()"></box-icon>
@@ -163,13 +172,7 @@
       </div>
     </div>
   </div>
-  <div id="canvas-container">
-    <!-- Định nghĩa canvas và ảnh -->
-    <canvas id="myCanvas" width="1366" height="768" style="border: 1px solid #000; position: absolute;"></canvas>
-    <img id="map" src="./img/1.png" style="display:none;">
-    <div id="info-card" style="position: absolute; display: none; background-color: #fff; padding: 10px;"></div>
-  </div>
-  <script src="./script.js"></script>
+
 
 </body>
 
