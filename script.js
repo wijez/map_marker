@@ -45,7 +45,7 @@ const markerData = {
   marker2: {
       x: 1152,
       y: 295,
-      img: '/img/talanggianbi/cotindetthocam.jpg',
+      img: './img/talanggianbi/cotindetthocam.jpg',
       radius: 10,
       hrefMapinGoogle: 'https://maps.app.goo.gl/fywJTYLMysoKAiLDA',
       title: 'Nhà cô Tin - Dệt thổ cẩm',
@@ -65,7 +65,7 @@ const markerData = {
   marker4: {
       x: 1022,
       y: 282,
-      img: '/img/talanggianbi/conauche.jpg',
+      img: './img/talanggianbi/conauche.jpg',
       radius: 10,
       hrefMapinGoogle: '',
       title: 'Cô Chọn nấu Chè dây',
@@ -76,7 +76,7 @@ const markerData = {
   marker5: {
       x: 1005 ,
       y: 342,
-      img: '/img/talanggianbi/nhaguoitalang.jpg',
+      img: './img/talanggianbi/nhaguoitalang.jpg',
       radius: 10,
       hrefMapinGoogle: '',
       title: 'Nhà Gươl thôn Tà Lang',
@@ -86,7 +86,7 @@ const markerData = {
   marker6: {
       x: 969,
       y: 285,
-      img: '/img/talanggianbi/homestayalang.jpg',
+      img: './img/talanggianbi/homestayalang.jpg',
       radius: 10,
       hrefMapinGoogle: 'https://www.google.com/maps/place/Homestay+Alang+Nhu/@16.1206275,107.9844736,17z/data=!3m1!4b1!4m6!3m5!1s0x3141f55004fcaaed:0x8b491ec7267c1971!8m2!3d16.1206275!4d107.9870485!16s%2Fg%2F11h7pzl39q?hl=vi-VN&entry=ttu',
       title: 'Homestay ALăng Như',
@@ -106,7 +106,7 @@ const markerData = {
   marker8: {
       x: 844,
       y: 313,
-      img: '/img/talanggianbi/homestaythihong.jpg',
+      img: './img/talanggianbi/homestaythihong.jpg',
       radius: 10,
       hrefMapinGoogle: 'https://www.google.com/maps/place/Homestay+Z%C6%A1+R%C3%A2m+Th%E1%BB%8B+H%E1%BB%93ng/@16.1202308,107.9828444,17z/data=!3m1!4b1!4m6!3m5!1s0x3141f5defd4b6507:0xea46ef685b24aa5e!8m2!3d16.1202308!4d107.9854193!16s%2Fg%2F11ssy8y8gg?hl=vi-VN&entry=ttu',
       title: 'Homestay Thị Hồng',
@@ -117,7 +117,7 @@ const markerData = {
       x: 669,
       y: 198,
       
-      img: '/img/talanggianbi/vungbot.jpg',
+      img: './img/talanggianbi/vungbot.jpg',
       radius: 10,
       hrefMapinGoogle: 'https://www.google.com/maps/place/V%C5%A9ng+B%E1%BB%8Dt,+H%C3%B2a+B%E1%BA%AFc,+%C4%90%C3%A0+N%E1%BA%B5ng/@16.1214688,107.9806948,17z/data=!3m1!4b1!4m6!3m5!1s0x3141f57e2165fe37:0x2c535e03e2aa65fb!8m2!3d16.1214688!4d107.9832697!16s%2Fg%2F11s3wgf_gd?entry=ttu',
       title: 'Vũng Bọt',
@@ -137,7 +137,7 @@ const markerData = {
 marker111: {
   x: 609,
   y: 519,
-  img: '/img/talanggianbi/conglangtalang.png',
+  img: './img/talanggianbi/conglangtalang.png',
   radius: 10,
   hrefMapinGoogle: '',
   title: 'Cổng làng tà lang',
@@ -147,7 +147,7 @@ marker111: {
   marker12: {
       x: 658,
       y: 532,
-      img: '/img/talanggianbi/truongtieuhoc.png',
+      img: './img/talanggianbi/truongtieuhoc.png',
       radius: 10,
       hrefMapinGoogle: '',
       title: 'Trường tiểu Học',
@@ -157,7 +157,7 @@ marker111: {
   marker13: {
       x: 544,
       y: 516,
-      img: '/img/talanggianbi/cefehaiyen.png',
+      img: './img/talanggianbi/cefehaiyen.png',
       radius: 10,
       hrefMapinGoogle: 'https://www.google.com/maps/place/C%C3%A0+Ph%C3%AA+H%E1%BA%A3i+Y%E1%BA%BFn/@16.1177284,107.980527,17z/data=!4m14!1m7!3m6!1s0x3141f5fd71fec6a7:0xf85b1ce5ca3aa161!2sTaBi+Retreat!8m2!3d16.1162486!4d107.9783162!16s%2Fg%2F11k51h8v3d!3m5!1s0x3141f57e381bc873:0x12c159fdbf8a4e02!8m2!3d16.1175917!4d107.9810465!16s%2Fg%2F11ppdxlbcl?hl=vi-VN&entry=ttu',
       title: 'Tạp Hóa Hải Yến',
@@ -167,7 +167,7 @@ marker111: {
   marker14: {
       x: 460,
       y: 555,
-      img: '/img/talanggianbi/nhaguoi.jpg',
+      img: './img/talanggianbi/nhaguoi.jpg',
       radius: 10,
       hrefMapinGoogle: '',
       title: 'Nhà Gươl thôn Giàn Bí',
@@ -176,7 +176,7 @@ marker111: {
 ,
   marker15: {
       map: `<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30661.008822904496!2d108.01087353605213!3d16.136631307566265!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31418bd3ca7c84c1%3A0xb304c8f2904e86f5!2zTMOgbmcgTcOq!5e0!3m2!1svi!2s!4v1713952355600!5m2!1svi!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`,
-      img: '/img/talanggianbi/dantalu.jpg',
+      img: './img/talanggianbi/dantalu.jpg',
       radius: 10,
       hrefMapinGoogle: '',
       x: 395,
@@ -252,7 +252,7 @@ marker111: {
            return;
          }
          else {
-           infoCard.style.left = (event.pageX - 300) + 'px';
+           infoCard.style.left = (event.pageX - 20) + 'px';
            infoCard.style.top = (event.pageY + 20) + 'px';
            infoCard.style.display = 'block';
            return;
