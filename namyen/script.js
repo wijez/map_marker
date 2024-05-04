@@ -333,8 +333,8 @@ window.onload = function () {
         ctx.beginPath();
 
         ctx.arc(marker.x, marker.y, marker.radius - 2, 0, 2 * Math.PI);
-        ctx.fillStyle = 'red';
-        ctx.fill();
+        // ctx.fillStyle = 'red';
+        // ctx.fill();
         if (distance <= marker.radius) {
           infoCard.innerHTML =
             `
