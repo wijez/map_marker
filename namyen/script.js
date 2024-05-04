@@ -40,11 +40,11 @@ window.onload = function () {
       `
     },
     marker2: {
-      x: 697,
-      y: 334,
+      x: 747,
+      y: 333,
       radius: 10,
       icon: '',
-      img: './img/namyen/cautreohoabac.jpg',
+      img: './img/namyen/langnguon.jpg',
       hrefMapinGoogle: 'https://maps.app.goo.gl/fywJTYLMysoKAiLDA',
       title: 'Làng Nguồn',
       description: `
@@ -57,8 +57,8 @@ window.onload = function () {
       `
     },
     marker3: {
-      x: 707,
-      y: 322,
+      x: 759,
+      y: 323,
       radius: 10,
       icon: '',
       img: '',
@@ -76,8 +76,8 @@ window.onload = function () {
       `
     },
     marker4: {
-      x: 761,
-      y: 357,
+      x: 812,
+      y: 361,
       radius: 10,
       icon: '',
       img: '',
@@ -96,7 +96,7 @@ window.onload = function () {
       `,
     },
     marker5: {
-      x: 886,
+      x: 934,
       y: 633,
       radius: 10,
       icon: '',
@@ -118,8 +118,8 @@ window.onload = function () {
 
     },
     marker6: {
-      x: 721,
-      y: 331,
+      x: 769,
+      y: 329,
       radius: 10,
       icon: '',
       img: '',
@@ -137,8 +137,8 @@ window.onload = function () {
       `
     },
     marker7: {
-      x: 729,
-      y: 316,
+      x: 778,
+      y: 320,
       radius: 10,
       icon: '',
       img: '',
@@ -161,8 +161,8 @@ window.onload = function () {
     `
     },
     marker8: {
-      x: 746,
-      y: 321,
+      x: 797,
+      y: 323,
       radius: 10,
       icon: '',
       img: '',
@@ -184,7 +184,7 @@ window.onload = function () {
       `
     },
     marker9: {
-      x: 805,
+      x: 859,
       y: 213,
       radius: 10,
       icon: '',
@@ -213,7 +213,7 @@ window.onload = function () {
       `,
     },
     marker10: {
-      x: 1054,
+      x: 1105,
       y: 377,
       radius: 10,
       icon: '',
@@ -229,8 +229,8 @@ window.onload = function () {
       <strong>Không cung cấp dịch vụ lưu trú.</strong> `
     },
     marker11: {
-      x: 632,
-      y: 312,
+      x: 683,
+      y: 311,
       radius: 10,
       icon: '',
       img: '',
@@ -240,8 +240,8 @@ window.onload = function () {
 
     },
     marker12: {
-      x: 638,
-      y: 285,
+      x: 686,
+      y: 283,
       radius: 10,
       icon: '',
       img: '',
@@ -260,7 +260,7 @@ window.onload = function () {
       `
     },
     marker13: {
-      x: 644,
+      x: 692,
       y: 240,
       radius: 10,
       icon: '',
@@ -277,8 +277,8 @@ window.onload = function () {
 
     },
     marker14: {
-      x: 585,
-      y: 314,
+      x: 636,
+      y: 316,
       radius: 10,
       icon: '',
       img: '',
@@ -293,7 +293,7 @@ window.onload = function () {
       `
     },
     marker15: {
-      x: 537,
+      x: 588,
       y: 264,
       radius: 10,
       map: `<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30661.008822904496!2d108.01087353605213!3d16.136631307566265!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31418bd3ca7c84c1%3A0xb304c8f2904e86f5!2zTMOgbmcgTcOq!5e0!3m2!1svi!2s!4v1713952355600!5m2!1svi!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`,
@@ -320,23 +320,6 @@ window.onload = function () {
 
   ctx.drawImage(image, widthW, heightW);
 
-
-  // function convertCoordinatesToPercent(markerData, canvas) {
-  //   for (const key in markerData) {
-  //     if (markerData.hasOwnProperty(key)) {
-  //       const marker = markerData[key];
-  //       marker.x = (marker.x / canvas.width) * 100;
-  //       marker.y = (marker.y / canvas.height) * 100;
-  //     }
-  //   }
-  // }
-
-
-  // Gọi hàm để chuyển đổi tọa độ của tất cả các điểm đánh dấu sang %
-  // convertCoordinatesToPercent(markerData, canvas);
-
-
-
   window.addEventListener('mousemove', function (event) {
     var rect = canvas.getBoundingClientRect();
     var x = event.clientX - rect.left;
@@ -350,7 +333,7 @@ window.onload = function () {
           (x - marker.x) ** 2 + (y - marker.y) ** 2);
         ctx.beginPath();
 
-        ctx.arc(marker.x, marker.y, marker.radius, 0, 2 * Math.PI);
+        ctx.arc(marker.x, marker.y, marker.radius - 2, 0, 2 * Math.PI);
         ctx.fillStyle = 'red';
         ctx.fill();
         if (distance <= marker.radius) {
@@ -398,21 +381,21 @@ window.onload = function () {
   });
 
 
-  // function getMousePos(canvas, event) {
-  //   const rect = canvas.getBoundingClientRect(); // Lấy kích thước và vị trí tuyệt đối của canvas trong cửa sổ trình duyệt
-  //   const x = event.clientX - rect.left; // Tính toán tọa độ x của chuột
-  //   const y = event.clientY - rect.top; // Tính toán tọa độ y của chuột
-  //   return { x, y };
-  // }
+  function getMousePos(canvas, event) {
+    const rect = canvas.getBoundingClientRect(); // Lấy kích thước và vị trí tuyệt đối của canvas trong cửa sổ trình duyệt
+    const x = event.clientX - rect.left; // Tính toán tọa độ x của chuột
+    const y = event.clientY - rect.top; // Tính toán tọa độ y của chuột
+    return { x, y };
+  }
 
-  // // Sự kiện di chuột trên canvas
-  // canvas.addEventListener('mousemove', function (event) {
-  //   const mousePos = getMousePos(canvas, event); // Lấy tọa độ của chuột trong canvas
-  //   ctx.clearRect(500, 190, 200, 100); // Xóa vùng hiển thị tọa độ trước đó
-  //   ctx.fillStyle = 'black'; // Thiết lập màu vẽ
-  //   ctx.fillText(`X: ${mousePos.x}, Y: ${mousePos.y}`, 500, 200); // Hiển thị tọa độ
+  // Sự kiện di chuột trên canvas
+  canvas.addEventListener('mousemove', function (event) {
+    const mousePos = getMousePos(canvas, event); // Lấy tọa độ của chuột trong canvas
+    ctx.clearRect(200, 190, 200, 100); // Xóa vùng hiển thị tọa độ trước đó
+    ctx.fillStyle = 'black'; // Thiết lập màu vẽ
+    ctx.fillText(`X: ${mousePos.x}, Y: ${mousePos.y}`, 200, 200); // Hiển thị tọa độ
 
-  // });
+  });
 
 
   //   window.addEventListener('DOMContentLoaded', function() {
