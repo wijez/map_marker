@@ -1,0 +1,219 @@
+#map-container {
+  position: relative;
+  display: none;
+    justify-content: center;
+  }
+
+#myCanvas {
+  right: 0;
+}
+
+#cavas-container {
+  right: 0;
+  position: absolute;
+  top: 50%;
+  height: 50%;
+}
+#myCanvas{
+  right: 0;
+  
+}
+
+  .marker {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: red;
+  border-radius: 50%;
+  cursor: pointer;
+  }
+  
+  #info-box {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: white;
+  padding: 10px;
+  border: 1px solid #ccc;
+  display: block;
+  }
+  
+  .hidden {
+  display: block;
+  }
+
+  #info-card {
+    display: block;
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  #info-card strong {
+    font-weight: bold;
+  }
+  
+  #info-card img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 10px;
+  }
+
+
+
+
+
+  
+  .menu{
+    background-color:#E4FBF3;
+}
+.title{
+    background-color: rgb(240, 80, 80);
+    color: white;
+    font-size: 25px;
+    padding: 5px 5px;
+    font:bold;
+}
+.link-map p:hover{
+    background-color: #00B46F;
+}
+.link-map p{
+    color: rgb(0, 0, 0);
+    margin-left: 5px;
+    border-radius: 15px;
+    padding: 10px 15px;
+}
+#goi-y-nam-yen{
+display: none;
+}
+#len{
+display: none;
+}
+#goi-y-ta-lang{
+display: none;
+}
+#up{
+display: none;
+}
+#menu-hien{
+z-index: 1;
+}
+
+
+.menu {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+
+  overflow-y: auto;
+  /* display: none; */
+}
+.menu-hien {
+  position: absolute;
+  display: inline-block;
+  top: 0;
+  left: 0;
+}
+.menu .menu-an {
+  width: auto;
+  height: 100vh;
+}
+
+.menu .menu-an .menu-an-foot .link-map {
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  font-family: sans-serif;
+  color: black;
+  text-decoration: none;
+}
+.menu .menu-an .menu-an-foot .link-map:hover {
+  color: blue;
+}
+.menu-an-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.container {
+  position: relative;
+}
+
+
+@media only screen and (max-width: 768px) {
+  .container {
+    max-width: 100%; /* Đảm bảo rằng hình ảnh map không vượt quá kích thước màn hình */
+  }
+  img {
+    max-width: 100%;
+  }
+}
+ul {
+  list-style: none;
+  margin-left: 20px;
+  padding-left: 10px;
+}
+ul li {
+  width: 300px;
+  padding-bottom: 15px;
+}
+ul li a {
+  text-decoration: none;
+  font-size: 15px;
+  display: flex;
+  gap: 10px;
+  color: black;
+  justify-content: left;
+  align-items: center;
+}
+
+.menu-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.image-container {
+  position: relative;
+  display: inline-block;
+  border-radius: 10px ;
+}
+
+.image-container:hover {
+  transform: translateY(-300px)
+}
+
+.hover-image {
+  width: 60px;
+  height: 60px;
+  transition: transform 0.3s ease;
+}
+
+.hover-image:hover {
+  transform: scale(5); 
+}
+
+.image-info {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  visibility: hidden;
+  opacity: 0; 
+  transition: visibility 0 opacity 0.3s ease;
+}
+
+.image-container:hover .image-info {
+  opacity: 1;
+  visibility: visible;
+}
+
