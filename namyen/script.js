@@ -186,10 +186,11 @@ window.onload = function () {
       x: 859,
       y: 213,
       radius: 10,
-      icon: '',
-      img: 'nhathogiaoxu.jpg',
-      hrefMapinGoogle: 'https://maps.app.goo.gl/WdcD7MjBCF8Qaq6F9',
-      title: 'Nhà thờ Giáo xứ Hội Yên',
+      tt: 3,
+      icon: "",
+      img: "nhathogiaoxu.jpg",
+      hrefMapinGoogle: "https://maps.app.goo.gl/WdcD7MjBCF8Qaq6F9",
+      title: "Nhà thờ Giáo xứ Hội Yên",
       description: `
       
       Nhà thờ Giáo xứ Hội Yên nằm ở vị trí đắc địa, là nơi “Tựa Sơn hướng Thủy”, tựa lưng vào 
@@ -232,21 +233,21 @@ window.onload = function () {
       x: 683,
       y: 311,
       radius: 10,
-      icon: '',
-      img: '',
-      hrefMapinGoogle: 'https://maps.app.goo.gl/q9jx1NrDeYzkHpV89',
-      title: 'Cu Đê House',
-      description: ''
-
+      icon: "",
+      img: "",
+      hrefMapinGoogle: "https://maps.app.goo.gl/q9jx1NrDeYzkHpV89",
+      title: "Cu Đê House",
+      description: "",
     },
     marker12: {
       x: 686,
       y: 283,
       radius: 10,
-      icon: '',
-      img: '',
-      hrefMapinGoogle: 'https://maps.app.goo.gl/845RL8oxhcvjEKXy5',
-      title: 'Hòa Bắc Ecolodge - Camping Space Art',
+      icon: "",
+      tt: 6,
+      img: "",
+      hrefMapinGoogle: "https://maps.app.goo.gl/845RL8oxhcvjEKXy5",
+      title: "Hòa Bắc Ecolodge - Camping Space Art",
       description: `<strong>Hòa Bắc Ecolodge - Camping Space Art:</strong> được xem là địa điểm nghỉ dưỡng sinh thái hấp <br>
       dẫn trong khu vực. Nằm nép mình giữa vùng núi Hòa Bắc với không gian xanh mát, cánh 
       rừng thông hòa cùng tiếng chim líu lo, khu vực đồng bằng bằng phẳng. Đây là nơi lý tưởng 
@@ -278,11 +279,12 @@ window.onload = function () {
     marker14: {
       x: 636,
       y: 316,
+      tt: 7,
       radius: 10,
-      icon: '',
-      img: 'campingcude.jpg',
-      hrefMapinGoogle: 'https://maps.app.goo.gl/hw3JMGR2NTPRUriv9',
-      title: 'Cu Đê Camping',
+      icon: "",
+      img: "campingcude.jpg",
+      hrefMapinGoogle: "https://maps.app.goo.gl/hw3JMGR2NTPRUriv9",
+      title: "Cu Đê Camping",
       description: `
       Nằm ngay cạnh bờ sông Cu Đê, khu cắm trại có vẻ đẹp thiên nhiên hoang sơ, không gian
       trong lành của cây cỏ. Đến Cu Đê Camping, du khách có thể chiêm ngưỡng một màu xanh 
@@ -318,7 +320,7 @@ window.onload = function () {
 
   ctx.drawImage(image, widthW, heightW);
 
-  window.addEventListener('click', function (event) {
+  window.addEventListener("click", function (event) {
     var rect = canvas.getBoundingClientRect();
     var x = event.clientX - rect.left;
     var y = event.clientY - rect.top;
@@ -326,11 +328,10 @@ window.onload = function () {
     var infoCardHeight = 300;
 
     for (const marker of Object.values(markerData)) {
-        var distance = Math.sqrt((x - marker.x) ** 2 + (y - marker.y) ** 2);
+      var distance = Math.sqrt((x - marker.x) ** 2 + (y - marker.y) ** 2);
 
-        if (distance <= marker.radius) {
-            infoCard.innerHTML =
-                `
+      if (distance <= marker.radius) {
+        infoCard.innerHTML = `
                 <div style="width:${infoCardWidth}px; height:${infoCardHeight}px">
                     <div class="overflow-hidden" style="display: flex; align-items: center; margin-top: 20px; ">
                         <strong>${marker.title}</strong>
@@ -350,19 +351,22 @@ window.onload = function () {
                         ${marker.map}
                     </div>
                 </div>
-                `
-            var infoCardLeft = event.pageX - (marker.x <= canvas.width - infoCardWidth ? 30 : infoCardWidth - 20);
-            var infoCardTop = event.pageY - (marker.y <= canvas.height - infoCardHeight ? 20 : infoCardHeight + 20);
-            infoCard.style.left = infoCardLeft + 'px';
-            infoCard.style.top = infoCardTop + 'px';
-            infoCard.style.display = 'block';
-            return;
-        }
+                `;
+        var infoCardLeft =
+          event.pageX -
+          (marker.x <= canvas.width - infoCardWidth ? 30 : infoCardWidth - 20);
+        var infoCardTop =
+          event.pageY -
+          (marker.y <= canvas.height - infoCardHeight
+            ? 20
+            : infoCardHeight + 20);
+        infoCard.style.left = infoCardLeft + "px";
+        infoCard.style.top = infoCardTop + "px";
+        infoCard.style.display = "block";
+        return;
+      }
     }
-});
-
-
-
+  });
 
   // function getMousePos(canvas, event) {
   //   const rect = canvas.getBoundingClientRect(); // Lấy kích thước và vị trí tuyệt đối của canvas trong cửa sổ trình duyệt
@@ -380,14 +384,12 @@ window.onload = function () {
 
   // });
 
-
-
   //   window.addEventListener('DOMContentLoaded', function() {
   //     const mapContainer = document.getElementById('mapInGoogle');
   //     const mapLink = document.getElementById('mapInGoogle');
 
   //     mapLink.addEventListener('mouseenter', function() {
-  //         mapContainer.style.display = 'block'; 
+  //         mapContainer.style.display = 'block';
   //         mapContainer.innerHTML = `${markers.map}`
   //     });
 
@@ -396,34 +398,37 @@ window.onload = function () {
   //     });
   // });
 
-  window.addEventListener('click', function (event) {
-    // Kiểm tra xem click có xảy ra bên ngoài các điểm đánh dấu không
-    var isOutsideMarkers = true;
-    for (const markerKey in markerData) {
-      if (markerData.hasOwnProperty(markerKey)) {
+  var arr = document.querySelectorAll("#goi-y-nam-yen li");
+  arr.forEach(function (item, index) {
+    console.log(item);
+    item.addEventListener("click", function (event) {
+      for (const markerKey in markerData) {
         const marker = markerData[markerKey];
         if (marker.tt - 1 == index) {
           console.log(marker);
           infoCard.innerHTML = `
-          <div style= "width : 350px ; height: 300px" >
-          <div style="display: flex; align-items: center; margin-top: 10px; ">
-          <h2><strong>${marker.title}</strong></h2>
-          <a id="mapInGoogle" target="_blank" style="width:30px; height:30px;margin-left: auto;" href="${marker.hrefMapinGoogle}" alt="${marker.title}"><img src="https://img.icons8.com/?size=48&id=kDqO6kPb3xLj&format=gif" alt="Google Maps ${marker.title}"></a> 
-          </div>
 
-          <br><hr>
-          <div style="text-align: justify; max-height:250px;">
-          <p style="">${marker.description}</p>
-          <br>
-          <div>
-          <img style="width:200px; height:150px;" src="./img/namyen/${marker.img}">
-              
-          <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ảnh Minh Họa 
-          <div id="map-container" class="hidden">
+          <div style= "width : 350px ; height: 300px" >
+            <div style="display: flex; align-items: center; margin-top: 10px; height : 10px">
+            <h2><strong>${marker.title}</strong></h2>
+            <a id="mapInGoogle" target="_blank" style="width:30px; height:30px;margin-left: auto;" href="${marker.hrefMapinGoogle}" alt="${marker.title}"><img src="https://img.icons8.com/?size=48&id=kDqO6kPb3xLj&format=gif" alt="Google Maps ${marker.title}"></a> 
+            </div>
+
+            <br><hr>
+            <div style="text-align: justify; max-height:250px; overflow-y:auto">
+            <p>${marker.description}</p>
+            <br>
+            <div>
+            <img style="width:200px; height:150px;" src="${marker.img}">
+                
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ảnh Minh Họa 
+            <div id="map-container" class="hidden">
+            
+            </div>
           
           </div>
-        
-        </div>`;
+
+          `;
           infoCard.style.position = "absolute";
           infoCard.style.display = "block";
           infoCard.style.top = marker.y + "px";
@@ -440,6 +445,6 @@ window.onload = function () {
           });
         }
       }
-    }});
- 
+    });
+  });
 };
