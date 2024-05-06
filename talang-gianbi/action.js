@@ -12,31 +12,19 @@ function hover() {
   document.getElementById("menu").style.transform = "translateX(200px)";
 }
 
-
 //hiển thị submenu
-function hienSub() {
-  document.getElementById("goi-y-nam-yen").style.display = "block";
-  document.getElementById("xuong").style.display = "none";
-  document.getElementById("len").style.display = "block";
-  document.getElementById("dia-diem-1").style.backgroundColor = "#00B46F";
-}
-function anSub() {
-  document.getElementById("goi-y-nam-yen").style.display = "none";
-  document.getElementById("xuong").style.display = "block";
-  document.getElementById("len").style.display = "none";
-  document.getElementById("dia-diem-1").style.background = "none";
-}
+
 function hienSub1() {
   document.getElementById("goi-y-ta-lang").style.display = "block";
   document.getElementById("down").style.display = "none";
   document.getElementById("up").style.display = "block";
-  document.getElementById("dia-diem-2").style.backgroundColor = "#00B46F";
+  document.getElementById("link-map-2").style.backgroundColor = "#aaaaaa";
 }
 function anSub1() {
   document.getElementById("goi-y-ta-lang").style.display = "none";
   document.getElementById("down").style.display = "block";
   document.getElementById("up").style.display = "none";
-  document.getElementById("dia-diem-2").style.background = "none";
+  document.getElementById("link-map-2").style.background = "none";
 }
 
 function setTT1() {
@@ -66,4 +54,3 @@ function setTT2() {
   console.log(tt2);
   tt2 = tt2 + 1;
 }
-

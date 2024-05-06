@@ -1,25 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
-  <title>Marker on Image</title>
-</head>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Marker on Image</title>
+  </head>
 
-<body>
-  <div id="canvas-container">
-    <!-- Định nghĩa canvas và ảnh -->
-    
-    <img id="map" src="./img/namyenmap.jpg" height="1200" style="display:none;">
-    <div id="info-card" style="position: absolute; display: none; background-color: #fff; padding: 10px;"></div>
-  </div>
+  <body>
+    <div id="canvas-container">
+      <!-- Định nghĩa canvas và ảnh -->
 
+      <img id="map" src="./img/namyenmap.jpg" height="1200"
+        style="display:none;">
+      <div id="info-card"></div>
+    </div>
 
-
-  
-  <script>
+    <script>
     // Lấy hình ảnh và marker từ DOM
 var map = document.getElementById("map");
 var marker = document.getElementById("marker");
@@ -38,16 +36,15 @@ function updateMarkerPosition() {
 // Gọi hàm updateMarkerPosition để cập nhật vị trí ban đầu của marker
 updateMarkerPosition();
   </script>
-  
 
-  <!-- <div id="marker1" class="marker"> </div>
+    <!-- <div id="marker1" class="marker"> </div>
   <div id="marker2" class="marker"> </div> -->
-  
-  <div style="width: 300px; height: 500px; ">
-  <div id="info-box" class="hidden">
-    <p id="info-text"></p>
-  </div>
 
-</body>
+    <div style="width: 300px; height: 500px; ">
+      <div id="info-box" class="hidden">
+        <p id="info-text"></p>
+      </div>
 
-</html>
+    </body>
+
+  </html>

@@ -1,15 +1,11 @@
-
-var image = document.getElementById('map');
-var canvas = document.getElementById('myCanvas');
-var infoCard = document.getElementById('info-card');
-
+var image = document.getElementById("map");
+var canvas = document.getElementById("myCanvas");
+var infoCard = document.getElementById("info-card");
 
 // Khi trang đã được tải hoàn toàn
 window.onload = function () {
-
-  var widthW = (canvas.width - image.width) / 2
-  var heightW = (canvas.height - image.height) / 2
-
+  var widthW = (canvas.width - image.width) / 2;
+  var heightW = (canvas.height - image.height) / 2;
 
   // data
 
@@ -18,10 +14,11 @@ window.onload = function () {
       x: 773,
       y: 394,
       radius: 10,
+      tt: 1,
       map: `<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30661.008822904496!2d108.01087353605213!3d16.136631307566265!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31418bd3ca7c84c1%3A0xb304c8f2904e86f5!2zTMOgbmcgTcOq!5e0!3m2!1svi!2s!4v1713952355600!5m2!1svi!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`,
-      img: 'cautreohoabac.jpg',
-      hrefMapinGoogle: 'https://maps.app.goo.gl/xpQDgNvh7PEeZxEt9',
-      title: 'Cầu treo Hòa Bắc',
+      img: "cautreohoabac.jpg",
+      hrefMapinGoogle: "https://maps.app.goo.gl/xpQDgNvh7PEeZxEt9",
+      title: "Cầu treo Hòa Bắc",
       description: `Cầu treo Hòa Bắc còn có tên gọi khác là Cầu dây văng Hòa Bắc, nối hai bờ của con sông 
        Cu Đê. Trước khi cây cầu được xây dựng, người dân di chuyển qua lại hai bên bờ bằng ghe 
       và xuồng. Tuy nhiên, điều này tiềm ẩn rủi ro khi có thời tiết xấu, đặc biệt vào mùa mưa lũ.
@@ -37,16 +34,17 @@ window.onload = function () {
       Có nhiều homestay, khu cắm trại xung quanh cây cầu,
       an ninh đảm bảo. Vì vậy, khách du lịch hoàn toàn có thể yên tâm để trải nghiệm và khám
        phá địa điểm tuyệt vời này.
-      `
+      `,
     },
     marker2: {
       x: 747,
       y: 333,
       radius: 10,
-      icon: '',
-      img: 'langnguon.jpg',
-      hrefMapinGoogle: 'https://maps.app.goo.gl/fywJTYLMysoKAiLDA',
-      title: 'Làng Nguồn',
+      tt: 5,
+      icon: "",
+      img: "langnguon.jpg",
+      hrefMapinGoogle: "https://maps.app.goo.gl/fywJTYLMysoKAiLDA",
+      title: "Làng Nguồn",
       description: `
       Nằm ngay tại trung tâm thôn Nam Yên, xã Hoà Bắc, huyện Hoà Vang, TP. Đà Nẵng.
       Làng Nguồn là điểm đến tuyệt vời dành cho gia đình, bạn bè mỗi dịp cuối tuần hay
@@ -54,16 +52,16 @@ window.onload = function () {
       Làng Nguồn có 13 phòng hiện đại, sức chứa 4 - 5 người/phòng với đầy đủ tiện nghi 
       bao gồm phòng bếp và phòng ăn. Tại đây còn cung cấp dịch vụ cắm trại và tổ chức
       sự kiện cũng như nhiều không gian đẹp để du khách check-in.
-      `
+      `,
     },
     marker3: {
       x: 759,
       y: 323,
       radius: 10,
-      icon: '',
-      img: '',
-      hrefMapinGoogle: '',
-      title: 'Homestay Sang',
+      icon: "",
+      img: "",
+      hrefMapinGoogle: "",
+      title: "Homestay Sang",
       description: `
       Homestay Sang sở hữu cảnh quan thiên nhiên tuyệt đẹp với núi rừng và những thửa ruộng 
       bậc thang. Du khách sẽ được tận hưởng bầu không khí trong lành, yên bình và hòa mình 
@@ -73,16 +71,16 @@ window.onload = function () {
       Homestay cung cấp nhiều hoạt động vui chơi giải trí như tour tham quan bản làng bằng xe
       đạp, đốt lửa trại, ...Đặc biệt, du khách còn được thưởng thức những món ăn đặc sản của
       người dân địa phương như gà nướng, cơm lam, rau rừng…
-      `
+      `,
     },
     marker4: {
       x: 812,
       y: 361,
       radius: 10,
-      icon: '',
-      img: 'campinghoabac.jpg',
-      hrefMapinGoogle: '',
-      title: 'Khu cắm trại Hòa Bắc',
+      icon: "",
+      img: "campinghoabac.jpg",
+      hrefMapinGoogle: "",
+      title: "Khu cắm trại Hòa Bắc",
       description: `
       Khu cắm trại Hòa Bắc là một bờ đất trống nhô ra từ bãi bồi của sông Cu đê. Đi vào con 
       đường đối diện với Trạm y tế Hòa Bắc tầm 200m, du khách sẽ thấy bảng chỉ dẫn rẽ trái
@@ -99,10 +97,11 @@ window.onload = function () {
       x: 934,
       y: 633,
       radius: 10,
-      icon: '',
-      img: 'vacbachong.jpg',
-      hrefMapinGoogle: '',
-      title: 'Mô hình vườn - ao - chuồng - nhà bác Hồng',
+      icon: "",
+      tt: 9,
+      img: "vacbachong.jpg",
+      hrefMapinGoogle: "",
+      title: "Mô hình vườn - ao - chuồng - nhà bác Hồng",
       description: `
  
       Vườn - ao - chuồng nhà bác Hồng là nơi cung cấp nguồn lương thực, thực phẩm chủ yếu
@@ -114,16 +113,16 @@ window.onload = function () {
       những hoạt động tham quan, học tập, tìm hiểu các phương pháp canh tác cây trồng và phát 
       triển nông nghiệp.
 
-     `
-
+     `,
     },
     marker6: {
       x: 769,
       y: 329,
       radius: 10,
-      img: 'campingnamyen.jpg',
-      hrefMapinGoogle: '',
-      title: 'Nam Yên Camping',
+      tt: 8,
+      img: "campingnamyen.jpg",
+      hrefMapinGoogle: "",
+      title: "Nam Yên Camping",
       description: `
      
       Khu vực cắm trại tại <strong>Nam Yên Camping</strong> được trang bị cơ sở hạ tầng hiện đại, ẩm thực 
@@ -133,16 +132,16 @@ window.onload = function () {
       trại, đêm nhạc hát cho nhau nghe
       theo yêu cầu của du khách.
      
-      `
+      `,
     },
     marker7: {
       x: 778,
       y: 320,
       radius: 10,
-      icon: '',
-      img: '',
-      hrefMapinGoogle: '',
-      title: 'Homestay Hoa Chín',
+      icon: "",
+      img: "",
+      hrefMapinGoogle: "",
+      title: "Homestay Hoa Chín",
       description: `
      
       Homestay Hoa Chín tọa lạc tại thôn Nam Yên, xã Hòa Bắc, huyện Hòa Vang, TP. Đà Nẵng
@@ -157,15 +156,16 @@ window.onload = function () {
       ●	Homestay dừng hoạt động từ tháng 9 đến tháng 12 do ảnh hưởng của mưa lũ 
       ●	Sinh viên sẽ được giảm giá thuê phòng khi mang theo thẻ sinh viên.
      
-    `
+    `,
     },
     marker8: {
       x: 797,
       y: 323,
       radius: 10,
-      icon: '',
-      img: 'hoptacxa.jpg',
-      hrefMapinGoogle: '',
+      icon: "",
+      tt: 4,
+      img: "hoptacxa.jpg",
+      hrefMapinGoogle: "",
       title: `Trung tâm Du lịch học tập cộng đồng Hợp tác xã (HTX) <br>
                Nông nghiệp sinh thái & Du lịch cộng đồng Hòa Bắc`,
       description: `
@@ -180,7 +180,7 @@ window.onload = function () {
       xe đạp và xe điện du lịch. Quanh khu vực homestay có các quầy tạp hóa, quán cafe gần kề 
       nên rất thuận lợi cho du khách. An ninh tại khu vực này rất tốt.
       
-      `
+      `,
     },
     marker9: {
       x: 859,
@@ -215,17 +215,18 @@ window.onload = function () {
       x: 1105,
       y: 377,
       radius: 10,
-      icon: '',
-      img: 'vuonrungbacdu.jpg',
-      hrefMapinGoogle: '',
-      title: 'Vườn rừng bác Du',
+      icon: "",
+      tt: 2,
+      img: "vuonrungbacdu.jpg",
+      hrefMapinGoogle: "",
+      title: "Vườn rừng bác Du",
       description: `
       Vườn rừng bác Du nằm trong con hẻm nhỏ, trong vườn có hồ cá cùng với mạch nước ngầm
       từ sông Cu Đê nên hồ không bao giờ bị khô cạn. Trong vườn có rất nhiều loại cây như tre,
       chuối, bắp, khế, mía, cây bạc hà và có các loài chim, khỉ đến đây sinh sống. Đặc biệt, chủ
       vườn có trồng cây sao đen quý. Du khách từ các cơ sở lưu trú lân cận chủ yếu đến vườn để
       tham quan mô hình vườn rừng. <br>
-      <strong>Không cung cấp dịch vụ lưu trú.</strong> `
+      <strong>Không cung cấp dịch vụ lưu trú.</strong> `,
     },
     marker11: {
       x: 683,
@@ -256,24 +257,23 @@ window.onload = function () {
       trại với không gian thoáng đãng. Chi phí thuê lều cho khách lẻ và khách theo đoàn dao 
       động từ 200.000 - 6000.000 đồng/người/ngày.
 
-      `
+      `,
     },
     marker13: {
       x: 692,
       y: 240,
       radius: 10,
-      icon: '',
-      img: '',
-      hrefMapinGoogle: '',
-      title: 'Đền Âm Linh',
+      icon: "",
+      img: "",
+      hrefMapinGoogle: "",
+      title: "Đền Âm Linh",
       description: `
         Khu vực thờ cúng linh thiêng trong thôn đã có từ khoảng thế kỉ 19. Công trình đã bị tàn phá
         sau chiến tranh chống thực dân Pháp và được xây dựng lại từ năm 1992. Đền Âm Linh 
         nằm trên vùng đất bằng phẳng, xung quanh được bao quanh bởi đồi núi. Bên trong đền có 
         9 gian cúng tế. Đây là nơi thờ cúng những người vô danh, không nơi nương tựa. Tại đây
         du khách có thể tham dự lễ hội cúng bái được tổ chức vào ngày 25 tháng chạp hằng năm.
-        `
-
+        `,
     },
     marker14: {
       x: 636,
@@ -289,16 +289,16 @@ window.onload = function () {
       bạt ngàn của đồng cỏ, núi rừng, dòng sông và bầu trời.
       <br><br>
       Cu Đê Camping cung cấp dịch vụ cafe, ăn uống và lưu trú với khu vực lều trại riêng biệt. 
-      `
+      `,
     },
     marker15: {
       x: 588,
       y: 264,
       radius: 10,
       map: `<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30661.008822904496!2d108.01087353605213!3d16.136631307566265!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31418bd3ca7c84c1%3A0xb304c8f2904e86f5!2zTMOgbmcgTcOq!5e0!3m2!1svi!2s!4v1713952355600!5m2!1svi!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`,
-      img: '',
-      hrefMapinGoogle: 'https://maps.app.goo.gl/Dyf9KTgaPTim6zH47',
-      title: 'Làng Mê',
+      img: "",
+      hrefMapinGoogle: "https://maps.app.goo.gl/Dyf9KTgaPTim6zH47",
+      title: "Làng Mê",
       description: `
       Làng Mê nằm ở thôn Nam Yên, xã Hòa Bắc, huyện Hòa Vang, TP. Đà Nẵng, với lợi thế
       không gian rộng rãi, thoáng mát. Nơi đây là địa điểm du lịch lý tưởng, thích hợp với nghỉ
@@ -309,13 +309,12 @@ window.onload = function () {
       nên ở đây cung cấp nhiều trải nghiệm dịch vụ hấp dẫn trong quá trình du khách lưu trú Giá
       dịch vụ sẽ từ 500.000 đồng/người/ngày. 
 
-      `
+      `,
     },
   };
 
-
   // xử lý vẽ điểm
-  var ctx = canvas.getContext('2d');
+  var ctx = canvas.getContext("2d");
 
   ctx.drawImage(image, widthW, heightW);
 
@@ -403,26 +402,44 @@ window.onload = function () {
     for (const markerKey in markerData) {
       if (markerData.hasOwnProperty(markerKey)) {
         const marker = markerData[markerKey];
-        var rect = canvas.getBoundingClientRect();
-        var x = event.clientX - rect.left;
-        var y = event.clientY - rect.top;
-        var distance = Math.sqrt(
-          (x - marker.x) **
-          2 +
-          (y - marker.y) **
-          2
-        );
-        if (distance <= marker.radius) {
-          isOutsideMarkers = false;
-          break;
+        if (marker.tt - 1 == index) {
+          console.log(marker);
+          infoCard.innerHTML = `
+          <div style= "width : 350px ; height: 300px" >
+          <div style="display: flex; align-items: center; margin-top: 10px; ">
+          <h2><strong>${marker.title}</strong></h2>
+          <a id="mapInGoogle" target="_blank" style="width:30px; height:30px;margin-left: auto;" href="${marker.hrefMapinGoogle}" alt="${marker.title}"><img src="https://img.icons8.com/?size=48&id=kDqO6kPb3xLj&format=gif" alt="Google Maps ${marker.title}"></a> 
+          </div>
+
+          <br><hr>
+          <div style="text-align: justify; max-height:250px;">
+          <p style="">${marker.description}</p>
+          <br>
+          <div>
+          <img style="width:200px; height:150px;" src="./img/namyen/${marker.img}">
+              
+          <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ảnh Minh Họa 
+          <div id="map-container" class="hidden">
+          
+          </div>
+        
+        </div>`;
+          infoCard.style.position = "absolute";
+          infoCard.style.display = "block";
+          infoCard.style.top = marker.y + "px";
+          infoCard.style.left = marker.x + "px";
+
+          event.preventDefault();
+          var offsetTop = infoCard.offsetTop;
+          var windowHeight = window.innerHeight;
+          var halfWindowHeight = windowHeight / 2;
+          var scrollTo = offsetTop - halfWindowHeight;
+          window.scrollTo({
+            top: scrollTo,
+            behavior: "smooth",
+          });
         }
       }
-    }
-    // Nếu click xảy ra bên ngoài các điểm đánh dấu, ẩn thông tin
-    if (isOutsideMarkers) {
-      infoCard.style.display = 'none';
-    }
+    });
   });
-}
-
-
+};
