@@ -222,30 +222,44 @@ for (const key in markerData) {
        if (distance <= marker.radius) {
          
           infoCard.innerHTML =
-          `
+          // `
+          // <div class = "hienthithongtin" style= "width : 450px ; height: 300px " >
+          //   <div style="display: flex; align-items: center; margin-top: 10px; height : 10px  ;">
+          //     <h2><strong>${marker.title}</strong></h2>
+          //     <a id="mapInGoogle" target="_blank" style="width:30px; height:30px;margin-left: auto;" href="${marker.hrefMapinGoogle}" alt="${marker.title}"><img src="https://img.icons8.com/?size=48&id=kDqO6kPb3xLj&format=gif" alt="Google Maps ${marker.title}"></a> 
+          //     </div>
 
-          <div style= "width : 350px ; height: 300px" >
-            <div style="display: flex; align-items: center; margin-top: 10px; height : 10px">
-            <h2><strong>${marker.title}</strong></h2>
-            <a id="mapInGoogle" target="_blank" style="width:30px; height:30px;margin-left: auto;" href="${marker.hrefMapinGoogle}" alt="${marker.title}"><img src="https://img.icons8.com/?size=48&id=kDqO6kPb3xLj&format=gif" alt="Google Maps ${marker.title}"></a> 
-            </div>
-
-            <br><hr>
-            <div style="text-align: justify; max-height:250px; overflow-y:auto">
-            <p>${marker.description}</p>
-            <br>
-            <div>
-            <img style="width:200px; height:150px;" src="${marker.img}">
-                
-            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ảnh Minh Họa 
-            <div id="map-container" class="hidden">
-            
-            </div>
+          //     <br><hr>
+          //     <div style="text-align: justify; max-height:250px; overflow-y:auto">
+          //       <p>${marker.description}</p>
+          //       <br>
+          //     <div>
+          //     <img style="width:200px; height:150px;" src="${marker.img}">
+                  
+          //     <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ảnh Minh Họa 
+          //     <div id="map-container" class="hidden"></div>
+          // </div>
+          // `
           
-          </div>
-
+          
           `
+          <div class = "info" style= "width : 400px ; height: 250px " >
+            <div style="text-align: justify; max-height:250px; overflow-y:auto">
+            <img style="width:400px; height:190px; padding-bottom:0px" src="${marker.img}">
+            <h2>${marker.title}</h2>
+            <hr> 
+            <a href="${marker.hrefMapinGoogle}" ><img src="./img/talanggianbi/placeholder.png" style='width:40px; height:40px',></a>
+            <br>
+            <a href="${marker.hrefMapinGoogle}" >Địa Chỉ</a>
 
+            <hr>
+            <div class "content">
+              <p>${marker.description}</p>
+              
+            </div>
+            </div>    
+          </div>
+          `
 
          if (marker.x <= canvas.width - 376 && marker.y <= canvas.height - 300) {
             infoCard.style.left = (event.pageX - 0) + 'px';
@@ -257,7 +271,7 @@ for (const key in markerData) {
            infoCard.style.left = (event.pageX - 370) + 'px';
            infoCard.style.top = (event.pageY - 2) + 'px';
            infoCard.style.display = 'block';
-           return;
+           return;``
          }
          else if(marker.x < canvas.width - 376 && marker.y > canvas.height - 300){
           infoCard.style.left = (event.pageX - 0) + 'px';
