@@ -1,6 +1,5 @@
 #map-container {
   position: relative;
-  /* display: none; */
   justify-content: center;
 }
 
@@ -48,7 +47,7 @@
   background-color: white;
   border: 1px solid #ccc;
   border-radius: 10px;
-  padding: 10px;
+  padding: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -206,18 +205,20 @@ ul li a {
 }
 
 .image-container {
+
   position: relative;
   display: inline-block;
   border-radius: 10px;
 }
 
 .image-container:active {
-  transform: translateY(-300px)
+  z-index: 1;
+  transform: translateY(-200px)
 }
 
 .hover-image {
-  width: 60px;
-  height: 60px;
+  width: 40px;
+  height: 40px;
   transition: transform 0.3s ease;
 }
 
@@ -246,12 +247,7 @@ ul li a {
 }
 
 
-
-
-/* .overflow-hidden {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  width: 100%; 
-}  */
-
+iframe {
+  width: 300px;
+  height: 200px;
+}
