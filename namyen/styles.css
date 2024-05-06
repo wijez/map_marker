@@ -1,8 +1,8 @@
 #map-container {
   position: relative;
-  display: none;
-    justify-content: center;
-  }
+  /* display: none; */
+  justify-content: center;
+}
 
 #myCanvas {
   right: 0;
@@ -14,21 +14,21 @@
   top: 50%;
   height: 50%;
 }
-#myCanvas{
+
+#myCanvas {
   right: 0;
-  
 }
 
-  .marker {
+.marker {
   position: absolute;
   width: 10px;
   height: 10px;
   background-color: red;
   border-radius: 50%;
   cursor: pointer;
-  }
-  
-  #info-box {
+}
+
+#info-box {
   position: absolute;
   top: 10px;
   right: 10px;
@@ -36,90 +36,104 @@
   padding: 10px;
   border: 1px solid #ccc;
   display: block;
-  }
-  
-  .hidden {
+}
+
+.hidden {
   display: block;
-  }
-
-  #info-card {
-    display: block;
-    position: absolute;
-    background-color: white;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    padding: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  #info-card strong {
-    font-weight: bold;
-  }
-  
-  #info-card img {
-    max-width: 100%;
-    height: auto;
-    margin-top: 10px;
-  }
-
-
-
-
-
-  
-  .menu{
-    background-color:#E4FBF3;
-}
-.title{
-    background-color: rgb(240, 80, 80);
-    color: white;
-    font-size: 25px;
-    padding: 5px 5px;
-    font:bold;
-}
-.link-map p:hover{
-    background-color: #00B46F;
-}
-.link-map p{
-    color: rgb(0, 0, 0);
-    margin-left: 5px;
-    border-radius: 15px;
-    padding: 10px 15px;
-}
-#goi-y-nam-yen{
-display: none;
-}
-#len{
-display: none;
-}
-#goi-y-ta-lang{
-display: none;
-}
-#up{
-display: none;
-}
-#menu-hien{
-z-index: 1;
 }
 
+#info-card {
+  display: none;
+  position: absolute;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#info-card strong {
+  font-weight: bold;
+}
+
+#info-card img {
+  max-width: 100%;
+  height: auto;
+  margin-top: 10px;
+}
+
+.menu {
+  background-color: #e7e7e7;
+}
+
+.title {
+  /* background-color: rgb(116, 108, 108); */
+  color: rgb(0, 0, 0);
+  font-size: 25px;
+  padding: 15px 5px;
+  font: bold;
+}
+
+.link-map p {
+  color: rgb(0, 0, 0);
+
+  border-radius: 15px;
+}
+
+.link-map {
+  width: 300px;
+  padding: 5px 10px;
+  border-radius: 10px;
+
+}
+
+.link-map:hover {
+  background-color: #aaaaaa;
+}
+
+
+#goi-y-nam-yen {
+  display: none;
+}
+
+#len {
+  display: none;
+}
+
+#goi-y-ta-lang {
+  display: none;
+}
+
+#up {
+  display: none;
+}
+
+#menu-hien {
+  z-index: 1;
+}
 
 .menu {
   position: fixed;
-  top: 10px;
-  left: 10px;
-
+  top: 0px;
+  left: 0px;
   overflow-y: auto;
   /* display: none; */
 }
-.menu-hien {
+
+#menu-hien {
   position: absolute;
-  display: inline-block;
-  top: 0;
-  left: 0;
+  display: none;
+  top: 10px;
+  left: 10px;
 }
+
 .menu .menu-an {
-  width: auto;
+  width: 300px;
   height: 100vh;
+}
+
+.menu .menu-an .menu-an-foot {
+  width: 300px;
 }
 
 .menu .menu-an .menu-an-foot .link-map {
@@ -130,44 +144,58 @@ z-index: 1;
   color: black;
   text-decoration: none;
 }
-.menu .menu-an .menu-an-foot .link-map:hover {
-  color: blue;
-}
+
+
+
 .menu-an-head {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+
 .container {
   position: relative;
 }
 
-
 @media only screen and (max-width: 768px) {
   .container {
-    max-width: 100%; /* Đảm bảo rằng hình ảnh map không vượt quá kích thước màn hình */
+    max-width: 100%;
+    /* Đảm bảo rằng hình ảnh map không vượt quá kích thước màn hình */
   }
+
   img {
     max-width: 100%;
   }
 }
+
 ul {
   list-style: none;
-  margin-left: 20px;
   padding-left: 10px;
+  width: 300px;
 }
+
+
+
 ul li {
   width: 300px;
-  padding-bottom: 15px;
+  display: flex;
+  padding: 6px;
+  justify-content: left;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
 }
+
+ul li:hover {
+  background-color: #bebebe;
+  border-radius: 5px;
+}
+
 ul li a {
   text-decoration: none;
   font-size: 15px;
-  display: flex;
-  gap: 10px;
   color: black;
-  justify-content: left;
-  align-items: center;
+
 }
 
 .menu-container {
@@ -180,11 +208,11 @@ ul li a {
 .image-container {
   position: relative;
   display: inline-block;
-  border-radius: 10px ;
+  border-radius: 10px;
 }
 
 .image-container:hover {
-  transform: translateY(-300px)
+  transform: translateY(-300px);
 }
 
 .hover-image {
@@ -194,7 +222,7 @@ ul li a {
 }
 
 .hover-image:hover {
-  transform: scale(5); 
+  transform: scale(5);
 }
 
 .image-info {
@@ -208,7 +236,7 @@ ul li a {
   border-radius: 5px;
   font-size: 14px;
   visibility: hidden;
-  opacity: 0; 
+  opacity: 0;
   transition: visibility 0 opacity 0.3s ease;
 }
 
@@ -216,4 +244,3 @@ ul li a {
   opacity: 1;
   visibility: visible;
 }
-

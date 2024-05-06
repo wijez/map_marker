@@ -1,180 +1,198 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
-  <title>Marker on Image</title>
-  <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
-  <script src="action.js"></script>
-</head>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Marker on Image</title>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <script src="action.js"></script>
+  </head>
 
-<body>
-  <div id="canvas-container">
-    <!-- Định nghĩa canvasvà ảnh -->
-    <button id="closeButton">Close</button>
+  <body>
+    <div id="canvas-container">
+      <!-- Định nghĩa canvasvà ảnh -->
+      <button id="closeButton">Close</button>
 
-    <canvas id="myCanvas" width="1366" height="768" style="border: 1px solid #000; position: absolute;"></canvas>
-    <img id="map" src="./img/talanggianbi/map4.png"  style="display:none;">
-    <div id="info-card" style="position: absolute; display: none; background-color: #fff; padding: 10px;"></div>
-  </div>
-  
-  <div class="menu-container">
-    <box-icon name='list-ul' id="menu-hien" onclick="hien()"></box-icon>
-    <div class="menu" id="menu">
+      <canvas id="myCanvas" width="1366" height="768"
+        style="border: 1px solid #000; position: absolute;"></canvas>
+      <img id="map" src="./img/talanggianbi/map4.png" style="display:none;">
+      <div id="info-card"
+        style="position: absolute; display: none; background-color: #fff; padding: 10px;"></div>
+    </div>
 
-      <div class="menu-an" id="menu-an">
-        <div class="menu-an-head">
-          <p class="title">DU LỊCH HÒA BẮC</p>
-          <box-icon name='x' onclick="an()"></box-icon>
-        </div>
-        <hr>
-        <div class="menu-an-foot">
-          <a class="link-map" href="#">
-            <p id="dia-diem-1" onclick="setTT1()">Nam Yên</p>
-            <box-icon type='solid' id="xuong" name='chevron-down' onclick="hienSub()"></box-icon>
-            <box-icon type='solid' name='chevron-up' id="len" onclick="anSub()"></box-icon>
-          </a>
-          <ul id="goi-y-nam-yen">
-            <li>
-              <a href="#">
-                <img src="./img/namyen/cautreohoabac.jpg" width="30px" height="30px">
-                Cầu treo hòa bắc
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <img src="./img/namyen/vuonrungbacdu.jpg" width="30px" height="30px">
-                Vườn rừng bác Du
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <img src="./img/namyen/nhathogiaoxu.jpg" width="30px" height="30px">
-                Nhà thờ Giáo xứ Hội Yên
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <img src="./img/namyen/hoptacxa.jpg" width="30px" height="30px">
-                HTXNN & Du lịch cộng đồng Hòa Bắc
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <img src="./img/namyen/langnguon.jpg" width="30px" height="30px">
-                Làng Nguồn
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <img src="./img/namyen/campinghoabac.jpg" width="30px" height="30px">
-                Hòa Bắc Ecolodge-Camping
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <img src="./img/namyen/campingcude.jpg" width="30px" height="30px">
-                Cu Đê Camping
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <img src="./img/namyen/campingnamyen.jpg" width="30px" height="30px">
-                Nam Yên Camping
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <img src="./img/namyen/vuonrungbacdu.jpg" width="30px" height="30px">
-                Vườn-ao-chuồng-nhà bác Hồng
-              </a>
-            </li>
-          </ul>
-          <!-- Tà lang giàn bí -->
-          <a class="link-map" href="#">
-            <p id="dia-diem-2" onclick="setTT2()">Tà Lang-Giàn
-              Bí</p>
-            <box-icon type='solid' id="down" name='chevron-down' onclick="hienSub1()"></box-icon>
-            <box-icon type='solid' name='chevron-up' id="up" onclick="anSub1()"></box-icon>
-          </a>
+    <div class="menu-container">
+      <box-icon name='list-ul' id="menu-hien" onclick="hien()"></box-icon>
+      <div class="menu" id="menu">
 
-          <ul id="goi-y-ta-lang">
-            <li>
-              <a href="#">
-                <img src="./img/talanggianbi/nhaguoitalang.jpg" width="30px" height="30px">
-                Nhà Gươl thôn Tà Lang
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <img src="./img/talanggianbi/dantalu.jpg" width="30px" height="30px">
-                Nghệ nhân đàn Ta Lư
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <img src="./img/talanggianbi/cotindetthocam.jpg" width="30px" height="30px">
-                Nhà cô Tin–Dệt thổ cẩm
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <img src="./img/talanggianbi/conauche.jpg" width="30px" height="30px">
-                Cô Chọn nấu Chè dây
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <img src="./img/talanggianbi/vungbot.jpg" width="30px" height="30px">
-                Vũng Bọt
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <img src="./img/talanggianbi/homestaythihong.jpg" width="30px" height="30px">
-                Homestay Thị Hồng
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <img src="./img/talanggianbi/homestayalang.jpg" width="30px" height="30px">
-                Homestay ALăng Như
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <img src="./img/talanggianbi/nhaguoi.jpg" width="30px" height="30px">
-                Nhà Gươl thôn Giàn Bí
-              </a>
-            </li>
-            <li>
-              <a href="#">
-              </a>
-            </li>
-          </ul>
+        <div class="menu-an" id="menu-an">
+          <div class="menu-an-head">
+            <p class="title">DU LỊCH HÒA BẮC</p>
+            <box-icon name='x' onclick="an()"></box-icon>
+          </div>
+          <hr>
+          <div class="menu-an-foot">
+            <a class="link-map" href="../namyen/index.html">
+              <p id="dia-diem-1" onclick="setTT1()">Nam Yên</p>
+              <box-icon type='solid' id="xuong" name='chevron-down'
+                onclick="hienSub()"></box-icon>
+              <box-icon type='solid' name='chevron-up' id="len"
+                onclick="anSub()"></box-icon>
+            </a>
+            <ul id="goi-y-nam-yen">
+              <li>
+                <a href="#">
+                  <img src="./img/namyen/cautreohoabac.jpg" width="30px"
+                    height="30px">
+                  Cầu treo hòa bắc
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="./img/namyen/vuonrungbacdu.jpg" width="30px"
+                    height="30px">
+                  Vườn rừng bác Du
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="./img/namyen/nhathogiaoxu.jpg" width="30px"
+                    height="30px">
+                  Nhà thờ Giáo xứ Hội Yên
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="./img/namyen/hoptacxa.jpg" width="30px"
+                    height="30px">
+                  HTXNN & Du lịch cộng đồng Hòa Bắc
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="./img/namyen/langnguon.jpg" width="30px"
+                    height="30px">
+                  Làng Nguồn
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="./img/namyen/campinghoabac.jpg" width="30px"
+                    height="30px">
+                  Hòa Bắc Ecolodge-Camping
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="./img/namyen/campingcude.jpg" width="30px"
+                    height="30px">
+                  Cu Đê Camping
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="./img/namyen/campingnamyen.jpg" width="30px"
+                    height="30px">
+                  Nam Yên Camping
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="./img/namyen/vuonrungbacdu.jpg" width="30px"
+                    height="30px">
+                  Vườn-ao-chuồng-nhà bác Hồng
+                </a>
+              </li>
+            </ul>
+            <!-- Tà lang giàn bí -->
+            <a class="link-map" id="link-map-2" href="#">
+              <p id="dia-diem-2" onclick="setTT2()">Tà Lang-Giàn
+                Bí</p>
+              <box-icon type='solid' id="down" name='chevron-down'
+                onclick="hienSub1()"></box-icon>
+              <box-icon type='solid' name='chevron-up' id="up"
+                onclick="anSub1()"></box-icon>
+            </a>
 
+            <ul id="goi-y-ta-lang">
+              <li>
+
+                <img src="./img/talanggianbi/nhaguoitalang.jpg" width="30px"
+                  height="30px">
+                <a id="info" href="#">Nhà Gươl thôn Tà Lang </a>
+
+              </li>
+              <li>
+
+                <img src="./img/talanggianbi/dantalu.jpg" width="30px"
+                  height="30px">
+                <a id="info" href="#"> Nghệ nhân đàn Ta Lư</a>
+
+              </li>
+              <li>
+
+                <img src="./img/talanggianbi/cotindetthocam.jpg" width="30px"
+                  height="30px">
+                <a id="info" href="#"> Nhà cô Tin–Dệt thổ cẩm </a>
+
+              </li>
+              <li>
+
+                <img src="./img/talanggianbi/conauche.jpg" width="30px"
+                  height="30px">
+                <a href="#" id="info"> Cô Chọn nấu Chè dây </a>
+
+              </li>
+              <li>
+
+                <img src="./img/talanggianbi/vungbot.jpg" width="30px"
+                  height="30px">
+                <a href="#" id="info">Vũng Bọt
+                </a>
+              </li>
+              <li>
+
+                <img src="./img/talanggianbi/homestaythihong.jpg" width="30px"
+                  height="30px">
+                <a href="#" id="info"> Homestay Thị Hồng
+                </a>
+              </li>
+              <li>
+
+                <img src="./img/talanggianbi/homestayalang.jpg" width="30px"
+                  height="30px">
+                <a href="#" id="info"> Homestay ALăng Như
+                </a>
+              </li>
+              <li>
+
+                <img src="./img/talanggianbi/nhaguoi.jpg" width="30px"
+                  height="30px">
+                <a href="#" id="info"> Nhà Gươl thôn Giàn Bí
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                </a>
+              </li>
+            </ul>
+
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
+    <script src="script.js"></script>
 
-
-
-
-  <script src="script.js"></script>
-
-
-  <!-- <div id="marker1" class="marker"> </div>
+    <!-- <div id="marker1" class="marker"> </div>
   <div id="marker2" class="marker"> </div> -->
 
-  <!-- <div style="width: 300px; height: 500px; ">
+    <!-- <div style="width: 300px; height: 500px; ">
     <div id="info-box" class="hidden">
       <p id="info-text"></p>
     </div> -->
 
-</body>
+  </body>
 
 </html>
