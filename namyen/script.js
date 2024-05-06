@@ -440,6 +440,6 @@ window.onload = function () {
           });
         }
       }
-    });
-  });
+    }});
+ 
 };
