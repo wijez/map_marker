@@ -11,12 +11,10 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script>
     $(document).ready(function () {
-      $('.image-container').hover(function () {
-        $(this).find('.hover-img').css('bottom', '100%');
-      }, function () {
-        $(this).find('.hover-img').css('bottom', '0');
+      $('.image-container').click(function () {
+        $(this).toggleClass('active');
       });
-    });
+    });    
   </script>
 
 

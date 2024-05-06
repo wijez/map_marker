@@ -183,7 +183,7 @@ ul li a {
   border-radius: 10px ;
 }
 
-.image-container:hover {
+.image-container:active {
   transform: translateY(-300px)
 }
 
@@ -193,7 +193,7 @@ ul li a {
   transition: transform 0.3s ease;
 }
 
-.hover-image:hover {
+.hover-image:active {
   transform: scale(5); 
 }
 
@@ -216,4 +216,14 @@ ul li a {
   opacity: 1;
   visibility: visible;
 }
+
+
+
+
+/* .overflow-hidden {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%; 
+}  */
 
