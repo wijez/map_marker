@@ -232,16 +232,26 @@ window.onload = function () {
             <h2><strong>${marker.title}</strong></h2>
             <a id="mapInGoogle" target="_blank" style="width:30px; height:30px; margin-bottom: 20px;" href="${marker.hrefMapinGoogle}" alt="${marker.title}"><img src="https://img.icons8.com/?size=48&id=kDqO6kPb3xLj&format=gif" alt="Google Maps ${marker.title}"></a> 
             </div>
-            <button id="hidden-click" style="cursor: pointer; position: absolute;top: 5px; right: 5px;font-size: 20px;" >x</button>
-            </div>
+            <button id="hidden-click" style="
+            height: 30px;
+            width: 30px;
+            border-radius: 5px;
+            cursor: pointer;
+            position: absolute;
+            top: 8px;
+            right: 5px;
+            font-weight: normal;
+            font-size: 20px;"
+            >x</button>            </div>
 
 
             <br><hr>
             <div style="text-align: justify; max-height:250px; overflow-y:auto">
+            <img style="width:200px; height:150px;" src="${marker.img}">
+
             <p>${marker.description}</p>
             <br>
             <div>
-            <img style="width:200px; height:150px;" src="${marker.img}">
                 
             <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <div id="map-container" class="hidden">
@@ -319,19 +329,27 @@ window.onload = function () {
             <h2><strong>${marker.title}</strong></h2>
             <a id="mapInGoogle" target="_blank" style="width:30px; height:30px; margin-bottom: 20px;" href="${marker.hrefMapinGoogle}" alt="${marker.title}"><img src="https://img.icons8.com/?size=48&id=kDqO6kPb3xLj&format=gif" alt="Google Maps ${marker.title}"></a> 
             </div>
-            <button id="hidden-click" style="cursor: pointer; position: absolute;     top: 5px;
-            right: 5px;
-            font-weight: bold;
-            font-size: 20px;" >x</button>
+            <button id="hidden-click" style="
+                height: 30px;
+                width: 30px;
+                border-radius: 5px;
+                cursor: pointer;
+                position: absolute;
+                top: 8px;
+                right: 5px;
+                font-weight: normal;
+                font-size: 20px;"
+                >x</button>
             </div>
 
 
             <br><hr>
             <div style="text-align: justify; max-height:250px; overflow-y:auto">
+            <img style="width:200px; height:150px;" src="${marker.img}">
             <p>${marker.description}</p>
             <br>
             <div>
-            <img style="width:200px; height:150px;" src="${marker.img}">
+            
                 
             <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <div id="map-container" class="hidden">

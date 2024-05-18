@@ -1,0 +1,231 @@
+[33mcommit 0f1e635c7405b779459438bbad511ef88d0b4f46[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mhoa2[m[33m, [m[1;31morigin/hoa2[m[33m)[m
+Author: abc <abc@example.com>
+Date:   Sat May 18 17:02:18 2024 +0700
+
+    update img
+
+[33mcommit f5a85395958729516e905d524a136649d47fe362[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m
+Author: VIET-GITL <viet.info.43@gmail.com>
+Date:   Tue May 7 00:34:42 2024 +0700
+
+    styles namyen info card
+
+[33mcommit bbea845663f0d34bcc4c1b0cd2d8c884dd294cce[m
+Author: abc <abc@example.com>
+Date:   Tue May 7 00:24:45 2024 +0700
+
+    fix script namyen
+
+[33mcommit d5546ca666e57626afbbf793f4af2f964ad683fc[m[33m ([m[1;31morigin/stage[m[33m)[m
+Author: VIET-GITL <viet.info.43@gmail.com>
+Date:   Mon May 6 23:46:43 2024 +0700
+
+    fix conflic
+
+[33mcommit 0a4166ae9d4f015bc2f9479cece79c579da7fdaf[m
+Merge: 6ff5f83 7ca00af
+Author: VIET-GITL <viet.info.43@gmail.com>
+Date:   Mon May 6 23:45:29 2024 +0700
+
+    Merge branch 'stage'
+
+[33mcommit 7ca00afdcf1b9384dc974747c39eafba55ab7218[m
+Author: VIET-GITL <viet.info.43@gmail.com>
+Date:   Mon May 6 23:29:03 2024 +0700
+
+     styles container-main
+
+[33mcommit 6ff5f83807840ef8a6e42db9035207beb02fedc6[m
+Author: VIET-GITL <viet.info.43@gmail.com>
+Date:   Mon May 6 23:09:58 2024 +0700
+
+    styles infocard
+
+[33mcommit df69f9fd938c212f60ed81c2d2f1b8d042d9a5eb[m
+Author: abc <abc@example.com>
+Date:   Mon May 6 23:07:57 2024 +0700
+
+    hoa push stage
+
+[33mcommit 99995380b7540a8bc730943b79f879f432551960[m
+Author: VIET-GITL <viet.info.43@gmail.com>
+Date:   Sun May 5 03:40:56 2024 +0700
+
+    done
+
+[33mcommit 6a3a832a2f5c94baf00b6ba263a9c6ee401418ca[m
+Merge: ff92318 4cb94a9
+Author: VIET-GITL <viet.info.43@gmail.com>
+Date:   Sun May 5 03:35:04 2024 +0700
+
+    done
+
+[33mcommit ff9231808f3b0b8c003c03474f34692128c10c72[m
+Author: VIET-GITL <viet.info.43@gmail.com>
+Date:   Sun May 5 03:25:42 2024 +0700
+
+    welldone
+
+[33mcommit 73006e82ceac73e09f940c70e8f0c9f46d9d6758[m
+Author: VIET-GITL <viet.info.43@gmail.com>
+Date:   Sun May 5 03:24:12 2024 +0700
+
+    welldone
+
+[33mcommit 4cb94a9667306a4ff07338ae3748158caf3afe50[m
+Author: QuocBinh1 <BinhPlayll@gmail.com>
+Date:   Sun May 5 03:06:24 2024 +0700
+
+    xong
+
+[33mcommit 07840f54aa549f91a7382636a427b5bc70103245[m
+Author: QuocBinh1 <BinhPlayll@gmail.com>
+Date:   Sun May 5 02:22:28 2024 +0700
+
+    update img1
+
+[33mcommit 93eec6a64815d65114ca4dff1fe90f949458ac0b[m
+Author: QuocBinh1 <BinhPlayll@gmail.com>
+Date:   Sun May 5 02:15:53 2024 +0700
+
+    update img
+
+[33mcommit ce6f170b79a1c0c69e6e5f7166d10c688ff7ad00[m
+Author: VIET-GITL <viet.info.43@gmail.com>
+Date:   Sun May 5 02:07:43 2024 +0700
+
+    :)
+
+[33mcommit 1412afffd8c7bdc8fdd7ba1dac44fd0a89108009[m
+Author: QuocBinh1 <BinhPlayll@gmail.com>
+Date:   Sun May 5 02:06:30 2024 +0700
+
+    check màn hinh
+
+[33mcommit f78fb0f8740c73211143428ae54c6550820300ea[m
+Author: VIET-GITL <viet.info.43@gmail.com>
+Date:   Sun May 5 01:50:59 2024 +0700
+
+    easy
+
+[33mcommit 1b7c82aa1ee2bf6ec29b49a6a45a0604b5b252ce[m
+Author: QuocBinh1 <BinhPlayll@gmail.com>
+Date:   Sun May 5 01:23:15 2024 +0700
+
+    Commit message
+
+[33mcommit f8a38d343d8db2fc77ebb6a4c5f3f72b78a9fa93[m
+Author: VIET-GITL <viet.info.43@gmail.com>
+Date:   Sat May 4 04:06:14 2024 +0700
+
+    namyen fix text
+
+[33mcommit 324690174adbed01a58f30fa113e2842afd8807d[m
+Author: VIET-GITL <viet.info.43@gmail.com>
+Date:   Sat May 4 02:15:07 2024 +0700
+
+    rebase
+
+[33mcommit 960e9a7f39a62fe8903261e92442fc1539b3a5f3[m
+Author: VIET-GITL <viet.info.43@gmail.com>
+Date:   Sat May 4 01:45:27 2024 +0700
+
+    add namyen
+
+[33mcommit e61795cf3536eb26e48abf23e039db6fc17a2eda[m
+Merge: 70bba9a 3d6a061
+Author: VIET-GITL <viet.info.43@gmail.com>
+Date:   Sat May 4 00:33:56 2024 +0700
+
+    Completed merge
+
+[33mcommit 70bba9af88bd33ac04f8f1c7d44ee36daf6ef9d0[m
+Author: VIET-GITL <viet.info.43@gmail.com>
+Date:   Sat May 4 00:31:21 2024 +0700
+
+    reup
+
+[33mcommit 3d6a061cc5c955b0d4472c3c68acce2b70727c36[m
+Author: QuocBinh1 <BinhPlayll@gmail.com>
+Date:   Fri May 3 23:56:11 2024 +0700
+
+    binh1
+
+[33mcommit 508b84836864e082e37977509bb3ee8df9a9da03[m
+Author: QuocBinh1 <BinhPlayll@gmail.com>
+Date:   Fri May 3 23:43:46 2024 +0700
+
+    binh
+
+[33mcommit 18e08ef629a293fc9e1c87b643918b3842313060[m
+Author: VIET-GITL <viet.info.43@gmail.com>
+Date:   Fri May 3 21:52:33 2024 +0700
+
+    menu active
+
+[33mcommit 64a0ce1e1413e52c819ffce2788c0c8dd7eb7c6f[m
+Merge: 2f6d6f3 2396984
+Author: VIET-GITL <viet.info.43@gmail.com>
+Date:   Thu May 2 00:50:38 2024 +0700
+
+    resize browser
+
+[33mcommit 2f6d6f372efac2e48243a70cc2b7143fbdf300ad[m
+Author: VIET-GITL <viet.info.43@gmail.com>
+Date:   Thu May 2 00:44:09 2024 +0700
+
+    resize browser
+
+[33mcommit 23969846c389c8c27d706811f913c71505d93a04[m[33m ([m[1;31morigin/hoa1[m[33m)[m
+Author: abc <abc@example.com>
+Date:   Wed May 1 23:26:29 2024 +0700
+
+    put map2
+
+[33mcommit 45f9086543dfd5ef7be63d70c7d8afedcf60bb13[m
+Author: VIET-GITL <viet.info.43@gmail.com>
+Date:   Wed May 1 22:28:13 2024 +0700
+
+    styles width window browser
+
+[33mcommit 075432d1f919b6ab7d7c988898826979a82f0385[m
+Author: VIET-GITL <viet.info.43@gmail.com>
+Date:   Wed Apr 24 17:21:06 2024 +0700
+
+    add 1 div
+
+[33mcommit aa89ea02a371e0cf066221b44a19d3bef145ada1[m
+Author: VIET-GITL <viet.info.43@gmail.com>
+Date:   Wed Apr 24 17:16:50 2024 +0700
+
+    add sroll card
+
+[33mcommit aa2abb3401ab39c7f37ecf57814c0b7d50bb9d7d[m
+Author: VIET-GITL <viet.info.43@gmail.com>
+Date:   Wed Apr 24 17:14:23 2024 +0700
+
+    fix card + feat linkgg map
+
+[33mcommit 31622c2750a86af76f8330710b7e63189ec615d4[m
+Author: VIET-GITL <viet.info.43@gmail.com>
+Date:   Wed Apr 24 12:21:44 2024 +0700
+
+    swap
+
+[33mcommit c8a7abe5c6ffb653810da284629853c5de55990b[m
+Author: VIET-GITL <114148428+VIET-GITL@users.noreply.github.com>
+Date:   Wed Apr 24 12:18:08 2024 +0700
+
+    Create static.yml
+
+[33mcommit 1246da8ae1d4a593a9d2d010d3674bfd843d2f7d[m
+Author: VIET-GITL <viet.info.43@gmail.com>
+Date:   Wed Apr 24 11:51:45 2024 +0700
+
+    fix card, ggmap link, img , title
+
+[33mcommit 8ba93e2c8b5f11e8ed6e969440e95ed4402e919e[m
+Author: VIET-GITL <viet.info.43@gmail.com>
+Date:   Wed Apr 24 01:20:08 2024 +0700
+
+    Initial commit
