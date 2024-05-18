@@ -1,5 +1,6 @@
 var image = document.getElementById("map");
 //dfGdl2cF01g
+
 var canvas = document.getElementById("myCanvas");
 var markers = document.getElementById(".marker");
 const infoBox = document.getElementById("info-box");
@@ -51,7 +52,7 @@ window.onload = function () {
     marker3: {
       x: 1118,
       y: 300,
-      img: "",
+      img: "../images/noinfomation.jpg",
       radius: 10,
       hrefMapinGoogle:
         "https://www.google.com/maps/place/Th%C3%B4n+gi%C3%A0n+b%C3%AD+ho%C3%A0+B%E1%BA%AFc+huy%E1%BB%87n+ho%C3%A0+vang/@16.1179841,107.9809055,17z/data=!3m1!4b1!4m6!3m5!1s0x3141f58e1887a83b:0xcda33510bd9f645c!8m2!3d16.1179841!4d107.9827977!16s%2Fg%2F11swpdhykn?hl=vi-VN&entry=ttu",
@@ -97,7 +98,7 @@ window.onload = function () {
     marker7: {
       x: 929,
       y: 293,
-      img: "",
+      img: "../images/noinfomation.jpg",
       radius: 10,
       hrefMapinGoogle:
         "https://www.google.com/maps/place/Tr%C6%B0%E1%BB%9Dng+MN+Ho%C3%A0+B%E1%BA%AFc,+%C4%91i%E1%BB%83m+tr%C6%B0%E1%BB%9Dng+Gi%C3%A0n+B%C3%AD/@16.1205504,107.9103448,13z/data=!4m7!3m6!1s0x3141f5006a3a51e3:0x6a3fa835de9d456!8m2!3d16.1205504!4d107.9865625!15sChNUcsaw4budbmcgTeG6p20gTm9ukgEJcHJlc2Nob29s4AEA!16s%2Fg%2F11vjw_s9zt?hl=vi-VN&entry=ttu",
@@ -131,7 +132,7 @@ window.onload = function () {
     marker10: {
       x: 697,
       y: 368,
-      img: "",
+      img: "../images/noinfomation.jpg",
       radius: 10,
       hrefMapinGoogle:
         "https://www.google.com/maps/place/C%E1%BA%A7u+S%E1%BA%ADp,+th%C3%B4n+T%C3%A0+Lang,+%C4%90T601,+Ho%C3%A0+B%E1%BA%AFc,+H%C3%B2a+Vang,+%C4%90%C3%A0+N%E1%BA%B5ng,+Vi%E1%BB%87t+Nam/@16.1195585,107.9814273,837m/data=!3m2!1e3!4b1!4m6!3m5!1s0x3141f4cf43976ef3:0x23b8fcca6c927a63!8m2!3d16.1195585!4d107.9840022!16s%2Fg%2F11g6bk0tq0?entry=ttu",
@@ -226,10 +227,14 @@ window.onload = function () {
           infoCard.innerHTML = `
 
           <div style= "width : 350px ; height: 300px" >
-            <div style="display: flex; align-items: center; margin-top: 10px; height : 10px">
+            <div style="display: flex; align-items: center;justify-content: space-between; margin-top: 10px; height : 10px">
+            <div style="display: flex;align-items: center;justify-content: center; gap:5px">
             <h2><strong>${marker.title}</strong></h2>
-            <a id="mapInGoogle" target="_blank" style="width:30px; height:30px;margin-left: auto;" href="${marker.hrefMapinGoogle}" alt="${marker.title}"><img src="https://img.icons8.com/?size=48&id=kDqO6kPb3xLj&format=gif" alt="Google Maps ${marker.title}"></a> 
+            <a id="mapInGoogle" target="_blank" style="width:30px; height:30px; margin-bottom: 20px;" href="${marker.hrefMapinGoogle}" alt="${marker.title}"><img src="https://img.icons8.com/?size=48&id=kDqO6kPb3xLj&format=gif" alt="Google Maps ${marker.title}"></a> 
             </div>
+            <button id="hidden-click" style="cursor: pointer; position: absolute;top: 5px; right: 5px;font-size: 20px;" >x</button>
+            </div>
+
 
             <br><hr>
             <div style="text-align: justify; max-height:250px; overflow-y:auto">
@@ -238,7 +243,7 @@ window.onload = function () {
             <div>
             <img style="width:200px; height:150px;" src="${marker.img}">
                 
-            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ảnh Minh Họa 
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <div id="map-container" class="hidden">
             
             </div>
@@ -246,6 +251,11 @@ window.onload = function () {
           </div>
 
           `;
+          document
+            .getElementById("hidden-click")
+            .addEventListener("click", function () {
+              infoCard.style.display = "none";
+            });
           isOutsideMarkers = false;
 
           if (
@@ -304,10 +314,17 @@ window.onload = function () {
           infoCard.innerHTML = `
 
           <div style= "width : 350px ; height: 300px" >
-            <div style="display: flex; align-items: center; margin-top: 10px; height : 10px">
+            <div style="display: flex; align-items: center;justify-content: space-between; margin-top: 10px; height : 10px">
+            <div style="display: flex;align-items: center;justify-content: center; gap:5px">
             <h2><strong>${marker.title}</strong></h2>
-            <a id="mapInGoogle" target="_blank" style="width:30px; height:30px;margin-left: auto;" href="${marker.hrefMapinGoogle}" alt="${marker.title}"><img src="https://img.icons8.com/?size=48&id=kDqO6kPb3xLj&format=gif" alt="Google Maps ${marker.title}"></a> 
+            <a id="mapInGoogle" target="_blank" style="width:30px; height:30px; margin-bottom: 20px;" href="${marker.hrefMapinGoogle}" alt="${marker.title}"><img src="https://img.icons8.com/?size=48&id=kDqO6kPb3xLj&format=gif" alt="Google Maps ${marker.title}"></a> 
             </div>
+            <button id="hidden-click" style="cursor: pointer; position: absolute;     top: 5px;
+            right: 5px;
+            font-weight: bold;
+            font-size: 20px;" >x</button>
+            </div>
+
 
             <br><hr>
             <div style="text-align: justify; max-height:250px; overflow-y:auto">
@@ -316,7 +333,7 @@ window.onload = function () {
             <div>
             <img style="width:200px; height:150px;" src="${marker.img}">
                 
-            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ảnh Minh Họa 
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <div id="map-container" class="hidden">
             
             </div>
@@ -324,6 +341,11 @@ window.onload = function () {
           </div>
 
           `;
+          document
+            .getElementById("hidden-click")
+            .addEventListener("click", function () {
+              infoCard.style.display = "none";
+            });
           infoCard.style.position = "absolute";
           infoCard.style.display = "block";
           infoCard.style.top = marker.y + "px";
