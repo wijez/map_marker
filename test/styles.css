@@ -1,3 +1,25 @@
+/* Reset some default browser styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* General styles */
+body {
+  font-family: Arial, sans-serif;
+}
+
+.info-card {
+  width: 100%;
+  max-width: 400px; /* Adjust max-width as needed for larger screens */
+  margin: auto;
+  padding: 15px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
 /* Styles for the button container */
 .button-container {
   display: flex;
@@ -41,87 +63,29 @@
   box-shadow: 0 0 3px 2px rgba(0, 123, 255, 0.5); /* Adds a focus shadow */
 }
 
-/* General styles */
-body {
-  font-family: Arial, sans-serif;
-}
-
-#map-container {
-  position: relative;
+/* Styles for overflow hidden and strong text */
+.overflow-hidden {
   display: flex;
-  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 15px;
 }
 
-#canvas-container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100%;
-  height: 100%;
+.overflow-hidden strong {
+  font-size: 1.2em;
 }
 
-#myCanvas {
-  width: 100%;
-  height: 100%;
-  border: none;
-}
-
-.marker {
-  position: absolute;
-  width: 10px;
-  height: 10px;
-  background-color: red;
-  border-radius: 50%;
-  cursor: pointer;
-}
-
-#info-box {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background-color: white;
-  padding: 10px;
-  border: 1px solid #ccc;
-  display: block;
-}
-
-.hidden {
-  display: none;
-}
-
-#info-card {
-  display: none;
-  position: absolute;
-  background-color: white;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  padding: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  max-width: 300px;
-}
-
-#info-card strong {
-  font-weight: bold;
-}
-
-#info-card img {
-  max-width: 100%;
-  height: auto;
-  margin-top: 10px;
-}
-
-.title {
-  color: rgb(0, 0, 0);
-  font-size: 25px;
-  padding: 15px 5px;
-  font-weight: bold;
-}
-
+/* Styles for the image container and hover effects */
 .image-container {
   position: relative;
   display: inline-block;
   border-radius: 10px;
+}
+
+.image-container img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
 }
 
 .image-container:active {
@@ -130,13 +94,13 @@ body {
 }
 
 .hover-image {
-  width: 40px;
-  height: 40px;
+  width: 100%;
+  height: auto;
   transition: transform 0.3s ease;
 }
 
 .hover-image:active {
-  transform: scale(5);
+  transform: scale(1.05); /* Slightly increase the scale on active */
 }
 
 .image-info {
@@ -159,8 +123,46 @@ body {
   visibility: visible;
 }
 
+/* Styles for the description container */
+.description-container {
+  text-align: justify;
+  max-height: 160px;
+  overflow-y: auto;
+  background-color: white;
+  margin-top: 15px;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Styles for the title */
+.title {
+  color: rgb(0, 0, 0);
+  font-size: 25px;
+  padding: 15px 5px;
+  font-weight: bold;
+}
+
 /* Responsive styles */
 @media only screen and (max-width: 768px) {
+  .info-card {
+    max-width: 100%;
+    padding: 10px;
+  }
+
+  .overflow-hidden strong {
+    font-size: 1em;
+  }
+
+  .button-container img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .description-container {
+    max-height: 120px;
+  }
+
   .container {
     max-width: 100%;
   }

@@ -1,4 +1,5 @@
 .menu-container {
+  border-radius: 10px;
   position: fixed;
   top: 0;
   left: 0;
@@ -69,3 +70,54 @@ hr {
   border-top: 1px solid #cccccc; /* Đường kẻ ngang giữa các phần của menu */
   margin-bottom: 20px; /* Khoảng cách dưới cùng của đường kẻ ngang */
 }
+
+.menu-an-foot {
+  width: 100%; /* Adjust based on your requirement */
+}
+
+/* Common styles for both link sets */
+.link-map {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-decoration: none; /* Remove underline from links */
+  background-color: #f9f9f9; /* Light grey background */
+  border: 1px solid #ddd; /* Light grey border */
+  border-radius: 4px; /* Rounded corners */
+  padding: 10px;
+  color: #333; /* Dark grey text color */
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.link-map:hover {
+  background-color: #e9e9e9; /* Slightly darker grey on hover */
+}
+
+/* Styles for text paragraphs */
+.link-map p {
+  margin: 0;
+}
+
+/* Styles for box-icons */
+.link-map box-icon {
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+/* Initially hide both icons */
+.link-map box-icon {
+  display: none;
+}
+
+/* Show the down chevron when the dropdown is hidden */
+.link-map.hide box-icon[name='chevron-down'] {
+  display: inline-block;
+}
+
+/* Show the up chevron when the dropdown is visible */
+.link-map.show box-icon[name='chevron-up'] {
+  display: inline-block;
+}
+
+
