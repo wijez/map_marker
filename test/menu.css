@@ -1,0 +1,71 @@
+.menu-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000; /* đảm bảo menu hiển thị trên cùng */
+}
+
+#menu-hien {
+  cursor: pointer; /* biểu tượng menu trông như một nút kích hoạt */
+}
+
+.menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 300px; /* Độ rộng của menu */
+  background-color: #ffffff; /* Màu nền của menu */
+  border-right: 1px solid #cccccc; /* Đường viền bên phải */
+  padding: 20px; /* Khoảng cách giữa nội dung và biên của menu */
+}
+
+.menu-an-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px; /* Khoảng cách dưới cùng của tiêu đề */
+}
+
+.title {
+  font-size: 20px; /* Kích thước phông chữ của tiêu đề */
+  font-weight: bold; /* Chữ đậm */
+}
+
+.menu-an-foot {
+  margin-bottom: 20px; /* Khoảng cách dưới cùng của nội dung chính */
+}
+
+.link-map {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px; /* Khoảng cách giữa các mục trong menu */
+}
+
+.link-map p {
+  margin: 0; /* Loại bỏ khoảng cách mặc định */
+}
+
+ul {
+  list-style: none; /* Loại bỏ dấu chấm của danh sách */
+  padding: 0; /* Loại bỏ padding mặc định */
+  margin: 0; /* Loại bỏ margin mặc định */
+}
+
+ul li {
+  margin-bottom: 10px; /* Khoảng cách giữa các mục trong danh sách */
+}
+
+ul li a {
+  text-decoration: none; /* Loại bỏ đường gạch chân của liên kết */
+  color: #333333; /* Màu chữ cho các liên kết */
+}
+
+ul li img {
+  margin-right: 10px; /* Khoảng cách giữa hình ảnh và văn bản */
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid #cccccc; /* Đường kẻ ngang giữa các phần của menu */
+  margin-bottom: 20px; /* Khoảng cách dưới cùng của đường kẻ ngang */
+}

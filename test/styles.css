@@ -1,0 +1,206 @@
+/* Styles for the button container */
+.button-container {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Adjust spacing between buttons as needed */
+}
+
+#mapInGoogle,
+#hidden-click {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px; /* Set desired width */
+  height: 40px; /* Set desired height */
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+#mapInGoogle img,
+#hidden-click img {
+  width: 100%; /* Ensure images fill their containers */
+  height: auto;
+}
+
+#hidden-click {
+  cursor: pointer;
+  position: relative; /* Updated for potential relative positioning */
+  font-weight: bold;
+  font-size: 20px;
+}
+
+#hidden-click:hover,
+#mapInGoogle:hover {
+  opacity: 0.8; /* Adds a hover effect */
+}
+
+#hidden-click:focus,
+#mapInGoogle:focus {
+  outline: none; /* Removes default focus outline */
+  box-shadow: 0 0 3px 2px rgba(0, 123, 255, 0.5); /* Adds a focus shadow */
+}
+
+/* General styles */
+body {
+  font-family: Arial, sans-serif;
+}
+
+#map-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+#canvas-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+}
+
+#myCanvas {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.marker {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: red;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+#info-box {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: white;
+  padding: 10px;
+  border: 1px solid #ccc;
+  display: block;
+}
+
+.hidden {
+  display: none;
+}
+
+#info-card {
+  display: none;
+  position: absolute;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  max-width: 300px;
+}
+
+#info-card strong {
+  font-weight: bold;
+}
+
+#info-card img {
+  max-width: 100%;
+  height: auto;
+  margin-top: 10px;
+}
+
+.title {
+  color: rgb(0, 0, 0);
+  font-size: 25px;
+  padding: 15px 5px;
+  font-weight: bold;
+}
+
+.image-container {
+  position: relative;
+  display: inline-block;
+  border-radius: 10px;
+}
+
+.image-container:active {
+  z-index: 1;
+  transform: translateY(-200px);
+}
+
+.hover-image {
+  width: 40px;
+  height: 40px;
+  transition: transform 0.3s ease;
+}
+
+.hover-image:active {
+  transform: scale(5);
+}
+
+.image-info {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0 opacity 0.3s ease;
+}
+
+.image-container:hover .image-info {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Responsive styles */
+@media only screen and (max-width: 768px) {
+  .container {
+    max-width: 100%;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  .menu .menu-an {
+    width: 100%;
+  }
+
+  .menu .menu-an .menu-an-foot .link-map {
+    font-size: 18px;
+  }
+
+  ul {
+    padding-left: 5px;
+  }
+
+  ul li {
+    padding: 4px;
+  }
+
+  ul li a {
+    font-size: 14px;
+  }
+
+  .menu-container {
+    width: 100%;
+  }
+
+  #info-box {
+    width: 100%;
+    top: auto;
+    bottom: 0;
+  }
+
+  #info-card {
+    width: 100%;
+    bottom: 0;
+  }
+}
