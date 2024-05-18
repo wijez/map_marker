@@ -1,21 +1,17 @@
-var image = document.getElementById("map");
-var canvas = document.getElementById("myCanvas");
-var infoCard = document.getElementById("info-card");
-
-// Khi trang đã được tải hoàn toàn
-window.onload = function () {
-  var widthW = (canvas.width - image.width) / 2;
-  var heightW = (canvas.height - image.height) / 2;
-
-  // data
-
-  const markerData = {
+window.addEventListener('load', function() {
+  var canvas = document.getElementById('myCanvas');
+  var ctx = canvas.getContext('2d');
+  var image = document.getElementById('map');
+  var infoCard = document.getElementById('info-card');
+  var suggest = document.getElementById('goi-y-nam-yen')
+ 
+  var markerData = {
     marker1: {
-      x: 773,
-      y: 394,
+      x: 2630,
+      y: 2900,
       radius: 10,
       tt: 1,
-      map: `<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30661.008822904496!2d108.01087353605213!3d16.136631307566265!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31418bd3ca7c84c1%3A0xb304c8f2904e86f5!2zTMOgbmcgTcOq!5e0!3m2!1svi!2s!4v1713952355600!5m2!1svi!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`,
+
       img: "cautreohoabac.jpg",
       hrefMapinGoogle: "https://maps.app.goo.gl/xpQDgNvh7PEeZxEt9",
       title: "Cầu treo Hòa Bắc",
@@ -37,8 +33,8 @@ window.onload = function () {
       `,
     },
     marker2: {
-      x: 747,
-      y: 333,
+      x:  2420,
+      y: 2460,
       radius: 10,
       tt: 5,
       icon: "",
@@ -55,8 +51,8 @@ window.onload = function () {
       `,
     },
     marker3: {
-      x: 759,
-      y: 323,
+      x: 2490,
+      y: 2400,
       radius: 10,
       icon: "",
       img: "",
@@ -73,9 +69,10 @@ window.onload = function () {
       người dân địa phương như gà nướng, cơm lam, rau rừng…
       `,
     },
+  
     marker4: {
-      x: 812,
-      y: 361,
+      x: 2878,
+      y: 2617,
       radius: 10,
       icon: "",
       img: "campinghoabac.jpg",
@@ -94,8 +91,8 @@ window.onload = function () {
       `,
     },
     marker5: {
-      x: 934,
-      y: 633,
+      x: 3800 ,
+      y: 4763,
       radius: 10,
       icon: "",
       tt: 9,
@@ -116,8 +113,8 @@ window.onload = function () {
      `,
     },
     marker6: {
-      x: 769,
-      y: 329,
+      x: 2590,
+      y: 2460,
       radius: 10,
       tt: 8,
       img: "campingnamyen.jpg",
@@ -135,8 +132,8 @@ window.onload = function () {
       `,
     },
     marker7: {
-      x: 778,
-      y: 320,
+      x: 2662,
+      y: 2393,
       radius: 10,
       icon: "",
       img: "",
@@ -159,8 +156,8 @@ window.onload = function () {
     `,
     },
     marker8: {
-      x: 797,
-      y: 323,
+      x: 2774,
+      y: 2400,
       radius: 10,
       icon: "",
       tt: 4,
@@ -183,8 +180,8 @@ window.onload = function () {
       `,
     },
     marker9: {
-      x: 859,
-      y: 213,
+      x: 3243,
+      y: 1620,
       radius: 10,
       tt: 3,
       icon: "",
@@ -213,8 +210,8 @@ window.onload = function () {
       `,
     },
     marker10: {
-      x: 1105,
-      y: 377,
+      x: 5070 ,
+      y: 2850,
       radius: 10,
       icon: "",
       tt: 2,
@@ -230,8 +227,8 @@ window.onload = function () {
       <strong>Không cung cấp dịch vụ lưu trú.</strong> `,
     },
     marker11: {
-      x: 683,
-      y: 311,
+      x: 1930,
+      y: 2280,
       radius: 10,
       icon: "",
       img: "",
@@ -247,8 +244,8 @@ window.onload = function () {
       `,
     },
     marker12: {
-      x: 686,
-      y: 283,
+      x: 1960,
+      y: 2100,
       radius: 10,
       icon: "",
       tt: 6,
@@ -268,8 +265,8 @@ window.onload = function () {
       `,
     },
     marker13: {
-      x: 692,
-      y: 240,
+      x: 1999,
+      y: 1800,
       radius: 10,
       icon: "",
       img: "",
@@ -284,8 +281,8 @@ window.onload = function () {
         `,
     },
     marker14: {
-      x: 636,
-      y: 316,
+      x: 1590,
+      y: 2370,
       tt: 7,
       radius: 10,
       icon: "",
@@ -301,10 +298,9 @@ window.onload = function () {
       `,
     },
     marker15: {
-      x: 588,
-      y: 264,
+      x: 1204,
+      y: 1952,
       radius: 10,
-      map: `<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30661.008822904496!2d108.01087353605213!3d16.136631307566265!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31418bd3ca7c84c1%3A0xb304c8f2904e86f5!2zTMOgbmcgTcOq!5e0!3m2!1svi!2s!4v1713952355600!5m2!1svi!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`,
       img: "",
       hrefMapinGoogle: "https://maps.app.goo.gl/Dyf9KTgaPTim6zH47",
       title: "Làng Mê",
@@ -322,113 +318,152 @@ window.onload = function () {
     },
   };
 
-  // xử lý vẽ điểm
-  var ctx = canvas.getContext("2d");
+  var canvasContainer = document.getElementById('canvas-container');
 
-  ctx.drawImage(image, widthW, heightW);
+  function resizeCanvas() {
+    canvas.width = canvasContainer.offsetWidth;
+    canvas.height = canvasContainer.offsetHeight;
+    drawMarkers();
+  }
 
-  window.addEventListener('click', function (event) {
+  function drawMarkers() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
+    for (const marker of Object.values(markerData)) {
+      var scaledX = marker.x / image.naturalWidth * canvas.width;
+      var scaledY = marker.y / image.naturalHeight * canvas.height;
+      ctx.beginPath();
+      ctx.arc(scaledX, scaledY, marker.radius, 0, 2 * Math.PI, false);
+      ctx.fillStyle = 'blue';
+      ctx.fill();
+      marker.scaledX = scaledX;
+      marker.scaledY = scaledY;
+    }
+  }
+
+  window.addEventListener('resize', resizeCanvas);
+  resizeCanvas();
+
+  window.addEventListener('click', function(event) {
     var rect = canvas.getBoundingClientRect();
     var x = event.clientX - rect.left;
     var y = event.clientY - rect.top;
     var infoCardWidth = 300;
     var infoCardHeight = 350;
-
+    const defaultImage = './img/namyen/noinfomaition.jpg';
+    
     for (const marker of Object.values(markerData)) {
-      var distance = Math.sqrt((x - marker.x) ** 2 + (y - marker.y) ** 2);
-
+      var distance = Math.sqrt((x - marker.scaledX) ** 2 + (y - marker.scaledY) ** 2);
+      const imageUrl = marker.img ? `./img/namyen/${marker.img}` : defaultImage;
       if (distance <= marker.radius) {
         infoCard.innerHTML = `
-                <div style="width:${infoCardWidth}px; height:${infoCardHeight}px">
-                    <div class="overflow-hidden" style="display: flex; align-items: center;justify-items: center; margin-top: 15px; ">
-                        <strong>${marker.title}</strong>
-                        <a id="mapInGoogle" target="_blank" style="width:40px; height:40px; margin-left:auto; " href="${marker.hrefMapinGoogle}" alt="${marker.title}"><img src="https://img.icons8.com/?size=48&id=kDqO6kPb3xLj&format=gif" alt="Google Maps ${marker.title}"></a> 
-                    </div>
-                    <br><hr>
-                    <div class="image-container" id="no_image">
-                        <img class="hover-image"  src="./img/namyen/${marker.img}" alt="No image">
-                        <div class="image-info">${marker.title}</div>
-                        <br><hr>
-                    </div>
-                    <div style="text-align: justify; max-height:160px; overflow-y:auto; background-color: white;">
-                        <p>${marker.description}</p>
-                        <div id="map-container" class="hidden" style=" width:20px; height: 20px;white-space: nowrap;">
-                         ${marker.map ? marker.map : '!Không có thông tin bản đồ'}
-                        </div>
-                    </div>
-                    <br>
-                </div>
-                `;
-        var infoCardLeft =
-          event.pageX -
-          (marker.x <= canvas.width - infoCardWidth ? 30 : infoCardWidth - 20);
-        var infoCardTop =
-          event.pageY -
-          (marker.y <= canvas.height - infoCardHeight
-            ? 20
-            : infoCardHeight + 20);
-        infoCard.style.left = infoCardLeft + "px";
-        infoCard.style.top = infoCardTop + "px";
-        infoCard.style.display = "block";
+        <div style="width:${infoCardWidth}px; height:${infoCardHeight}px">
+        <div class="overflow-hidden" style="display: flex; align-items: center; justify-content: space-between; margin-top: 15px;">
+          <strong>${marker.title}</strong>
+          <div class="button-container" style="display: flex; align-items: center; margin-left: auto;">
+            <a id="mapInGoogle" target="_blank" href="${marker.hrefMapinGoogle}" alt="${marker.title}">
+              <img src="https://img.icons8.com/?size=48&id=kDqO6kPb3xLj&format=gif" alt="Google Maps ${marker.title}">
+            </a>
+            <button id="hidden-click">
+              <img src="https://img.icons8.com/?size=80&id=I02TdaPxbwRz&format=png"/>
+            </button>
+          </div>
+        </div>
+        <br><hr>
+        <div class="image-container" id="no_image">
+          <img class="hover-image" src="${imageUrl}" />
+          <div class="image-info">${marker.title}</div>
+          <br><hr>
+        </div>
+        <div style="text-align: justify; max-height:160px; overflow-y:auto; background-color: white;">
+          <p>${marker.description}</p>
+        </div>
+        <br>
+      </div>
+      `;
+          document
+          .getElementById("hidden-click")
+          .addEventListener("click", function () {
+            infoCard.style.display = "none";
+          });
+        
+        var infoCardLeft = event.pageX - (marker.scaledX <= canvas.width - infoCardWidth ? 30 : infoCardWidth - 20);
+        var infoCardTop = event.pageY - (marker.scaledY <= canvas.height - infoCardHeight ? 20 : infoCardHeight + 20);
+
+        if (infoCardLeft < 0) infoCardLeft = 0;
+        if (infoCardTop < 0) infoCardTop = 0;
+        if (infoCardLeft + infoCardWidth > window.innerWidth) infoCardLeft = window.innerWidth - infoCardWidth;
+        if (infoCardTop + infoCardHeight > window.innerHeight) infoCardTop = window.innerHeight - infoCardHeight;
+
+        infoCard.style.left = infoCardLeft + 'px';
+        infoCard.style.top = infoCardTop + 'px';
+        infoCard.style.display = 'block';
         return;
       }
     }
-  });
 
-  document.addEventListener("click", function (event) {
-    if (!infoCard.contains(event.target)) {
-        infoCard.style.display = "none";
-    }
-});
+      var arr = document.querySelectorAll("#goi-y-nam-yen li");
+      arr.forEach(function (item, index) {
+        var rect = canvas.getBoundingClientRect();
+        var x = event.clientX - rect.left;
+        var y = event.clientY - rect.top;
+        var infoCardWidth = 300;
+        var infoCardHeight = 350;
+        const defaultImage = './img/namyen/noinfomaition.jpg';
+        item.addEventListener("click", function (event) {
+          for (const markerKey in markerData) {
+            const marker = markerData[markerKey];
+            if (marker.tt - 1 == index) {
 
-
-  var arr = document.querySelectorAll("#goi-y-nam-yen li");
-  arr.forEach(function (item, index) {
-    console.log(item);
-    item.addEventListener("click", function (event) {
-      for (const markerKey in markerData) {
-        const marker = markerData[markerKey];
-        if (marker.tt - 1 == index) {
-          console.log(marker);
-          infoCard.innerHTML = `
-
-          <div style="width:${infoCardWidth}px; height:${infoCardHeight}px">
-          <div class="overflow-hidden" style="display: flex; align-items: center;justify-items: center; margin-top: 15px; ">
-              <strong>${marker.title}</strong>
-              <a id="mapInGoogle" target="_blank" style="width:40px; height:40px; margin-left:auto; " href="${marker.hrefMapinGoogle}" alt="${marker.title}"><img src="https://img.icons8.com/?size=48&id=kDqO6kPb3xLj&format=gif" alt="Google Maps ${marker.title}"></a> 
-          </div>
-          <br><hr>
-          <div class="image-container" id="no_image">
-              <img class="hover-image"  src="./img/namyen/${marker.img}" alt="No image">
-              <div class="image-info">${marker.title}</div>
-              <br><hr>
-          </div>
-          <div style="text-align: justify; max-height:160px; overflow-y:auto; background-color: white;">
-              <p>${marker.description}</p>
-              <div id="map-container" class="hidden" style=" width:20px; height: 20px;white-space: nowrap;">
-               ${marker.map ? marker.map : '!Không có thông tin bản đồ'}
+              console.log(marker);
+              const imageUrl = marker.img ? `./img/namyen/${marker.img}` : defaultImage;
+              infoCard.innerHTML = `  <div style="width:${infoCardWidth}px; height:${infoCardHeight}px">
+              <div class="overflow-hidden" style="display: flex; align-items: center; justify-content: space-between; margin-top: 15px;">
+                <strong>${marker.title}</strong>
+                <div class="button-container" style="display: flex; align-items: center; margin-left: auto;">
+                  <a id="mapInGoogle" target="_blank" href="${marker.hrefMapinGoogle}" alt="${marker.title}">
+                    <img src="https://img.icons8.com/?size=48&id=kDqO6kPb3xLj&format=gif" alt="Google Maps ${marker.title}">
+                  </a>
+                  <button id="hidden-click">
+                    <img src="https://img.icons8.com/?size=80&id=I02TdaPxbwRz&format=png"/>
+                  </button>
+                </div>
               </div>
-          </div>
-          <br>
-      </div>
+              <br><hr>
+              <div class="image-container" id="no_image">
+                <img class="hover-image" src="${imageUrl}" alt="No image"
+                >
+                <div class="image-info">${marker.title}</div>
+                <br><hr>
+              </div>
+              <div style="text-align: justify; max-height:160px; overflow-y:auto; background-color: white;">
+                <p>${marker.description}</p>
+              </div>
+              <br>
+            </div>
+            `;
+            document
+            .getElementById("hidden-click")
+            .addEventListener("click", function () {
+              infoCard.style.display = "none";
+            });
+            var infoCardLeft = event.pageX - (marker.scaledX <= canvas.width - infoCardWidth ? 30 : infoCardWidth - 20);
+        var infoCardTop = event.pageY - (marker.scaledY <= canvas.height - infoCardHeight ? 20 : infoCardHeight + 20);
 
-          `;
-          infoCard.style.position = "absolute";
-          infoCard.style.display = "block";
-          infoCard.style.top = marker.y + "px";
-          infoCard.style.left = marker.x + "px";
+        if (infoCardLeft < 0) infoCardLeft = 0;
+        if (infoCardTop < 0) infoCardTop = 0;
+        if (infoCardLeft + infoCardWidth > window.innerWidth) infoCardLeft = window.innerWidth - infoCardWidth;
+        if (infoCardTop + infoCardHeight > window.innerHeight) infoCardTop = window.innerHeight - infoCardHeight;
 
-          event.preventDefault();
-          var offsetTop = infoCard.offsetTop;
-          var windowHeight = window.innerHeight;
-          var halfWindowHeight = windowHeight / 2;
-          var scrollTo = offsetTop - halfWindowHeight;
-          window.scrollTo({
-            top: scrollTo,
-            behavior: "smooth",
-          });
+        infoCard.style.left = infoCardLeft + 'px';
+        infoCard.style.top = infoCardTop + 'px';
+        infoCard.style.display = 'block';
+        return;
+            
+          }
         }
-      }
-    });
-  });
-};
+  
+            });     });
+  
+});
+});
