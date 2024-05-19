@@ -13,7 +13,7 @@ window.addEventListener('load', function() {
       tt: 1,
 
       img: "cautreohoabac.jpg",
-      hrefMapinGoogle: "https://maps.app.goo.gl/xpQDgNvh7PEeZxEt9",
+      hrefMapinGoogle: "https://maps.app.goo.gl/HfSHy8suuXHqhrgZ6",
       title: "Cầu treo Hòa Bắc",
       description: `Cầu treo Hòa Bắc còn có tên gọi khác là Cầu dây văng Hòa Bắc, nối hai bờ của con sông 
        Cu Đê. Trước khi cây cầu được xây dựng, người dân di chuyển qua lại hai bên bờ bằng ghe 
@@ -39,7 +39,7 @@ window.addEventListener('load', function() {
       tt: 5,
       icon: "",
       img: "langnguon.jpg",
-      hrefMapinGoogle: "https://maps.app.goo.gl/fywJTYLMysoKAiLDA",
+      hrefMapinGoogle: "https://maps.app.goo.gl/wBA4xU9wjHirNyMj6",
       title: "Làng Nguồn",
       description: `
       Nằm ngay tại trung tâm thôn Nam Yên, xã Hoà Bắc, huyện Hoà Vang, TP. Đà Nẵng.
@@ -76,7 +76,7 @@ window.addEventListener('load', function() {
       radius: 10,
       icon: "",
       img: "campinghoabac.jpg",
-      hrefMapinGoogle: "",
+      hrefMapinGoogle: "https://maps.app.goo.gl/m5zLuFvQjqUWWdvb6",
       title: "Khu cắm trại Hòa Bắc",
       description: `
       Khu cắm trại Hòa Bắc là một bờ đất trống nhô ra từ bãi bồi của sông Cu đê. Đi vào con 
@@ -118,7 +118,7 @@ window.addEventListener('load', function() {
       radius: 10,
       tt: 8,
       img: "campingnamyen.jpg",
-      hrefMapinGoogle: "",
+      hrefMapinGoogle: "https://maps.app.goo.gl/apixfunf8Pt4Dxhs5",
       title: "Nam Yên Camping",
       description: `
      
@@ -137,7 +137,7 @@ window.addEventListener('load', function() {
       radius: 10,
       icon: "",
       img: "noimg.jpg",
-      hrefMapinGoogle: "",
+      hrefMapinGoogle: "https://maps.app.goo.gl/RCdETYGcM5fHXqN99",
       title: "Homestay Hoa Chín",
       description: `
      
@@ -162,7 +162,7 @@ window.addEventListener('load', function() {
       icon: "",
       tt: 4,
       img: "hoptacxa.jpg",
-      hrefMapinGoogle: "",
+      hrefMapinGoogle: "https://maps.app.goo.gl/4CbU1HCnz6XUkFBQ6",
       title: `Trung tâm Du lịch học tập cộng đồng Hợp tác xã (HTX) <br>
                Nông nghiệp sinh thái & Du lịch cộng đồng Hòa Bắc`,
       description: `
@@ -186,7 +186,7 @@ window.addEventListener('load', function() {
       tt: 3,
       icon: "",
       img: "nhathogiaoxu.jpg",
-      hrefMapinGoogle: "https://maps.app.goo.gl/WdcD7MjBCF8Qaq6F9",
+      hrefMapinGoogle: "https://maps.app.goo.gl/Euj4e56bwbNn9Toi6",
       title: "Nhà thờ Giáo xứ Hội Yên",
       description: `
       
@@ -232,7 +232,7 @@ window.addEventListener('load', function() {
       radius: 10,
       icon: "",
       img: "noimg.jpg",
-      hrefMapinGoogle: "https://maps.app.goo.gl/q9jx1NrDeYzkHpV89",
+      hrefMapinGoogle: "https://maps.app.goo.gl/ADun85LptggUzsPM9",
       title: "Cu Đê House",
       description: `Giữa miền an nhiên Hòa Bắc, có một căn nhà tên là Cu Đê House. Tên gọi ấy được bắt nguồn từ chính dòng sông Cu Đê hiền hòa, với cảnh sắc sơn thủy hữu tình. Khi đặt chân đến Cu Đê House, bạn sẽ cảm nhận được không khí thoáng đãng, nhẹ nhàng, là cảm giác một khi đã đến thì chẳng muốn rời xa.
       Điểm đặc biệt là Cu Đê House được thiết kế có một hồ bơi lớn nằm ngay trước căn nhà. Bố cục không gian mở nhằm giúp cho không gian cảnh quan thông thoáng và ánh sáng tự nhiên tràn ngập đến các phòng. Cu Đê House có 05 phòng với sức chứa tối đa khoảng 50 khách.
@@ -250,7 +250,7 @@ window.addEventListener('load', function() {
       icon: "",
       tt: 6,
       img: "noimg.jpg",
-      hrefMapinGoogle: "https://maps.app.goo.gl/845RL8oxhcvjEKXy5",
+      hrefMapinGoogle: "https://maps.app.goo.gl/9p3Q51sRcxWhzTJCA",
       title: "Hòa Bắc Ecolodge - Camping Space Art",
       description: `<strong>Hòa Bắc Ecolodge - Camping Space Art:</strong> được xem là địa điểm nghỉ dưỡng sinh thái hấp <br>
       dẫn trong khu vực. Nằm nép mình giữa vùng núi Hòa Bắc với không gian xanh mát, cánh 
@@ -260,7 +260,7 @@ window.addEventListener('load', function() {
       <strong>Hòa Bắc Ecolodge - Camping Space Art:</strong> có những chiếc lều trắng
        thơ mộng, khu vực lửa
       trại với không gian thoáng đãng. Chi phí thuê lều cho khách lẻ và khách theo đoàn dao 
-      động từ 200.000 - 6000.000 đồng/người/ngày.
+      động từ 200.000 - 600.000 đồng/người/ngày.
 
       `,
     },
@@ -287,7 +287,7 @@ window.addEventListener('load', function() {
       radius: 10,
       icon: "",
       img: "campingcude.jpg",
-      hrefMapinGoogle: "https://maps.app.goo.gl/hw3JMGR2NTPRUriv9",
+      hrefMapinGoogle: "https://maps.app.goo.gl/oWBYvbY5f9q58Bc26",
       title: "Cu Đê Camping",
       description: `
       Nằm ngay cạnh bờ sông Cu Đê, khu cắm trại có vẻ đẹp thiên nhiên hoang sơ, không gian
@@ -361,7 +361,7 @@ window.addEventListener('load', function() {
         </div>
         <br><hr>
         <div class="image-container" id="no_image">
-          <img class="hover-image" src="./img/namyen/${marker.img}" alt="No image">
+          <img class="hover-image" src="../images/namyen/${marker.img}" alt="No image">
           <div class="image-info">${marker.title}</div>
           <br><hr>
         </div>
